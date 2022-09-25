@@ -1,0 +1,23 @@
+#si_02,
+#si_03 {
+  display: none;
+}
+
+img {
+  background-size: cover;
+}
+
+.short_info {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 421px;
+}
+.slider_controls {
+  display: flex;
+  position: absolute;
+  top: 603px;
+}
