@@ -30,10 +30,17 @@
   text-decoration: none;
 }
 .active_links {
-  width: 400px;
+  position: absolute;
   height: 500px;
+  width: 100%;
+  top: 72px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background: bisque;
+  z-index: 99;
 }
 .toggle_menu_icons {
   display: none;
@@ -44,6 +51,11 @@
   }
   .toggle_menu_icons {
     display: flex;
+    height: 50px;
+    margin-right: 15px;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
   }
   .hamburger_menu {
     display: flex;
