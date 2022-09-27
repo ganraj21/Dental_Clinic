@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Home.css";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
@@ -7,14 +7,6 @@ import slider_two from "./images/slider_two.jpg";
 import slider_three from "./images/slider_three.jpg";
 
 const Home = () => {
-  const [currentimg, setCurrentImg] = useState(slider_one);
-
-  const next_fun = () => {
-    document.getElementById("img_01").style.display = "none";
-    document.getElementById("img_02").style.display = "flex";
-    document.getElementById("img_03").style.display = "none";
-  };
-  const prev_fun = () => {};
   return (
     <>
       <div className="slider-images">
@@ -33,10 +25,7 @@ const Home = () => {
         </div>
         <div className="slider_controls">
           <ChevronLeftIcon style={{ fontSize: "84px", color: "gray" }} />
-          <NavigateNextIcon
-            style={{ fontSize: "84px", color: "gray" }}
-            onClick={next_fun}
-          />
+          <NavigateNextIcon style={{ fontSize: "84px", color: "gray" }} />
         </div>
       </div>
 
