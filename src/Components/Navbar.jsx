@@ -1,26 +1,30 @@
 import React from "react";
+import logo_img from "./images/logo.png";
+import { Link } from "react-router-dom";
+import "./Navbar.css";
 const Navbar = () => {
   return (
     <>
       <div className="nav-container">
         <div className="logo">
-          <img src="/" alt="" />
+          <img src={logo_img} alt="om dental clinic logo" />
+          <h2>Dental Clinic</h2>
         </div>
         <div className="links">
           <div className="MenuItems">
-            <a href="/">Home </a>
+            <Link to="/">Home </Link>
           </div>
           <div className="MenuItems">
-            <a href="/about-us">About </a>
+            <Link to="/dental-clinic/about">About</Link>
           </div>
           <div className="MenuItems">
-            <a href="/appointment">Appointment </a>
+            <Link to="/dental-clinic/appointment">Appointment </Link>
           </div>
           <div className="MenuItems">
-            <a href="/dental-clinic/services">Services </a>
+            <Link to="/dental-clinic/services">Services </Link>
           </div>
           <div className="MenuItems">
-            <a href="/dental-clinic/contact">Contact </a>
+            <Link to="/dental-clinic/contact">Contact </Link>
           </div>
         </div>
       </div>

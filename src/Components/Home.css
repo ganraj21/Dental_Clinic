@@ -1,0 +1,43 @@
+#si_02,
+#si_03 {
+  display: none;
+}
+
+.slider_image img {
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.short_info {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 421px;
+}
+.slider_controls {
+  display: flex;
+  position: absolute;
+  top: 603px;
+}
+@media screen and (max-width: 580px) {
+  .slider_image img {
+    width: 579px;
+    height: 374px;
+  }
+  .short_info {
+    top: 342px;
+  }
+  .slider_controls {
+    top: 279px;
+  }
+}
+@media screen and (max-width: 480px) {
+  #img_01 {
+    background: url(./images/front_img.jpg);
+  }
+}
