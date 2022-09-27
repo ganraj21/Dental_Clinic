@@ -29,3 +29,26 @@
 .MenuItems a {
   text-decoration: none;
 }
+.active_links {
+  width: 400px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+.toggle_menu_icons {
+  display: none;
+}
+@media screen and (max-width: 720px) {
+  .links {
+    display: none;
+  }
+  .toggle_menu_icons {
+    display: flex;
+  }
+  .hamburger_menu {
+    display: flex;
+  }
+  .close_menu {
+    display: none;
+  }
+}

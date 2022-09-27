@@ -1,6 +1,8 @@
 import React from "react";
 import logo_img from "./images/logo.png";
 import { Link } from "react-router-dom";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 import "./Navbar.css";
 const Navbar = () => {
   return (
@@ -26,6 +28,10 @@ const Navbar = () => {
           <div className="MenuItems">
             <Link to="/dental-clinic/contact">Contact </Link>
           </div>
+        </div>
+        <div className="toggle_menu_icons">
+          <MenuIcon className="hamburger_menu" />
+          <CloseIcon className="close_menu" />
         </div>
       </div>
     </>
