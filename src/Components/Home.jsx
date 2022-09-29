@@ -14,7 +14,7 @@ const Home = () => {
           <img src={slider_one} alt="slider_image_one" id="img_01" />
           <div className="short_info">
             <h1>Welcome To Dental Clinic</h1>
-            <h3>Dental Clinic, Dentist Welcimes you !</h3>
+            <h3>Dental Clinic, Dentist Welcomes you !</h3>
           </div>
         </div>
         <div className="slider_image" id="si_02">
