@@ -4,7 +4,6 @@
 }
 
 .slider_image img {
-  height: 100vh;
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -26,7 +25,6 @@
 }
 .clinic_info {
   width: 100%;
-  height: 250px;
   display: flex;
   align-items: center;
   position: absolute;
@@ -52,8 +50,8 @@
 }
 @media screen and (max-width: 580px) {
   .slider_image img {
-    width: 579px;
     height: 374px;
+    background-size: cover;
   }
   .short_info {
     top: 342px;
@@ -65,5 +63,11 @@
 @media screen and (max-width: 480px) {
   #img_01 {
     background: url(./images/front_img.jpg);
+  }
+  .slider_image img {
+    height: 374px;
+  }
+  .clinic_info {
+    flex-direction: column;
   }
 }
