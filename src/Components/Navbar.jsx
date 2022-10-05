@@ -20,7 +20,7 @@ const Navbar = () => {
         <div className={isActive ? "active_links" : "links"}>
           <div className="MenuItems">
             <Link to="/" onClick={toggleClass}>
-              Home{" "}
+              Home
             </Link>
           </div>
           <div className="MenuItems">
@@ -30,17 +30,17 @@ const Navbar = () => {
           </div>
           <div className="MenuItems">
             <Link to="/dental-clinic/appointment" onClick={toggleClass}>
-              Appointment{" "}
+              Appointment
             </Link>
           </div>
           <div className="MenuItems">
             <Link to="/dental-clinic/services" onClick={toggleClass}>
-              Services{" "}
+              Services
             </Link>
           </div>
           <div className="MenuItems">
             <Link to="/dental-clinic/contact" onClick={toggleClass}>
-              Contact{" "}
+              Contact
             </Link>
           </div>
         </div>
