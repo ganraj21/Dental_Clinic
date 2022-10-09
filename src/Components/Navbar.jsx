@@ -6,7 +6,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import "./Navbar.css";
 const Navbar = () => {
   const [isActive, setActive] = useState(false);
-
+const [mac, setMac] = useState(toggleClass)
   const toggleClass = () => {
     document.getElementById('hamburger').style.display = 'none';
 document.getElementById('hmcross').style.display = 'flex';
@@ -26,27 +26,27 @@ document.getElementById('hmcross').style.display = 'none';
         </div>
         <div className={isActive ? "active_links" : "links"}>
           <div className="MenuItems">
-            <Link to="/" onClick={toggleClass}>
+            <Link to="/" onClick={setMac(toggleClassForClose)}>
               Home
             </Link>
           </div>
           <div className="MenuItems">
-            <Link to="/dental-clinic/about" onClick={toggleClass}>
+            <Link to="/dental-clinic/about" onClick={setMac(toggleClassForClose)}>
               About
             </Link>
           </div>
           <div className="MenuItems">
-            <Link to="/dental-clinic/appointment" onClick={toggleClass}>
+            <Link to="/dental-clinic/appointment"onClick={setMac(toggleClassForClose)} >
               Appointment
             </Link>
           </div>
           <div className="MenuItems">
-            <Link to="/dental-clinic/services" onClick={toggleClass}>
+            <Link to="/dental-clinic/services" onClick={setMac(toggleClassForClose)}>
               Services
             </Link>
           </div>
           <div className="MenuItems">
-            <Link to="/dental-clinic/contact" onClick={toggleClass}>
+            <Link to="/dental-clinic/contact" onClick={setMac(toggleClassForClose)}>
               Contact
             </Link>
           </div>
