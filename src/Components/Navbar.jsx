@@ -8,12 +8,14 @@ const Navbar = () => {
   const [isActive, setActive] = useState(false);
 
   const toggleClass = () => {
-    const hamburger = CloseIcon;
+    document.getElementById('hamburger').style.display = 'none';
+document.getElementById('hmcross').style.display = 'flex';
     setActive(!isActive);
   };
   const toggleClassForClose = () => {
-    const hamburger = MenuIcon;
-    setActive(isActive);
+        document.getElementById('hamburger').style.display = 'flex';
+document.getElementById('hmcross').style.display = 'none';
+    setActive(!isActive);
   };
   return (
     <>
@@ -51,10 +53,10 @@ const Navbar = () => {
         </div>
         <div className="toggle_menu_icons">
           <div className="hamburger_menu" id="hamburger">
-            <hamburger onClick={toggleClass} />
+            <MenuIcon onClick={toggleClass} />
           </div>
-          <div className="close_menu">
-            <hamburger onClick={toggleClassForClose} />
+          <div className="close_menu" id="hmcross">
+            <CloseIcon onClick={toggleClassForClose}/>
           </div>
         </div>
       </div>
