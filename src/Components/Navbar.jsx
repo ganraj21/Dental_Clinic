@@ -13,7 +13,7 @@ const Navbar = () => {
   };
   const toggleClassForClose = () => {
     const hamburger = MenuIcon;
-    setActive(false);
+    setActive(isActive);
   };
   return (
     <>
