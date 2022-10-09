@@ -6,7 +6,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import "./Navbar.css";
 const Navbar = () => {
   const [isActive, setActive] = useState(false);
-const [mac, setMac] = useState(toggleClass)
+
   const toggleClass = () => {
     document.getElementById('hamburger').style.display = 'none';
 document.getElementById('hmcross').style.display = 'flex';
@@ -17,6 +17,7 @@ document.getElementById('hmcross').style.display = 'flex';
 document.getElementById('hmcross').style.display = 'none';
     setActive(!isActive);
   };
+const [mac, setMac] = useState(toggleClass)
   return (
     <>
       <div className="nav-container">
