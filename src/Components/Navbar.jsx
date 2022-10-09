@@ -51,10 +51,10 @@ const Navbar = () => {
         </div>
         <div className="toggle_menu_icons">
           <div className="hamburger_menu" id="hamburger">
-            <MenuIcon onClick={toggleClass} />
+            <hamburger onClick={toggleClass} />
           </div>
           <div className="close_menu">
-            <CloseIcon onClick={toggleClassForClose} />
+            <hamburger onClick={toggleClassForClose} />
           </div>
         </div>
       </div>
