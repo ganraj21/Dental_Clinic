@@ -16,7 +16,9 @@ const [mac, setMac] = useState(toggleClass);
   const toggleClassForClose = () => {
         document.getElementById('hamburger').style.display = 'flex';
 document.getElementById('hmcross').style.display = 'none';
+const menumac = () =>{
 setMac(toggleClassForClose);
+}
     setActive(!isActive);
   };
 
@@ -29,27 +31,27 @@ setMac(toggleClassForClose);
         </div>
         <div className={isActive ? "active_links" : "links"}>
           <div className="MenuItems">
-            <Link to="/" onClick={mac}>
+            <Link to="/" onClick={menumac}>
               Home
             </Link>
           </div>
           <div className="MenuItems">
-            <Link to="/dental-clinic/about" onClick={mac}>
+            <Link to="/dental-clinic/about" onClick={menumac}>
               About
             </Link>
           </div>
           <div className="MenuItems">
-            <Link to="/dental-clinic/appointment"onClick={mac} >
+            <Link to="/dental-clinic/appointment"onClick={menumac} >
               Appointment
             </Link>
           </div>
           <div className="MenuItems">
-            <Link to="/dental-clinic/services" onClick={mac}>
+            <Link to="/dental-clinic/services" onClick={menumac}>
               Services
             </Link>
           </div>
           <div className="MenuItems">
-            <Link to="/dental-clinic/contact" onClick={mac}>
+            <Link to="/dental-clinic/contact" onClick={menumac}>
               Contact
             </Link>
           </div>
