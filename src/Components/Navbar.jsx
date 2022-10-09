@@ -8,11 +8,11 @@ const Navbar = () => {
   const [isActive, setActive] = useState(false);
 
   const toggleClass = () => {
-    const hamburger = CloseIcon
+    const hamburger = CloseIcon;
     setActive(!isActive);
   };
   const toggleClassForClose = () => {
-    const hamburger = MenuIcon
+    const hamburger = MenuIcon;
     setActive(false);
   };
   return (
