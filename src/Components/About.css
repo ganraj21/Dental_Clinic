@@ -1,15 +1,16 @@
 .about_section_container {
   display: flex;
-  height: 500px;
+  height: 100vh;
   flex-direction: column;
   align-content: center;
   justify-content: center;
   align-items: center;
 }
 .about_container {
-  width: 60%;
+  width: 80%;
+  padding: 15px 15px;
   display: flex;
-  height: 500px;
+  height: 65vh;
   background-color: antiquewhite;
   flex-direction: column;
   justify-content: center;

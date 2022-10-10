@@ -5,3 +5,17 @@
   align-content: center;
   align-items: center;
 }
+.upper_section {
+  margin-top: -1px;
+}
+.upper_section img {
+  width: 100%;
+  height: auto;
+}
+.appointment_section {
+  width: 80%;
+  height: 30vh;
+  padding: 15px;
+  background: bisque;
+  text-align: center;
+}

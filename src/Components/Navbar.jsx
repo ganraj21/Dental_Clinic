@@ -8,8 +8,17 @@ const Navbar = () => {
   const [isActive, setActive] = useState(false);
 
   const toggleClass = () => {
+    document.getElementById("hamburger").style.display = "none";
+    document.getElementById("hmcross").style.display = "flex";
     setActive(!isActive);
   };
+  //const [mac, setMac] = useState(toggleClass);
+  const toggleClassForClose = () => {
+    document.getElementById("hamburger").style.display = "flex";
+    document.getElementById("hmcross").style.display = "none";
+    setActive(!isActive);
+  };
+
   return (
     <>
       <div className="nav-container">
@@ -19,27 +28,27 @@ const Navbar = () => {
         </div>
         <div className={isActive ? "active_links" : "links"}>
           <div className="MenuItems">
-            <Link to="/" onClick={toggleClass}>
+            <Link to="/" onClick={toggleClassForClose}>
               Home
             </Link>
           </div>
           <div className="MenuItems">
-            <Link to="/dental-clinic/about" onClick={toggleClass}>
+            <Link to="/dental-clinic/about" onClick={toggleClassForClose}>
               About
             </Link>
           </div>
           <div className="MenuItems">
-            <Link to="/dental-clinic/appointment" onClick={toggleClass}>
+            <Link to="/dental-clinic/appointment" onClick={toggleClassForClose}>
               Appointment
             </Link>
           </div>
           <div className="MenuItems">
-            <Link to="/dental-clinic/services" onClick={toggleClass}>
+            <Link to="/dental-clinic/services" onClick={toggleClassForClose}>
               Services
             </Link>
           </div>
           <div className="MenuItems">
-            <Link to="/dental-clinic/contact" onClick={toggleClass}>
+            <Link to="/dental-clinic/contact" onClick={toggleClassForClose}>
               Contact
             </Link>
           </div>
@@ -48,8 +57,8 @@ const Navbar = () => {
           <div className="hamburger_menu" id="hamburger">
             <MenuIcon onClick={toggleClass} />
           </div>
-          <div className="close_menu">
-            <CloseIcon />
+          <div className="close_menu" id="hmcross">
+            <CloseIcon onClick={toggleClassForClose} />
           </div>
         </div>
       </div>
