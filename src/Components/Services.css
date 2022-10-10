@@ -1,5 +1,5 @@
 .services_container {
-  height: 90vh;
+  /* height: 100vh; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,9 +7,11 @@
   align-content: center;
 }
 .services_container h2 {
-  width: 100%;
+  width: 90%;
 }
 .service_info_container {
+  display: flex;
+  gap: 12px;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -23,14 +25,23 @@
   flex-direction: column;
   justify-content: center;
   width: 300px;
+  height: 200px;
   align-items: center;
   text-align: center;
+  background: antiquewhite;
+  padding: 15px;
 }
 
+@media screen and (min-width: 1024px) {
+  .service_info_container {
+    width: 700px;
+  }
+}
 @media screen and (max-width: 480px) {
   .service_info_container {
     display: grid;
     width: 100%;
+    height: 100vh;
     flex-wrap: wrap;
     justify-items: stretch;
     justify-content: center;
