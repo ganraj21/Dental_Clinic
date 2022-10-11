@@ -88,6 +88,7 @@
   box-shadow: inset 0 0 0 0 #f43e04;
   transition: ease-out 0.3s;
   font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif !important;
+  cursor: pointer;
 }
 .transperent_btn:hover {
   color: #fff;
