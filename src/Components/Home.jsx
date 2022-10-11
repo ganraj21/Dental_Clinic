@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./Home.css";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
-import Button from "@mui/material/Button";
 import slider_one from "./images/slider_one.jpg";
 import slider_two from "./images/slider_two.jpg";
 import slider_three from "./images/cartoon-style-dental-care-concept_23-2148984413.webp";
