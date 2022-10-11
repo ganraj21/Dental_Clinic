@@ -1,32 +1,61 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Home.css";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import Button from "@mui/material/Button";
-// import slider_one from "./images/slider_one.jpg";
-// import slider_two from "./images/slider_two.jpg";
-// import slider_three from "./images/slider_three.jpg";
+import slider_one from "./images/slider_one.jpg";
+import slider_two from "./images/slider_two.jpg";
+import slider_three from "./images/cartoon-style-dental-care-concept_23-2148984413.webp";
+import slider_four from "./images/front_img.jpg";
 
 const Home = () => {
+  const [selectedImage, setSelectedImage] = useState(0);
+  const [allImages, setAllImages] = useState([
+    slider_one,
+    slider_two,
+    slider_three,
+    slider_four,
+  ]);
+
+  // useEffect(() => {
+  //   setInterval(() => {
+  //     setSelectedImage((selectedImage) =>
+  //       selectedImage > 3 ? 0 : selectedImage + 1
+  //     );
+  //   }, 3000);
+  // });
+
   return (
     <>
       <div className="slider-images">
         <div className="slider_image" id="si_01">
-          <div id="img_01"></div>
-          <div className="short_info">
-            <h1>Welcome To Dental Clinic</h1>
-            <h3>Dental Clinic, Dentist Welcomes you !</h3>
-          </div>
+          {/* <img id="img_01" alt="" src={allImages[selectedImage]} /> */}
+          <img id="img_01" alt="" src={slider_three} />
         </div>
-        <div className="slider_image" id="si_02">
-          <div id="img_02"></div>
-        </div>
-        <div className="slider_image" id="si_03">
-          <div id="img_03"></div>
+
+        <div className="front_page_info">
+          <h2>We Care For Your Smile</h2>
+          <p>
+            We Believe Everyone should have easy access to great dental clinic
+          </p>
+          <Button variant="contained" style={{ background: "#F43E04" }}>
+            Book An Appointment
+          </Button>
         </div>
         <div className="slider_controls">
-          <ChevronLeftIcon style={{ fontSize: "84px", color: "gray" }} />
-          <NavigateNextIcon style={{ fontSize: "84px", color: "gray" }} />
+          <ChevronLeftIcon
+            style={{ fontSize: "84px", color: "gray" }}
+            onClick={() => {
+              if (selectedImage > 0) setSelectedImage(selectedImage - 1);
+            }}
+          />
+          <NavigateNextIcon
+            style={{ fontSize: "84px", color: "gray" }}
+            onClick={() => {
+              if (selectedImage < allImages.length - 1)
+                setSelectedImage(selectedImage + 1);
+            }}
+          />
         </div>
       </div>
 
