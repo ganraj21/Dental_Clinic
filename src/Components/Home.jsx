@@ -10,7 +10,7 @@ import slider_four from "./images/front_img.jpg";
 
 const Home = () => {
   const [selectedImage, setSelectedImage] = useState(2);
-  const [allImages, setAllImages] = useState([
+  const [allImages] = useState([
     slider_one,
     slider_two,
     slider_three,
