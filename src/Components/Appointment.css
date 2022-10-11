@@ -4,6 +4,9 @@
   justify-content: center;
   align-content: center;
   align-items: center;
+  position: relative;
+  top: -21px;
+  left: -7px;
 }
 .upper_section {
   margin-top: -1px;
@@ -16,6 +19,19 @@
   width: 80%;
   height: 30vh;
   padding: 15px;
-  background: bisque;
+  background: #104bbe;
+  color: #fff;
   text-align: center;
+  top: -14px;
+  position: absolute;
+  z-index: 99;
+  margin-bottom: 10px;
+}
+#apsec_01 {
+  display: flex;
+  position: absolute;
+  z-index: 45;
+  left: 38px;
+  top: 2px;
+  background: #505050;
 }

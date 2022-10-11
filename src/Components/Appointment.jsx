@@ -11,15 +11,19 @@ const Appointment = () => {
         </div>
         <div className="appointment_section_container">
           <div className="appointment_section">
-            <h2>How We Can Help…</h2>
-            <p>
+            <h2 style={{ fontSize: "27px" }}>How We Can Help…</h2>
+            <p style={{ fontSize: "18px" }}>
               We Offer a Wide Range of Procedures to Help You Get the Perfect
               Smile
             </p>
-            <Button variant="contained" style={{ background: "#F43E04" }}>
+            <Button
+              variant="contained"
+              style={{ background: "#F43E04", height: "50px" }}
+            >
               Book an Appointment
             </Button>
           </div>
+          <div className="appointment_section" id="apsec_01"></div>
         </div>
       </div>
     </>
