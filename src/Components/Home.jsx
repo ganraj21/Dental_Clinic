@@ -19,61 +19,65 @@ const Home = () => {
 
   return (
     <>
-      <div className="slider-images">
-        <div className="slider_image" id="si_01">
-          <img id="img_01" alt="" src={allImages[selectedImage]} />
-        </div>
+      <div className="slider_container">
+        <div className="slider-images">
+          <div className="slider_image" id="si_01">
+            <img id="img_01" alt="" src={allImages[selectedImage]} />
+          </div>
 
-        <div className="front_page_info">
-          <h2>We Care For Your Smile</h2>
-          <p>
-            We Believe Everyone should have easy access to great dental clinic
-          </p>
-          <Button variant="contained" style={{ background: "#F43E04" }}>
-            Book An Appointment
-          </Button>
-        </div>
-        <div className="slider_controls">
-          <ChevronLeftIcon
-            style={{ fontSize: "84px", color: "gray" }}
-            onClick={() => {
-              if (selectedImage > 0) setSelectedImage(selectedImage - 1);
-            }}
-          />
-          <NavigateNextIcon
-            style={{ fontSize: "84px", color: "gray" }}
-            onClick={() => {
-              if (selectedImage < allImages.length - 1)
-                setSelectedImage(selectedImage + 1);
-            }}
-          />
+          <div className="front_page_info">
+            <h2 style={{ fontSize: "51px", margin: "0", textAlign: "left" }}>
+              We Care For Your Smile
+            </h2>
+            <p style={{ fontSize: "21px", textAlign: "left" }}>
+              We Believe Everyone should have easy access to great dental clinic
+            </p>
+            <div className="social_links"></div>
+          </div>
+          <div className="slider_controls">
+            <ChevronLeftIcon
+              style={{ fontSize: "84px", color: "gray" }}
+              onClick={() => {
+                if (selectedImage > 0) setSelectedImage(selectedImage - 1);
+              }}
+            />
+            <NavigateNextIcon
+              style={{ fontSize: "84px", color: "gray" }}
+              onClick={() => {
+                if (selectedImage < allImages.length - 1)
+                  setSelectedImage(selectedImage + 1);
+              }}
+            />
+          </div>
         </div>
       </div>
 
-      <div className="clinic_info">
-        <div className="basic_info" id="info_01">
-          <h2>Flexible Schedule</h2>
-          <p>
-            We work on holidays, besides working late on regular days. In case
-            of emergencies we accept bookings.
-          </p>
-          <div className="transperent_btn">Read More</div>
-        </div>
-        <div className="basic_info" id="info_02">
-          <h2>Best Price Guarantee</h2>
-          <p>
-            Our reasonable prices made thousands of people smile with a new,
-            beautiful, irresistible smile, as never before!!
-          </p>
-          <div className="transperent_btn">Read More</div>
-        </div>
-        <div className="basic_info" id="info_03">
-          <h2>Opening Hours</h2>
-          <p>
-            Monday – Saturday: 10.00 am – 10.00 pm Sunday: 5.00 pm – 10.00 pm
-          </p>
-          <div className="transperent_btn" id="tr_btn_01">
-            Book An Appointment
+      <div className="clinic_container">
+        <div className="clinic_info">
+          <div className="basic_info" id="info_01">
+            <h2>Flexible Schedule</h2>
+            <p>
+              We work on holidays, besides working late on regular days. In case
+              of emergencies we accept bookings.
+            </p>
+            <div className="transperent_btn">Read More</div>
+          </div>
+          <div className="basic_info" id="info_02">
+            <h2>Best Price Guarantee</h2>
+            <p>
+              Our reasonable prices made thousands of people smile with a new,
+              beautiful, irresistible smile, as never before!!
+            </p>
+            <div className="transperent_btn">Read More</div>
+          </div>
+          <div className="basic_info" id="info_03">
+            <h2>Opening Hours</h2>
+            <p>
+              Monday – Saturday: 10.00 am – 10.00 pm Sunday: 5.00 pm – 10.00 pm
+            </p>
+            <div className="transperent_btn" id="tr_btn_01">
+              Book An Appointment
+            </div>
           </div>
         </div>
       </div>

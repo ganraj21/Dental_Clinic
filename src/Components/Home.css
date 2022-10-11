@@ -5,6 +5,7 @@
 
 .slider_image img {
   width: 100%;
+  margin-top: 10px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -22,28 +23,34 @@
 .slider_image {
   width: 100%;
 }
+.slider_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
 .slider-images {
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
   align-content: center;
   justify-content: center;
   align-items: center;
+  margin: 0px 10px 0px 16px;
 }
 .front_page_info {
   display: flex;
   width: 90%;
-  height: 277px;
+  height: 351px;
   align-items: center;
   flex-direction: column;
   align-content: center;
   justify-content: center;
   text-align: center;
-  background: #2196f3;
 }
 .slider_controls {
   display: flex;
   position: absolute;
-  top: 603px;
+  top: 540px;
 }
 .front_page_info button {
   height: 45px;
@@ -55,6 +62,9 @@
   align-items: center;
   margin: 10px 15px 10px 15px;
   justify-content: center;
+}
+.clinic_container {
+  display: flex;
 }
 .basic_info {
   color: #fff;
@@ -104,8 +114,14 @@
 }
 
 @media screen and (min-width: 1024px) {
+  .slider-images {
+    width: 80%;
+  }
 }
 @media screen and (max-width: 580px) {
+  .slider-images {
+    flex-direction: column;
+  }
   .slider_image img {
     background-size: cover;
   }
@@ -114,6 +130,9 @@
   }
   .slider_controls {
     top: 279px;
+  }
+  .front_page_info {
+    margin-top: -18px;
   }
 }
 @media screen and (max-width: 480px) {
