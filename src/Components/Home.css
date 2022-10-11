@@ -31,14 +31,14 @@
 }
 .front_page_info {
   display: flex;
-  width: 80%;
-  height: 350px;
+  width: 90%;
+  height: 277px;
   align-items: center;
   flex-direction: column;
   align-content: center;
   justify-content: center;
   text-align: center;
-  background: #f8f8f8;
+  background: #2196f3;
 }
 .slider_controls {
   display: flex;
@@ -119,6 +119,7 @@
 @media screen and (max-width: 480px) {
   .slider_image img {
     float: left;
+    top: 10px;
     margin-right: -100%;
     position: relative;
     width: 100%;
