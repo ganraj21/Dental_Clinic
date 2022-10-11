@@ -118,6 +118,11 @@
     width: 80%;
   }
 }
+@media screen and (max-width: 924px) {
+  .clinic_info {
+    flex-direction: column;
+  }
+}
 @media screen and (max-width: 580px) {
   .slider-images {
     flex-direction: column;
