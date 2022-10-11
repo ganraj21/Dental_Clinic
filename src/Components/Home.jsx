@@ -9,7 +9,7 @@ import slider_three from "./images/cartoon-style-dental-care-concept_23-21489844
 import slider_four from "./images/front_img.jpg";
 
 const Home = () => {
-  const [selectedImage, setSelectedImage] = useState(0);
+  const [selectedImage, setSelectedImage] = useState(2);
   const [allImages, setAllImages] = useState([
     slider_one,
     slider_two,
@@ -17,20 +17,11 @@ const Home = () => {
     slider_four,
   ]);
 
-  // useEffect(() => {
-  //   setInterval(() => {
-  //     setSelectedImage((selectedImage) =>
-  //       selectedImage > 3 ? 0 : selectedImage + 1
-  //     );
-  //   }, 3000);
-  // });
-
   return (
     <>
       <div className="slider-images">
         <div className="slider_image" id="si_01">
-          {/* <img id="img_01" alt="" src={allImages[selectedImage]} /> */}
-          <img id="img_01" alt="" src={slider_three} />
+          <img id="img_01" alt="" src={allImages[selectedImage]} />
         </div>
 
         <div className="front_page_info">
