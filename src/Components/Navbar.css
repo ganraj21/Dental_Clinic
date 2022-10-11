@@ -28,13 +28,18 @@
 .MenuItems {
   margin: 10px 20px;
   font-size: 18px;
+  line-height: 39px;
+  text-align: left;
 }
 .MenuItems a {
   text-decoration: none;
+  font-family: sans-serif;
+  font-weight: 600;
+  color: black;
 }
 .active_links {
   position: absolute;
-  height: 500px;
+  height: 398px;
   width: 100%;
   top: 72px;
   display: flex;
@@ -64,6 +69,12 @@
     display: flex;
   }
   .close_menu {
+    display: none;
+  }
+  #hamburger {
+    display: flex;
+  }
+  #hmcross {
     display: none;
   }
 }

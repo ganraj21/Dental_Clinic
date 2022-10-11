@@ -12,7 +12,6 @@ const Navbar = () => {
     document.getElementById("hmcross").style.display = "flex";
     setActive(!isActive);
   };
-  //const [mac, setMac] = useState(toggleClass);
   const toggleClassForClose = () => {
     document.getElementById("hamburger").style.display = "flex";
     document.getElementById("hmcross").style.display = "none";

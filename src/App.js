@@ -7,8 +7,6 @@ import Appointment from './Components/Appointment';
 import Services from './Components/Services';
 import Contact from './Components/Contact';
 
-
-
 const App = () =>{
   return(
     <>
