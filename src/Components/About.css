@@ -8,25 +8,31 @@
   font-family: "Poppins", sans-serif;
 }
 .about_container {
-  width: 80%;
-  padding: 15px 15px;
+  width: 100%;
   display: flex;
-  /* background-color: antiquewhite; */
   flex-direction: row;
   justify-content: center;
   align-content: center;
   align-items: center;
 }
 .about_info {
-  width: 60%;
+  padding: 0px 10px 20px 25px;
 }
-.about_image {
-  width: 40%;
+.about_short_descrp {
+  font-size: 18px;
+  font-weight: 500;
 }
+/* .about_image {
+  /* width: 40%;
+} */
 .about_image img {
   width: 403px;
 }
 @media screen and (min-width: 1024px) {
+  .about_container {
+    width: 90%;
+  }
+
   .about_image img {
     height: 554px;
     width: 554px;
@@ -35,5 +41,8 @@
 @media screen and (max-width: 720px) {
   .about_container {
     flex-direction: column;
+  }
+  .about_image img {
+    width: 90%;
   }
 }

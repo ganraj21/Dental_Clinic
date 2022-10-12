@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./Home.css";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+
+import "font-awesome/css/font-awesome.min.css";
 import slider_one from "./images/slider_one.jpg";
 import slider_two from "./images/slider_two.jpg";
 import slider_three from "./images/cartoon-style-dental-care-concept_23-2148984413.webp";
@@ -34,6 +36,9 @@ const Home = () => {
             <div className="social_links"></div>
           </div>
           <div className="slider_controls">
+            {/* <i class="fas fa-solid fa-period"></i>
+            <i class="fas fa-solid fa-period"></i>
+            <i class="fas fa-solid fa-period"></i> */}
             <ChevronLeftIcon
               style={{ fontSize: "84px", color: "gray" }}
               onClick={() => {
