@@ -2,6 +2,7 @@ import React from "react";
 import Button from "@mui/material/Button";
 import "./About.css";
 import about_img from "./images/flat-dental-care-concept-illustration_23-2149002069.jpg";
+import Profile from "./Profile";
 const About = () => {
   return (
     <>
@@ -28,6 +29,7 @@ const About = () => {
             <img src={about_img} alt="" />
           </div>
         </div>
+        <Profile />
       </div>
     </>
   );
