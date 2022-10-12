@@ -1,64 +1,56 @@
 import React, { useState } from "react";
 import logo_img from "./images/logo.png";
 import { Link } from "react-router-dom";
-import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from "@mui/icons-material/Close";
+import "font-awesome/css/font-awesome.min.css";
 import "./Navbar.css";
 const Navbar = () => {
   const [isActive, setActive] = useState(false);
 
-  const toggleClass = () => {
-    document.getElementById("hamburger").style.display = "none";
-    document.getElementById("hmcross").style.display = "flex";
-    setActive(!isActive);
-  };
-  const toggleClassForClose = () => {
-    document.getElementById("hamburger").style.display = "flex";
-    document.getElementById("hmcross").style.display = "none";
+  const handleClick = () => {
     setActive(!isActive);
   };
 
+  const closeMobileMenu = () => {
+    setActive(false);
+  };
   return (
     <>
       <div className="nav-container">
         <div className="logo">
-          <img src={logo_img} alt="om dental clinic logo" />
+          <Link to="/">
+            <img src={logo_img} alt="om dental clinic logo" />
+          </Link>
           <h2>Dental Clinic</h2>
         </div>
         <div className={isActive ? "active_links" : "links"}>
           <div className="MenuItems">
-            <Link to="/" onClick={toggleClassForClose}>
+            <Link to="/" onClick={closeMobileMenu}>
               Home
             </Link>
           </div>
           <div className="MenuItems">
-            <Link to="/dental-clinic/about" onClick={toggleClassForClose}>
+            <Link to="/dental-clinic/about" onClick={closeMobileMenu}>
               About
             </Link>
           </div>
           <div className="MenuItems">
-            <Link to="/dental-clinic/appointment" onClick={toggleClassForClose}>
+            <Link to="/dental-clinic/appointment" onClick={closeMobileMenu}>
               Appointment
             </Link>
           </div>
           <div className="MenuItems">
-            <Link to="/dental-clinic/services" onClick={toggleClassForClose}>
+            <Link to="/dental-clinic/services" onClick={closeMobileMenu}>
               Services
             </Link>
           </div>
           <div className="MenuItems">
-            <Link to="/dental-clinic/contact" onClick={toggleClassForClose}>
+            <Link to="/dental-clinic/contact" onClick={closeMobileMenu}>
               Contact
             </Link>
           </div>
         </div>
-        <div className="toggle_menu_icons">
-          <div className="hamburger_menu" id="hamburger">
-            <MenuIcon onClick={toggleClass} />
-          </div>
-          <div className="close_menu" id="hmcross">
-            <CloseIcon onClick={toggleClassForClose} />
-          </div>
+        <div className="toggle_menu_icons" onClick={handleClick}>
+          <i className={isActive ? "fas fa-times" : "fas fa-bars"}></i>
         </div>
       </div>
     </>
