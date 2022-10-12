@@ -28,7 +28,7 @@ const Home = () => {
             <h2 style={{ fontSize: "51px", margin: "0", textAlign: "left" }}>
               We Care For Your Smile
             </h2>
-            <p style={{ fontSize: "21px", textAlign: "left" }}>
+            <p>
               We Believe Everyone should have easy access to great dental clinic
             </p>
             <div className="social_links"></div>
