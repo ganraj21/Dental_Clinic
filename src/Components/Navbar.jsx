@@ -34,11 +34,6 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="MenuItems">
-            <Link to="/dental-clinic/appointment" onClick={closeMobileMenu}>
-              Appointment
-            </Link>
-          </div>
-          <div className="MenuItems">
             <Link to="/dental-clinic/services" onClick={closeMobileMenu}>
               Services
             </Link>
@@ -46,6 +41,11 @@ const Navbar = () => {
           <div className="MenuItems">
             <Link to="/dental-clinic/contact" onClick={closeMobileMenu}>
               Contact
+            </Link>
+          </div>
+          <div className="MenuItems" id="Appointment_menu">
+            <Link to="/dental-clinic/appointment" onClick={closeMobileMenu}>
+              Appointment
             </Link>
           </div>
         </div>
