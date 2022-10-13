@@ -39,6 +39,11 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="MenuItems">
+            <Link to="/dental-clinic/login_user" onClick={closeMobileMenu}>
+              Login
+            </Link>
+          </div>
+          <div className="MenuItems">
             <Link to="/dental-clinic/contact" onClick={closeMobileMenu}>
               Contact
             </Link>

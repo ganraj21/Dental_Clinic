@@ -1,0 +1,117 @@
+.login_section_container {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* height: 500px; */
+}
+.login_user_form,
+.login_info {
+  width: 100%;
+  display: flex;
+  height: 450px;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+.login_user_form {
+  flex-direction: column;
+  text-align: left;
+}
+.login_user_form h2 {
+  width: 293px;
+}
+.login_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  width: 90%;
+  border-radius: 6px;
+  margin-top: 45px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+.login_info {
+  background-color: blueviolet;
+}
+
+.login_user_name,
+.login_user_password {
+  display: flex;
+  flex-direction: column;
+  margin: 9px;
+}
+input {
+  width: 267px;
+  height: 35px;
+  outline: 1px solid black;
+  text-align: center;
+}
+.login_user_submit button {
+  height: 45px;
+  width: 278px !important;
+  border: none;
+  background: blueviolet;
+  outline: none;
+  color: #fff;
+  font-size: 18px;
+}
+.login_user_submit {
+  margin-top: 32px;
+}
+
+label {
+  margin-bottom: 9px;
+}
+.sign_up_msg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+.sign_up_msg h3 {
+  font-weight: 500;
+  color: #434343;
+}
+.sign_up_msg h3 span {
+  color: #21066c;
+  font-weight: 600;
+}
+#reset_pass {
+  font-size: 15px;
+  font-weight: 500;
+  color: #21066c;
+}
+@media screen and (min-width: 1024px) {
+  .login_container {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .login_section_container {
+    flex-direction: column;
+  }
+  .login_container {
+    flex-direction: column;
+  }
+  .login_info,
+  .login_user_form {
+    /* height: 350px;
+     */
+    padding: 7px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .login_section_container {
+    flex-direction: column;
+  }
+}

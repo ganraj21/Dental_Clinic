@@ -6,6 +6,7 @@ import About from './Components/About';
 import Appointment from './Components/Appointment';
 import Services from './Components/Services';
 import Contact from './Components/Contact';
+import Login from './Components/Login';
 const App = () =>{
   return(
     <>
@@ -16,6 +17,7 @@ const App = () =>{
       <Route exact path='/dental-clinic/appointment' element={<Appointment/>}/>
       <Route exact path='/dental-clinic/services' element={<Services/>}/>
       <Route exact path='/dental-clinic/contact' element={<Contact/>}/>
+      <Route exact path='/dental-clinic/login_user' element={<Login/>}/>
     </Routes>
     </>
   )
