@@ -1,12 +1,12 @@
 import React from 'react'
 import { Routes,Route} from 'react-router-dom'
-import Navbar from './Components/Navbar';
-import Home from './Components/Home';
-import About from './Components/About';
-import Appointment from './Components/Appointment';
-import Services from './Components/Services';
-import Contact from './Components/Contact';
-import Login from './Components/Login';
+import Navbar from './Pages/Navbar';
+import Home from './Pages/Home';
+import About from './Pages/About';
+import Appointment from './Pages/Appointment';
+import Services from './Pages/Services';
+import Contact from './Pages/Contact';
+import Login from './Pages/Login';
 const App = () =>{
   return(
     <>

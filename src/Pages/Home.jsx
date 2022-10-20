@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 import "./Home.css";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import NavigateNextIcon from "@mui/icons-material/NavigateNext";
-
 import "font-awesome/css/font-awesome.min.css";
 import slider_one from "./images/slider_one.jpg";
 import slider_two from "./images/slider_two.jpg";
@@ -26,32 +23,28 @@ const Home = () => {
             <img id="img_01" alt="" src={allImages[selectedImage]} />
           </div>
 
-          <div className="front_page_info">
-            <h2 style={{ fontSize: "51px", margin: "0", textAlign: "left" }}>
-              We Care For Your Smile
-            </h2>
-            <p>
-              We Believe Everyone should have easy access to great dental clinic
-            </p>
-            <div className="social_links"></div>
-          </div>
-          <div className="slider_controls">
-            {/* <i class="fas fa-solid fa-period"></i>
-            <i class="fas fa-solid fa-period"></i>
-            <i class="fas fa-solid fa-period"></i> */}
-            <ChevronLeftIcon
-              style={{ fontSize: "84px", color: "gray" }}
-              onClick={() => {
-                if (selectedImage > 0) setSelectedImage(selectedImage - 1);
-              }}
-            />
-            <NavigateNextIcon
-              style={{ fontSize: "84px", color: "gray" }}
-              onClick={() => {
-                if (selectedImage < allImages.length - 1)
-                  setSelectedImage(selectedImage + 1);
-              }}
-            />
+          <div className="front_container">
+            <div className="front_page_info">
+              <h2 style={{ fontSize: "51px", margin: "0", textAlign: "left" }}>
+                We Care For Your Smile
+              </h2>
+              <p>
+                We Believe Everyone should have easy access to great dental
+                clinic
+              </p>
+              <div className="social_links"></div>
+            </div>
+            <div className="slider_controls">
+              <div className="circle_dot_class">
+                <span></span>
+              </div>
+              <div className="circle_dot_class">
+                <span></span>
+              </div>
+              <div className="circle_dot_class">
+                <span></span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -90,3 +83,12 @@ const Home = () => {
 };
 
 export default Home;
+
+// onClick={() => {
+//   if (selectedImage > 0) setSelectedImage(selectedImage - 1);
+// }}
+
+// onClick={() => {
+//   if (selectedImage < allImages.length - 1)
+//     setSelectedImage(selectedImage + 1);
+// }}

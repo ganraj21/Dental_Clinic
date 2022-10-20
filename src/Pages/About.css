@@ -31,18 +31,21 @@
 @media screen and (min-width: 1024px) {
   .about_container {
     width: 90%;
+    height: 650px;
   }
 
   .about_image img {
-    height: 554px;
-    width: 554px;
+    width: 453px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .about_container {
+    height: 70vh;
   }
 }
 @media screen and (max-width: 720px) {
   .about_container {
     flex-direction: column;
-  }
-  .about_image img {
-    width: 90%;
+    height: 100%;
   }
 }

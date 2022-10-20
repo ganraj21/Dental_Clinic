@@ -42,6 +42,9 @@
   font-weight: 600;
   color: black;
 }
+.MenuItems a:active {
+  transform: scale(0.97);
+}
 
 .active_links {
   position: absolute;
@@ -80,7 +83,13 @@
 .toggle_menu_icons {
   display: none;
 }
-@media screen and (max-width: 780px) {
+@media screen and (min-width: 1024px) {
+  .MenuItems {
+    font-size: 17px;
+    line-height: 56px;
+  }
+}
+@media screen and (max-width: 900px) {
   .links {
     display: none;
   }
@@ -108,4 +117,6 @@
   #Appointment_menu:hover {
     box-shadow: inset 213px 0 0 0 #f43e04;
   }
+}
+@media screen and (max-width: 780px) {
 }
