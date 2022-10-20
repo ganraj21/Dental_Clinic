@@ -86,7 +86,6 @@
 @media screen and (min-width: 1024px) {
   .MenuItems {
     font-size: 17px;
-    line-height: 56px;
   }
 }
 @media screen and (max-width: 900px) {
