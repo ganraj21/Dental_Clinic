@@ -23,6 +23,13 @@ function Register() {
     draggable: true,
     theme: "dark",
   };
+
+  useEffect(() => {
+    if (localStorage.getItem("chat-app-user")) {
+      navigate("/dental-clinic/user/chat_section");
+    }
+  }, []);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (handleValidation()) {
@@ -174,6 +181,7 @@ const FormContainer = styled.div`
     text-transform: uppercase;
     justify-content: center;
     display: flex;
+    gap: 10px;
     a {
       color: #4e0eff;
       text-decoration: none;
