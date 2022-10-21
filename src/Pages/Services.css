@@ -11,6 +11,12 @@
   width: 90%;
   color: #232323;
 }
+.services_header {
+  margin: 30px;
+}
+.services_container h2 span {
+  margin-right: 9px;
+}
 .service_info_container {
   display: flex;
   gap: 12px;
@@ -61,6 +67,8 @@
 @media screen and (min-width: 1024px) {
   .service_info {
     width: 430px;
+    height: 272px;
+    justify-content: center;
   }
   .service_info_container {
     gap: 33px;

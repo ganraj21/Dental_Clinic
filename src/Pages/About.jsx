@@ -7,9 +7,14 @@ const About = () => {
   return (
     <>
       <div className="about_section_container">
+        <h2 className="about_title">
+          <span>
+            <i class="fa-solid fa-angles-right"></i>
+          </span>
+          About US
+        </h2>
         <div className="about_container">
           <div className="about_info">
-            <h2 className="about_title">About US ______</h2>
             <p className="about_short_descrp">
               We’re glad you hand your dental health concerns to our skilled
               hands.

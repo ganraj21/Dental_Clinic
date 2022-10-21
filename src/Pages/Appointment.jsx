@@ -15,8 +15,8 @@ const Appointment = () => {
               <span>No Slots Available for Today</span>
             </div>
             <p className="about_info">
-              Please book for the next slot available by clicking on book
-              appointment
+              Please book for the next slot available by clicking on book Your
+              slot
             </p>
             <hr />
             <div className="booking_container">

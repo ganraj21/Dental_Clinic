@@ -22,6 +22,13 @@
   font-size: 18px;
   font-weight: 500;
 }
+.about_title {
+  width: 80%;
+  margin: 30px;
+}
+.about_title span {
+  margin-right: 9px;
+}
 /* .about_image {
   /* width: 40%;
 } */
@@ -31,7 +38,7 @@
 @media screen and (min-width: 1024px) {
   .about_container {
     width: 90%;
-    height: 650px;
+    height: 550px;
   }
 
   .about_image img {

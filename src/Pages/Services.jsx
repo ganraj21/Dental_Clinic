@@ -5,7 +5,12 @@ const Services = () => {
   return (
     <>
       <div className="services_container">
-        <h2>Our Services</h2>
+        <h2 className="services_header">
+          <span>
+            <i class="fa-solid fa-angles-right"></i>
+          </span>
+          Our Treatments
+        </h2>
         <div className="service_info_container">
           {ServiceData.map((e, index) => (
             <div className="service_info" key={index}>

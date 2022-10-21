@@ -66,9 +66,8 @@ hr {
 .upper_container_header {
   align-items: center;
   display: flex;
-  width: 100%;
+  width: 90%;
   gap: 10px;
-  margin-left: 45px;
   margin-bottom: 45px;
 }
 
@@ -84,6 +83,7 @@ button {
   outline: none;
   color: green;
   font-weight: 600;
+  background-color: transparent;
 }
 .booking_slot_section {
   width: 223px;
@@ -93,6 +93,11 @@ button {
   display: flex;
   justify-content: center;
   align-content: center;
-  outline: 2px solid green;
+  outline: 1px solid green;
+  transition: ease-in-out 0.3s;
   border-radius: 9px;
+  cursor: pointer;
+}
+.booking_slot_section:active {
+  transform: scale(0.97);
 }

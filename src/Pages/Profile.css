@@ -45,3 +45,10 @@
   align-content: center;
   gap: 27px;
 }
+.profile_section_container h2 span {
+  margin-right: 9px;
+}
+
+.profile_section_container h2 {
+  width: 80%;
+}

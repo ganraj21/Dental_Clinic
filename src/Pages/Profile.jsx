@@ -24,7 +24,12 @@ const Profile = () => {
   return (
     <>
       <div className="profile_section_container">
-        <h2>Meet Our Teem</h2>
+        <h2>
+          <span>
+            <i class="fa-solid fa-angles-right"></i>
+          </span>
+          Meet Our Teem
+        </h2>
         <div className="p_info_container">
           {your_profile_details.map((e, index) => (
             <div className="profile_details" key={index}>
