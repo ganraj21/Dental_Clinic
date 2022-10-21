@@ -9,6 +9,11 @@ const Services = () => {
         <div className="service_info_container">
           {ServiceData.map((e, index) => (
             <div className="service_info" key={index}>
+              <img
+                className="service_image_details"
+                src={e.img_src}
+                alt="dental images"
+              />
               <h2 className="service__title">{e.title}</h2>
               <p className="service_detail_info">{e.description}</p>
             </div>

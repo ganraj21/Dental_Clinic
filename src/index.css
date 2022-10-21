@@ -8,9 +8,7 @@
 body {
   max-height: 100vh;
   max-width: 100vw;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: Poppins, sans-serif;
 }
 input {
   font-family: "Josefin Sans", sans-serif;

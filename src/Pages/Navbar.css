@@ -5,7 +5,11 @@
   justify-content: space-between;
   align-items: center;
   box-shadow: 0px 1px 6px 0px #6d6c6c;
-  z-index: 100;
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  height: 72px;
+  background: #fff;
 }
 
 .logo {
@@ -13,6 +17,10 @@
   width: 232px;
   justify-content: space-evenly;
   align-items: center;
+}
+.logo h2 {
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
 }
 .logo img {
   width: 30px;
@@ -38,12 +46,22 @@
 }
 .MenuItems a {
   text-decoration: none;
-  font-family: sans-serif;
+  font-family: Poppins, sans-serif;
   font-weight: 600;
   color: black;
 }
 .MenuItems a:active {
   transform: scale(0.97);
+  border-bottom: 6px solid blue;
+  transition: all 0.4 ease-in-out;
+}
+.MenuItems::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 50%;
 }
 
 .active_links {

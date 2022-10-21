@@ -9,6 +9,7 @@ import Contact from './Pages/Contact';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
 import ChatApp from './Pages/ChatApp';
+import SetAvatar from './Pages/SetAvatar';
 const App = () =>{
   return(
     <>
@@ -17,11 +18,12 @@ const App = () =>{
       <Route exact path='/' element={<Home/>}/>
       <Route exact path='/dental-clinic/about' element={<About/>}/>
       <Route exact path='/dental-clinic/appointment' element={<Appointment/>}/>
-      <Route exact path='/dental-clinic/services' element={<Services/>}/>
+      <Route exact path='/dental-clinic/treatments' element={<Services/>}/>
       <Route exact path='/dental-clinic/contact' element={<Contact/>}/>
       <Route exact path='/dental-clinic/user_registration' element={<Register/>}/>
       <Route exact path='/dental-clinic/login_user' element={<Login/>}/>
       <Route exact path='/dental-clinic/user/chat_section' element={<ChatApp/>}/>
+      <Route exact path='/dental-clinic/set_avatar' element={<SetAvatar/>}/>
     </Routes>
     </>
   )

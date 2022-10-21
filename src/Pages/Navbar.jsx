@@ -34,8 +34,8 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="MenuItems">
-            <Link to="/dental-clinic/services" onClick={closeMobileMenu}>
-              Services
+            <Link to="/dental-clinic/treatments" onClick={closeMobileMenu}>
+              Treatments
             </Link>
           </div>
           <div className="MenuItems">

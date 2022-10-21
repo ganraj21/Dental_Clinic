@@ -1,39 +1,56 @@
 const ServiceData = [
   {
     id: 1,
-    title: "Diagnostics",
-    description:
-      "Teeth cleanings, Fluoride and Sealant are just a few of our advanced diagnostics and preventive dentistry services!",
+    img_src:
+      "https://d3t5ai5vcxyqte.cloudfront.net/media/jtklaazjieqhljbboiyao.svg",
+    title: "Root Canal Treatment",
+    description: "Let's save the tooth",
   },
   {
     id: 2,
-    title: "Dentures & Denture Repair",
-    description:
-      "If you need a new denture or if you’re in need of fixing your old one, broken denture – we’re at your service!",
+    img_src: "https://d3t5ai5vcxyqte.cloudfront.net/media/xerhpggjxuxmfpsu.svg",
+    title: "Teeth Whitening",
+    description: "Are you eyeing whiter teeth?",
   },
   {
     id: 3,
-    title: "Cosmetic Solutions",
-    description:
-      "Our range of cosmetic dentistry solutions includes such vitals as teeth whitening as well as a laser dentistry.",
+    img_src:
+      "https://d3t5ai5vcxyqte.cloudfront.net/media/xckdqmsbqpdhzlhvwood.svg",
+    title: "Dental Implants",
+    description: "Make your implants last a lifetime.",
   },
   {
     id: 4,
-    title: "Orthodontics",
-    description:
-      "Diagnodent is an important part of our Orthodontics services. We also have a diverse choice of braces.",
+    img_src: "https://d3t5ai5vcxyqte.cloudfront.net/media/ztyabpe.svg",
+    title: "Dentures",
+    description: "Know the right type of denture for you.",
   },
   {
     id: 5,
-    title: "Restorative Solutions",
-    description:
-      "Restoring teeth in bad condition is what we specialize in. It may include laser restoration and Invisalign service.",
+    img_src:
+      "https://d3t5ai5vcxyqte.cloudfront.net/media/pegjpxeakmijzlnklbubfsfun.svg",
+    title: "Dental Fillings",
+    description: "Repairing the decay with fillings that blend in.",
   },
   {
     id: 6,
-    title: "Additional Treatments",
-    description:
-      "People’s dentistry issues may vary. That’s why we have a lot of non-conventional treatments, including X-ray scanning",
+    img_src: "https://d3t5ai5vcxyqte.cloudfront.net/media/znrdvnh.svg",
+    title: "Orthodontic Treatment/Braces",
+    description: "Never be too shy to smile",
+  },
+  {
+    id: 7,
+    img_src:
+      "	https://d3t5ai5vcxyqte.cloudfront.net/media/trteeoeviitzkuduaj.svg",
+    title: "Cosmetic Dentistry",
+    description: "Time to flaunt that smile",
+  },
+  {
+    id: 8,
+    img_src:
+      "	https://d3t5ai5vcxyqte.cloudfront.net/media/rkkaxifntuslufcqwxelgzu.svg",
+    title: "Pediatric Dentistry",
+    description: "For your child’s dental health",
   },
 ];
 

@@ -1,29 +1,34 @@
 import React from "react";
-import app_img from "./images/front_img.jpg";
-import Button from "@mui/material/Button";
 import "./Appointment.css";
 const Appointment = () => {
   return (
     <>
       <div className="app_container">
-        <div className="upper_section">
-          <img src={app_img} alt="" />
+        <div className="upper_container_header">
+          <i class="fa-solid fa-angles-right"></i>
+          <h2>Book a Clinic Appointment</h2>
         </div>
-        <div className="appointment_section_container">
-          <div className="appointment_section">
-            <h2 style={{ fontSize: "27px" }}>How We Can Help…</h2>
-            <p style={{ fontSize: "18px" }}>
-              We Offer a Wide Range of Procedures to Help You Get the Perfect
-              Smile
+        <div className="upper_container">
+          <div className="appointment_booking_section">
+            <div className="booking_header">
+              <i class="fa-regular fa-clock"></i>
+              <span>No Slots Available for Today</span>
+            </div>
+            <p className="about_info">
+              Please book for the next slot available by clicking on book
+              appointment
             </p>
-            <Button
-              variant="contained"
-              style={{ background: "#F43E04", height: "50px" }}
-            >
-              Book an Appointment
-            </Button>
+            <hr />
+            <div className="booking_container">
+              <div className="booking_bottom">
+                <h3>Book Clinic Visit</h3>
+                <h4>No Booking Fee</h4>
+              </div>
+              <div className="booking_slot_section">
+                <button className="book_slot">Book Your Slot</button>
+              </div>
+            </div>
           </div>
-          <div className="appointment_section" id="apsec_01"></div>
         </div>
       </div>
     </>
