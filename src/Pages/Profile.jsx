@@ -26,7 +26,7 @@ const Profile = () => {
       <div className="profile_section_container">
         <h2>
           <span>
-            <i class="fa-solid fa-angles-right"></i>
+            <i className="fa-solid fa-angles-right"></i>
           </span>
           Meet Our Teem
         </h2>

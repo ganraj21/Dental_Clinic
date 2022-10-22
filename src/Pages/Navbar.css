@@ -18,10 +18,7 @@
   justify-content: space-evenly;
   align-items: center;
 }
-.logo h2 {
-  font-family: Poppins, sans-serif;
-  font-weight: 600;
-}
+
 .logo img {
   width: 30px;
   height: 30px;

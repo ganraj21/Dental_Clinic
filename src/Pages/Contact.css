@@ -81,7 +81,7 @@
   padding: 12px;
 }
 .copyright_footer {
-  margin: 30px;
+  margin-top: 20px;
 }
 .copyright_footer span {
   margin-left: 9px;
@@ -91,7 +91,7 @@
   .container_container {
     width: 1028px;
     height: 527px;
-    margin-top: 60px;
+    margin-top: 49px;
   }
   .gmap {
     height: 284px;

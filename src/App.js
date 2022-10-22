@@ -11,6 +11,7 @@ import Register from './Pages/Register';
 import ChatApp from './Pages/ChatApp';
 import SetAvatar from './Pages/SetAvatar';
 import ChatImg from './Components/ChatImg.jsx';
+import BookingHours from './Pages/BookingHours';
 const App = () =>{
 
   return(
@@ -26,6 +27,7 @@ const App = () =>{
       <Route exact path='/dental-clinic/login_user' element={<Login/>}/>
       <Route exact path='/dental-clinic/user/chat_section' element={<ChatApp/>}/>
       <Route exact path='/dental-clinic/set_avatar' element={<SetAvatar/>}/>
+      <Route exact path='/dental-clinic/slot' element={<BookingHours/>}/>
     </Routes>
 
     </>

@@ -74,7 +74,7 @@ const Contact = () => {
             <div className="clinic_time_table">
               <h2>
                 <span>
-                  <i class="fa-solid fa-angles-right"></i>
+                  <i className="fa-solid fa-angles-right"></i>
                 </span>
                 OPD Hours
               </h2>
@@ -91,7 +91,7 @@ const Contact = () => {
         <p className="copyright_footer">
           Copyright
           <span>
-            <i class="fa-regular fa-copyright"></i>
+            <i className="fa-regular fa-copyright"></i>
           </span>
           2022 Om Dental Clinic
         </p>
