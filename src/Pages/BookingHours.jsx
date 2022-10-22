@@ -1,7 +1,7 @@
 import React from "react";
 import EveningData from "./PagesData/EveningData";
 import MorningData from "./PagesData/MorningData";
-
+import "./BookingHours.css";
 function BookingHours() {
   return (
     <>
