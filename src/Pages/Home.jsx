@@ -1,26 +1,26 @@
 import React, { useState } from "react";
 import "./Home.css";
 import "font-awesome/css/font-awesome.min.css";
-import slider_one from "./images/slider_one.jpg";
-import slider_two from "./images/slider_two.jpg";
-import slider_three from "./images/cartoon-style-dental-care-concept_23-2148984413.webp";
-import slider_four from "./images/front_img.jpg";
+import slider_one from "./images/slide_one.webp";
+import slider_two from "./images/slide_two.png";
+import slider_three from "./images/slide_three.png";
 
 const Home = () => {
-  const [selectedImage, setSelectedImage] = useState(2);
-  const [allImages] = useState([
-    slider_one,
-    slider_two,
-    slider_three,
-    slider_four,
-  ]);
+  const [selectedImage, setSelectedImage] = useState();
+  const [allImages] = useState([slider_one, slider_two, slider_three]);
+
+  setInterval(() => {
+    let i = 0;
+    setSelectedImage(allImages[i + 1]);
+    console.log(allImages[i]);
+  }, 5000);
 
   return (
     <>
       <div className="slider_container">
         <div className="slider-images">
           <div className="slider_image" id="si_01">
-            <img id="img_01" alt="" src={allImages[selectedImage]} />
+            <img id="img_01" alt="" src={selectedImage} />
           </div>
 
           <div className="front_container">

@@ -18,10 +18,12 @@
   height: 500px;
   padding: 15px 20px;
   background: aliceblue;
+  border-radius: 6px;
 }
 .profile_details img {
   border-radius: 50%;
   width: 196px;
+  border: 7px solid #29b300;
 }
 .profile_info {
   text-align: center;
@@ -50,5 +52,5 @@
 }
 
 .profile_section_container h2 {
-  width: 80%;
+  width: 85%;
 }

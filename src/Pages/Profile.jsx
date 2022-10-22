@@ -1,6 +1,6 @@
 import React from "react";
-import profile_one_img from "./images/Profile_images/single-team-1-286x286.jpg";
-import profile_two_img from "./images/Profile_images/single-team-2-286x286.jpg";
+import profile_one_img from "./images/Profile_images/male_profile_img.png";
+import profile_two_img from "./images/Profile_images/female_profile_img.png";
 import "./Profile.css";
 const Profile = () => {
   const your_profile_details = [

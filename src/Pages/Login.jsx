@@ -24,7 +24,7 @@ function Login() {
 
   useEffect(() => {
     if (localStorage.getItem("chat-app-user")) {
-      navigate("/dental-clinic/user/chat_section");
+      // navigate("/dental-clinic/user/chat_section");
     }
   }, []);
 
@@ -42,7 +42,7 @@ function Login() {
       }
       if (data.status === true) {
         localStorage.setItem("chat-app-user", JSON.stringify(data.user));
-        navigate("/dental-clinic/user/chat_section");
+        // navigate("/dental-clinic/user/chat_section");
       }
     }
   };
@@ -125,6 +125,7 @@ const FormContainer = styled.div`
     background-color: #00000076;
     border-radius: 2rem;
     padding: 3rem 5rem;
+    border-bottom: 7px solid white;
   }
   input {
     background-color: transparent;

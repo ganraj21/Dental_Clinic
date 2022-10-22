@@ -24,7 +24,6 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 700px;
   flex-wrap: wrap;
 }
 .service_image_details {
@@ -48,6 +47,7 @@
   margin-bottom: 30px;
   border-radius: 6px;
   font-family: Poppins, sans-serif;
+  cursor: pointer;
 }
 .service_info:hover {
   transform: scale(1.1);

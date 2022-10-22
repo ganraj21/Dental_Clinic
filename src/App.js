@@ -10,7 +10,9 @@ import Login from './Pages/Login';
 import Register from './Pages/Register';
 import ChatApp from './Pages/ChatApp';
 import SetAvatar from './Pages/SetAvatar';
+import ChatImg from './Components/ChatImg.jsx';
 const App = () =>{
+
   return(
     <>
     <Navbar/>
@@ -25,6 +27,7 @@ const App = () =>{
       <Route exact path='/dental-clinic/user/chat_section' element={<ChatApp/>}/>
       <Route exact path='/dental-clinic/set_avatar' element={<SetAvatar/>}/>
     </Routes>
+
     </>
   )
 }

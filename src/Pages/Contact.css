@@ -1,13 +1,111 @@
+.contact_section_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  flex-direction: column;
+}
+.container_container {
+  box-shadow: 0 0 25px 0 #cbcbcbbf;
+  width: 80%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 15px;
+  border-radius: 12px;
+}
 .gmap {
   display: flex;
   width: 90%;
-  height: 250px;
+  height: 284px;
 }
 .google_map_location {
-  width: 100%;
-  height: 500px;
+  width: 50%;
   display: flex;
   align-items: center;
   align-content: center;
   flex-direction: column;
+}
+.basic_contact_user_form {
+  width: 50%;
+  padding: 50px;
+  border-radius: 9px;
+}
+.clinic_time_table h2 span {
+  margin-right: 9px;
+}
+.clinic_time_table {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  margin-bottom: 9px;
+}
+.d_and_c {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 350px;
+  align-content: center;
+  height: 115px;
+}
+.direction_to_clinic,
+.call_to_clinic {
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  height: 45px;
+  outline: 2px solid green;
+}
+
+.direction_to_clinic a,
+.call_to_clinic a {
+  text-decoration: none;
+  font-size: 15px;
+  color: green;
+}
+
+.clinic_timing {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-bottom: 2px solid;
+  height: 60px;
+  padding: 12px;
+}
+.copyright_footer {
+  margin: 30px;
+}
+.copyright_footer span {
+  margin-left: 9px;
+  margin-right: 9px;
+}
+@media screen and (min-width: 1024px) {
+  .container_container {
+    width: 1028px;
+    height: 527px;
+    margin-top: 60px;
+  }
+  .gmap {
+    height: 284px;
+    width: 429px;
+  }
+  .basic_contact_user_form {
+    width: 500px;
+    padding: 25px;
+  }
+  .google_map_location {
+    width: 498px;
+    margin-top: 75px;
+  }
+  .clinic_timing {
+    height: 52px;
+  }
 }

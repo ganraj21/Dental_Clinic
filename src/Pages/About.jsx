@@ -1,7 +1,6 @@
 import React from "react";
-import Button from "@mui/material/Button";
 import "./About.css";
-import about_img from "./images/flat-dental-care-concept-illustration_23-2149002069.jpg";
+import about_img from "./images/about_img.webp";
 import Profile from "./Profile";
 const About = () => {
   return (
@@ -14,7 +13,7 @@ const About = () => {
           About US
         </h2>
         <div className="about_container">
-          <div className="about_info">
+          <div className="about_infos">
             <p className="about_short_descrp">
               We’re glad you hand your dental health concerns to our skilled
               hands.
@@ -28,7 +27,9 @@ const About = () => {
               relaxation for all our young and adult customers! Also we
               implement a lot of pain management and anesthesia options.
             </p>
-            <Button variant="contained">Read More</Button>
+            <div className="about_align_btn">
+              <button className="more_info_btn">Read More</button>
+            </div>
           </div>
           <div className="about_image">
             <img src={about_img} alt="" />

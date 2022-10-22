@@ -1,4 +1,5 @@
 import React from "react";
+import ChatImg from "../Components/ChatImg";
 import "./Appointment.css";
 const Appointment = () => {
   return (
@@ -30,6 +31,7 @@ const Appointment = () => {
             </div>
           </div>
         </div>
+        <ChatImg />
       </div>
     </>
   );
