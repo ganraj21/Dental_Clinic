@@ -10,13 +10,13 @@
   justify-content: center;
   align-content: center;
   flex-direction: column;
+  background: #26293a;
 }
 .bsc_lower_container {
   display: flex;
   align-items: center;
   justify-content: center;
   align-content: center;
-  width: 800px;
   height: 573px;
 }
 .bsc_lower_evening_container,
@@ -30,11 +30,7 @@
   width: 400px;
   height: 547px;
 }
-.bsc_header {
-  width: 250px;
-  height: 100vh;
-  overflow: scroll;
-}
+
 .md_data,
 .ed_data {
   width: 100px;
@@ -48,21 +44,38 @@
   background: #fff;
   border: 1px solid #d0d0d0;
   border-radius: 5px;
+  cursor: pointer;
+  transition: ease-in-out 0.4s;
 }
-
+.md_data:active,
+.ed_data:active {
+  transform: scale(0.9);
+  transition: all 0.5s ease-in-out;
+}
 .md_data:hover,
 .ed_data:hover {
   color: #fff;
   background-color: green;
+  border: 2px solid green;
 }
 .md_data:active,
 .ed_data:active {
   background-color: green;
 }
 .bsc_header_info {
-  background: bisque;
+  background: #e0e0e0;
   margin-bottom: 10px;
   margin-top: 10px;
+  height: 72px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  border-radius: 12px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 .morning_info_container,
 .evening_info_container {
@@ -101,4 +114,10 @@
 .booking_c_btn:hover {
   color: #fff;
   background-color: #0792e0;
+}
+
+.bsc_lower_container span {
+  color: white;
+  font-size: 18px;
+  width: 320px;
 }

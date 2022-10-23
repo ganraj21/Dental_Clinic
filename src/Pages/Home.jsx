@@ -14,7 +14,15 @@ const Home = () => {
 
           <div className="front_container">
             <div className="front_page_info">
-              <h2 style={{ fontSize: "51px", margin: "0", textAlign: "left" }}>
+              <h2
+                style={{
+                  fontSize: "51px",
+                  margin: "0",
+                  textAlign: "left",
+                  lineHeight: "1.2",
+                  color: "hsl(218, 70%, 18%);",
+                }}
+              >
                 We Care For Your Smile
               </h2>
               <p>

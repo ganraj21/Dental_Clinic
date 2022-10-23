@@ -54,3 +54,43 @@
 .profile_section_container h2 {
   width: 85%;
 }
+
+@media screen and (max-width: 1023px) {
+}
+@media screen and (max-width: 940px) {
+  .profile_section_container h2 {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .p_info_container {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 580px) {
+  .profile_section_container {
+    margin-bottom: 30px;
+    margin-top: 45px;
+    height: 100%;
+  }
+  .p_info_container {
+    flex-direction: column;
+    margin-top: 39px;
+  }
+  .profile_section_container h2 {
+    margin-top: 41px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .profile_section_container h2 {
+    margin-top: 54px;
+  }
+  .profile_details {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 420px) {
+}

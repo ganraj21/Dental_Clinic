@@ -183,13 +183,28 @@
     width: 400px;
   }
 }
+@media screen and (max-width: 1024px) {
+  .slider_controls {
+    display: none;
+  }
+  .front_page_info p {
+    width: 85%;
+    text-align: left;
+    margin-left: -49px;
+  }
+}
 @media screen and (max-width: 924px) {
   .clinic_info {
     flex-direction: column;
   }
+  .front_page_info {
+    justify-content: space-evenly;
+    height: 280px;
+  }
   .front_page_info p {
     width: 90%;
     text-align: left;
+    margin-left: -12px;
   }
   .slider-images {
     height: 500px;
@@ -197,7 +212,9 @@
 }
 @media screen and (max-width: 580px) {
   .slider-images {
-    flex-direction: column;
+    flex-direction: column-reverse;
+    gap: 30px;
+    height: 100vh;
   }
   .slider_image img {
     background-size: cover;
@@ -210,14 +227,22 @@
   }
   .front_page_info {
     margin-top: -18px;
+    height: 252px;
+  }
+  .front_container,
+  .slider_image {
+    width: 80%;
+  }
+  .slider_controls {
+    display: none;
+  }
+  .front_page_info p {
+    font-size: 18px;
+    margin-top: 10px;
   }
 }
 @media screen and (max-width: 480px) {
   .slider_image img {
-    float: left;
-    top: 10px;
-    margin-right: -100%;
-    position: relative;
     width: 100%;
     background-position: center;
     background-size: cover;
@@ -226,5 +251,28 @@
   .clinic_info {
     flex-direction: column;
     margin: 10px 0px 20px 0px;
+  }
+  .front_container {
+    margin-top: -42px;
+  }
+  .basic_info {
+    height: 260px;
+    width: 85%;
+  }
+  .front_container,
+  .slider_image {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .slider-images {
+    margin: 0;
+  }
+  .front_container {
+    width: 100%;
+  }
+  .front_page_info p {
+    width: 85%;
   }
 }

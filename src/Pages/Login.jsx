@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import styled from "styled-components";
+import { Link } from "react-router-dom";
 import Logo from "../assets/logo.svg";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -9,7 +8,6 @@ import { loginRoute } from "../utils/APIRoutes";
 import "./Login.css";
 
 function Login() {
-  const navigate = useNavigate();
   const [values, setValues] = useState({
     username: "",
     password: "",
@@ -66,8 +64,11 @@ function Login() {
   return (
     <>
       <div className="login_form_section">
-        <FormContainer>
-          <form onSubmit={(event) => handleSubmit(event)}>
+        <div className="form_container_for_login">
+          <form
+            className="login_u_form"
+            onSubmit={(event) => handleSubmit(event)}
+          >
             <div className="brand">
               <img src={Logo} alt="logo" />
               <h1>Om Dental Clinic</h1>
@@ -91,84 +92,11 @@ function Login() {
               <Link to="/dental-clinic/user_registration">Register</Link>
             </span>
           </form>
-        </FormContainer>
+        </div>
         <ToastContainer />
       </div>
     </>
   );
 }
-
-const FormContainer = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1rem;
-  align-items: center;
-  .brand {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    justify-content: center;
-    img {
-      height: 5rem;
-    }
-    h1 {
-      color: white;
-      text-transform: uppercase;
-    }
-  }
-
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    background-color: #00000076;
-    border-radius: 2rem;
-    padding: 3rem 5rem;
-    border-bottom: 7px solid white;
-    height: 450px;
-    margin-bottom: 30px;
-  }
-  input {
-    background-color: transparent;
-    padding: 1rem;
-    border: 0.1rem solid #4e0eff;
-    border-radius: 0.4rem;
-    color: white;
-    width: 100%;
-    font-size: 1rem;
-    &:focus {
-      border: 0.1rem solid #997af0;
-      outline: none;
-    }
-  }
-  button {
-    background-color: #4e0eff;
-    color: white;
-    padding: 1rem 2rem;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 0.4rem;
-    font-size: 1rem;
-    text-transform: uppercase;
-    &:hover {
-      background-color: #4e0eff;
-    }
-  }
-  span {
-    color: white;
-    text-transform: uppercase;
-    justify-content: center;
-    display: flex;
-    gap: 10px;
-    a {
-      color: #4e0eff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-  }
-`;
 
 export default Login;

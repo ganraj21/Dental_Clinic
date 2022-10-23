@@ -82,6 +82,7 @@
     flex-wrap: wrap;
     justify-items: stretch;
     justify-content: center;
+    margin-bottom: 30px;
   }
   .service_info {
     width: 382px;
@@ -95,5 +96,9 @@
   }
   .service_detail_info {
     width: 72%;
+  }
+  .services_header {
+    margin-top: 42px;
+    margin-bottom: 45px;
   }
 }

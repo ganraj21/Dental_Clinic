@@ -7,3 +7,128 @@
   width: 100%;
   background-color: #131324;
 }
+.form_container_for_login {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+}
+img {
+  height: 5rem;
+}
+h1 {
+  color: white;
+  text-transform: uppercase;
+}
+.login_u_form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: #00000076;
+  border-radius: 2rem;
+  padding: 3rem 5rem;
+  border-bottom: 7px solid white;
+  height: 450px;
+  margin-bottom: 30px;
+}
+input {
+  background-color: transparent;
+  padding: 1rem;
+  border: 0.1rem solid #4e0eff;
+  border-radius: 0.4rem;
+  color: white;
+  width: 100%;
+  font-size: 1rem;
+}
+input:focus {
+  border: 0.1rem solid #997af0;
+  outline: none;
+}
+button {
+  background-color: #4e0eff;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+button:hover {
+  background-color: #4e0eff;
+}
+span {
+  color: white;
+  text-transform: uppercase;
+  justify-content: center;
+  display: flex;
+  gap: 10px;
+}
+a {
+  color: #4e0eff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 1024px) {
+  .login_u_form {
+    height: 459px !important;
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .login_u_form {
+    padding: 35px 43px;
+    height: 459px !important;
+  }
+}
+@media screen and (max-width: 720px) {
+  .login_u_form {
+    padding: 27px 40px;
+    height: 461px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .login_u_form {
+    padding: 39px 43px;
+    height: 489px !important;
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .login_u_form {
+    height: 496px !important;
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .login_u_form {
+    width: 90%;
+    height: 496px !important;
+  }
+  .brand h1 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 392px) {
+  .login_u_form {
+    height: 80% !important;
+  }
+  .brand h1 {
+    font-size: 25px;
+  }
+}
