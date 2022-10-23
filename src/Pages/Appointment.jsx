@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 // import ChatImg from "../Components/ChatImg";
 import "./Appointment.css";
-import BookingHours from "./BookingHours";
+// import BookingHours from "./BookingHours";
 const Appointment = () => {
   return (
     <>
@@ -28,7 +28,7 @@ const Appointment = () => {
                 <h4>No Booking Fee</h4>
               </div>
               <div className="booking_slot_section">
-                <button className="book_slot" onClick={<BookingHours />}>
+                <button className="book_slot">
                   <Link to="/dental-clinic/slot">Book Your Slot</Link>
                 </button>
               </div>

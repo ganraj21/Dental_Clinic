@@ -85,7 +85,7 @@ button {
   font-weight: 600;
   background-color: transparent;
 }
-.booking_slot_section {
+.book_slot {
   width: 223px;
   text-align: center;
   height: 45px;
@@ -97,6 +97,8 @@ button {
   transition: ease-in-out 0.3s;
   border-radius: 9px;
   cursor: pointer;
+}
+.booking_slot_section {
 }
 .booking_slot_section:active {
   transform: scale(0.97);
