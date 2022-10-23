@@ -114,7 +114,7 @@
   align-items: center;
   height: 45px;
   color: antiquewhite;
-  width: 137px;
+  width: 164px;
   outline: 1px solid white;
   justify-content: center;
   align-content: center;
@@ -128,7 +128,7 @@
 .transperent_btn:hover {
   color: #fff;
   outline: 1px solid #f43e04;
-  box-shadow: inset 137px 0 0 0 #f43e04;
+  box-shadow: inset 164px 0 0 0 #f43e04;
 }
 .transperent_btn:active {
   transform: scale(0.9);
@@ -176,8 +176,8 @@
   }
   .slider_controls {
     position: relative;
-    top: 91px;
-    left: 346px;
+    top: 119px;
+    left: 341px;
   }
   .basic_info {
     width: 400px;

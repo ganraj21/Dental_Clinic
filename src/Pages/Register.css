@@ -1,0 +1,17 @@
+.register_form_section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  background-color: #131324;
+}
+
+@media screen and (min-width: 1024px) {
+  form {
+    height: 585px;
+    padding: 2rem 3rem !important;
+    gap: 1.5rem !important;
+  }
+}

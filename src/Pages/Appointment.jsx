@@ -1,5 +1,6 @@
 import React from "react";
-import ChatImg from "../Components/ChatImg";
+import { Link } from "react-router-dom";
+// import ChatImg from "../Components/ChatImg";
 import "./Appointment.css";
 import BookingHours from "./BookingHours";
 const Appointment = () => {
@@ -28,13 +29,13 @@ const Appointment = () => {
               </div>
               <div className="booking_slot_section">
                 <button className="book_slot" onClick={<BookingHours />}>
-                  Book Your Slot
+                  <Link to="/dental-clinic/slot">Book Your Slot</Link>
                 </button>
               </div>
             </div>
           </div>
         </div>
-        <ChatImg />
+        {/* <ChatImg /> */}
       </div>
     </>
   );

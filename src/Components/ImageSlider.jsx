@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import slider_one from "../Pages/images/slide_one.webp";
 import slider_two from "../Pages/images/slide_two.png";
 import slider_three from "../Pages/images/slide_three.png";
@@ -9,13 +9,13 @@ function ImageSlider() {
     <>
       <Carousel>
         <Carousel.Item interval={3000}>
-          <img className="d-block w-100" src={slider_one} alt="First slide" />
+          <img className=" w-100" src={slider_one} alt="First slide" />
         </Carousel.Item>
         <Carousel.Item interval={3000}>
-          <img className="d-block w-100" src={slider_two} alt="Second slide" />
+          <img className=" w-100" src={slider_two} alt="Second slide" />
         </Carousel.Item>
         <Carousel.Item interval={3000}>
-          <img className="d-block w-100" src={slider_three} alt="Third slide" />
+          <img className=" w-100" src={slider_three} alt="Third slide" />
         </Carousel.Item>
       </Carousel>
     </>

@@ -66,7 +66,7 @@ hr {
 .upper_container_header {
   align-items: center;
   display: flex;
-  width: 90%;
+  width: 85%;
   gap: 10px;
   margin-bottom: 45px;
 }

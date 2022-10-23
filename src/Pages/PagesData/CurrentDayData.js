@@ -1,0 +1,133 @@
+const date = new Date().toLocaleDateString();
+// date.setDate(date.getDate() + 1)
+const CurrentDayData = [
+{
+    index:1,
+    day:1,
+    cs_date:date,
+},
+{
+    index:2,
+    day:2,
+    cs_date:date,
+},
+{
+    index:3,
+    day:3,
+},
+{
+    index:4,
+    day:4,
+},
+{
+    index:5,
+    day:5,
+},
+{
+    index:6,
+    day:6,
+},
+{
+    index:7,
+    day:7,
+},
+{
+    index:8,
+    day:8,
+},
+{
+    index:9,
+    day:9,
+},
+{
+    index:10,
+    day:10,
+},
+{
+    index:11,
+    day:11,
+},
+{
+    index:12,
+    day:12,
+},
+{
+    index:13,
+    day:13,
+},
+{
+    index:14,
+    day:14,
+},
+{
+    index:15,
+    day:15,
+},
+{
+    index:16,
+    day:16,
+},
+{
+    index:17,
+    day:17,
+},
+{
+    index:18,
+    day:18,
+},
+{
+    index:19,
+    day:19,
+},
+{
+    index:20,
+    day:20,
+},
+{
+    index:21,
+    day:21,
+},
+{
+    index:22,
+    day:22,
+},
+{
+    index:23,
+    day:23,
+},
+{
+    index:24,
+    day:24,
+},
+{
+    index:25,
+    day:25,
+},
+{
+    index:26,
+    day:26,
+},
+{
+    index:27,
+    day:27,
+},
+{
+    index:28,
+    day:28,
+},
+{
+    index:29,
+    day:29,
+},
+{
+    index:30,
+    day:30,
+},
+{
+    index:31,
+    day:31,
+},
+
+]
+
+export default CurrentDayData;

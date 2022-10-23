@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Home.css";
 import "font-awesome/css/font-awesome.min.css";
-import ImageSlider from "../Components/ImageSlider";
+import slider_one from "../Pages/images/slide_one.webp";
 
 const Home = () => {
   return (
@@ -9,7 +9,7 @@ const Home = () => {
       <div className="slider_container">
         <div className="slider-images">
           <div className="slider_image">
-            <ImageSlider />
+            <img className="w-100" src={slider_one} alt="First slide" />
           </div>
 
           <div className="front_container">
@@ -46,7 +46,7 @@ const Home = () => {
               We work on holidays, besides working late on regular days. In case
               of emergencies we accept bookings.
             </p>
-            <div className="transperent_btn">Read More</div>
+            <div className="transperent_btn">Chat with Doctor</div>
           </div>
           <div className="basic_info" id="info_02">
             <h2>Best Price Guarantee</h2>

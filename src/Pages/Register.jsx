@@ -6,7 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { registerRoute } from "../utils/APIRoutes";
-
+import "./Register.css";
 function Register() {
   const navigate = useNavigate();
   const [values, setValues] = useState({
@@ -26,7 +26,7 @@ function Register() {
 
   useEffect(() => {
     if (localStorage.getItem("chat-app-user")) {
-      navigate("/dental-clinic/user/chat_section");
+      // navigate("/dental-clinic/user/chat_section");
     }
   }, []);
 
@@ -76,57 +76,58 @@ function Register() {
   };
   return (
     <>
-      <FormContainer>
-        <form onSubmit={(event) => handleSubmit(event)}>
-          <div className="brand">
-            <img src={Logo} alt="logo" />
-            <h1>Om Dental Clinic</h1>
-          </div>
-          <input
-            type="text"
-            placeholder="Username"
-            name="username"
-            onChange={(e) => handleChange(e)}
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            name="email"
-            onChange={(e) => handleChange(e)}
-          />
-          <input
-            type="Password"
-            placeholder="Password"
-            name="password"
-            onChange={(e) => handleChange(e)}
-          />
-          <input
-            type="Password"
-            placeholder="Confirm Password"
-            name="confirmPassword"
-            onChange={(e) => handleChange(e)}
-          />
-          <button type="submit">Create User</button>
-          <span>
-            Already have an account ?
-            <Link to="/dental-clinic/login_user">Login</Link>
-          </span>
-        </form>
-      </FormContainer>
-      <ToastContainer />
+      <div className="register_form_section">
+        <FormContainer>
+          <form onSubmit={(event) => handleSubmit(event)}>
+            <div className="brand">
+              <img src={Logo} alt="logo" />
+              <h1>Om Dental Clinic</h1>
+            </div>
+            <input
+              type="text"
+              placeholder="Username"
+              name="username"
+              onChange={(e) => handleChange(e)}
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              name="email"
+              onChange={(e) => handleChange(e)}
+            />
+            <input
+              type="Password"
+              placeholder="Password"
+              name="password"
+              onChange={(e) => handleChange(e)}
+            />
+            <input
+              type="Password"
+              placeholder="Confirm Password"
+              name="confirmPassword"
+              onChange={(e) => handleChange(e)}
+            />
+            <button type="submit">Create User</button>
+            <span>
+              Already have an account ?
+              <Link to="/dental-clinic/login_user">Login</Link>
+            </span>
+          </form>
+        </FormContainer>
+        <ToastContainer />
+      </div>
     </>
   );
 }
 
 const FormContainer = styled.div`
   height: 100vh;
-  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
   align-items: center;
-  background-color: #131324;
+  margin-bottom: 45px;
   .brand {
     display: flex;
     align-items: center;
@@ -148,6 +149,7 @@ const FormContainer = styled.div`
     background-color: #00000076;
     border-radius: 2rem;
     padding: 3rem 5rem;
+    border-bottom: 7px solid white;
   }
   input {
     background-color: transparent;
