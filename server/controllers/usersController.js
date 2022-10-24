@@ -63,3 +63,29 @@ module.exports.setAvatar = async(req,res,next) =>{
         next(ex);
     }
 }
+
+
+module.exports.getAllUsers = async(req,res,next) =>{
+    try{
+    const users = await User.find({_id:{$ne:req.params.id}}).select([
+        "email","username","_id",
+    ])
+    return res.json(users);
+    }
+    
+    catch(ex){
+        next(ex);
+    }
+}
+
+
+
+module.exports.appointment = async(req,res,next) =>{
+    try{
+        const { calenderData,name, email, phone} = req.body;
+        const calenderDate = await User.findOne({calenderData});
+    }
+    catch (ex){
+        next(ex);
+    }
+}

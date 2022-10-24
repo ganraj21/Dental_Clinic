@@ -121,3 +121,42 @@
   font-size: 18px;
   width: 320px;
 }
+.appointment_hours_form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  background-color: #131324;
+  width: 400px;
+  border-bottom: 7px solid white;
+  border-radius: 2rem;
+}
+.bsc_header {
+  width: 413px;
+}
+.form_for_booking {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  /* background-color: #00000076; */
+
+  padding: 3rem 5rem;
+  height: 450px;
+  margin-bottom: 30px;
+}
+.submit_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  height: 55px;
+  background: green;
+  color: #fff;
+}
+@media screen and (min-width: 1024px) {
+  form {
+    height: 585px;
+    padding: 2rem 3rem !important;
+    gap: 1.5rem !important;
+  }
+}

@@ -32,3 +32,33 @@ const useerSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model("Users",useerSchema)
+
+
+const apointmentSchema = new mongoose.Schema({
+    calenderData:{
+        type:String,
+        required:true,
+        max:20,
+        unique:true,
+    },
+    name:{
+        type:String,
+        required:true,
+        min:2,
+        max:50,
+        unique:true,
+    },
+    email:{
+        type:String,
+        required:true,
+        max:50,
+        unique:true,
+    },
+    phone:{
+        type:String,
+        required:true,
+        max:50,
+        unique:true,
+    },
+})
+module.exports = mongoose.model("Appointment",apointmentSchema)

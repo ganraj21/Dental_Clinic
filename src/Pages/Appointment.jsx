@@ -31,7 +31,9 @@ const Appointment = () => {
               </div>
               <div className="booking_slot_section">
                 <button className="book_slot">
-                  <Link to="/dental-clinic/slot">Book Your Slot</Link>
+                  <span>
+                    <Link to="/dental-clinic/slot">Book Your Slot</Link>
+                  </span>
                 </button>
               </div>
             </div>

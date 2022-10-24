@@ -7,11 +7,116 @@
   align-content: center;
   background-color: #131324;
 }
+.form_container_register {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 45px;
+}
+.register_u_form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: #00000076;
+  border-radius: 2rem;
+  padding: 3rem 5rem;
+  border-bottom: 7px solid white;
+  margin-bottom: 30px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.brand img {
+  height: 5rem;
+}
+h1 {
+  color: white;
+  text-transform: uppercase;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: #00000076;
+  border-radius: 2rem;
+  padding: 3rem 5rem;
+  border-bottom: 7px solid white;
+}
+input {
+  background-color: transparent;
+  padding: 1rem;
+  border: 0.1rem solid #4e0eff;
+  border-radius: 0.4rem;
+  color: white;
+  width: 100%;
+  font-size: 1rem;
+}
+input:focus {
+  border: 0.1rem solid #997af0;
+  outline: none;
+}
+.submit_register_btn {
+  background-color: #4e0eff;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.submit_register_btn:hover {
+  background-color: #4e0eff;
+}
+.lower_title_register {
+  color: white;
+  text-transform: uppercase;
+  justify-content: center;
+  display: flex;
+  gap: 10px;
+}
+.lower_title_register a {
+  color: #4e0eff;
+  text-decoration: none;
+  font-weight: bold;
+}
 
 @media screen and (min-width: 1024px) {
-  form {
+  .register_u_form {
     height: 585px;
     padding: 2rem 3rem !important;
     gap: 1.5rem !important;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .register_u_form {
+    padding: 2rem 3rem !important;
+    gap: 1.8rem !important;
+  }
+  .brand {
+    margin-bottom: -14px;
+  }
+}
+@media screen and (max-width: 580px) {
+  .register_u_form {
+    width: 90% !important;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .register_u_form {
+  }
+  .brand h1 {
+    font-size: 26px;
   }
 }

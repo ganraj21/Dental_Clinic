@@ -88,6 +88,7 @@
 .copyright_footer span {
   margin-left: 9px;
   margin-right: 9px;
+  color: black;
 }
 @media screen and (min-width: 1024px) {
   .container_container {

@@ -73,7 +73,7 @@ input:focus {
   display: flex;
   gap: 10px;
 }
-a {
+.lower_title_login a {
   color: #4e0eff;
   text-decoration: none;
   font-weight: bold;

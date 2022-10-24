@@ -77,8 +77,11 @@ function Register() {
   return (
     <>
       <div className="register_form_section">
-        <FormContainer>
-          <form onSubmit={(event) => handleSubmit(event)}>
+        <FormContainer className="form_container_register">
+          <form
+            className="register_u_form"
+            onSubmit={(event) => handleSubmit(event)}
+          >
             <div className="brand">
               <img src={Logo} alt="logo" />
               <h1>Om Dental Clinic</h1>
@@ -107,8 +110,10 @@ function Register() {
               name="confirmPassword"
               onChange={(e) => handleChange(e)}
             />
-            <button type="submit">Create User</button>
-            <span>
+            <button className="submit_register_btn" type="submit">
+              Create User
+            </button>
+            <span className="lower_title_register">
               Already have an account ?
               <Link to="/dental-clinic/login_user">Login</Link>
             </span>
@@ -120,76 +125,6 @@ function Register() {
   );
 }
 
-const FormContainer = styled.div`
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1rem;
-  align-items: center;
-  margin-bottom: 45px;
-  .brand {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    justify-content: center;
-    img {
-      height: 5rem;
-    }
-    h1 {
-      color: white;
-      text-transform: uppercase;
-    }
-  }
-
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    background-color: #00000076;
-    border-radius: 2rem;
-    padding: 3rem 5rem;
-    border-bottom: 7px solid white;
-  }
-  input {
-    background-color: transparent;
-    padding: 1rem;
-    border: 0.1rem solid #4e0eff;
-    border-radius: 0.4rem;
-    color: white;
-    width: 100%;
-    font-size: 1rem;
-    &:focus {
-      border: 0.1rem solid #997af0;
-      outline: none;
-    }
-  }
-  button {
-    background-color: #4e0eff;
-    color: white;
-    padding: 1rem 2rem;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 0.4rem;
-    font-size: 1rem;
-    text-transform: uppercase;
-    &:hover {
-      background-color: #4e0eff;
-    }
-  }
-  span {
-    color: white;
-    text-transform: uppercase;
-    justify-content: center;
-    display: flex;
-    gap: 10px;
-    a {
-      color: #4e0eff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-  }
-`;
+const FormContainer = styled.div``;
 
 export default Register;

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import EveningData from "./PagesData/EveningData";
 import MorningData from "./PagesData/MorningData";
+import Logo from "../assets/logo.png";
 import "./BookingHours.css";
 import BookingSlotOtp from "./BookingSlotOtp";
-import InfiniteCalendar from "react-infinite-calendar";
 import "react-infinite-calendar/styles.css";
 function BookingHours() {
   const [colorIn, setColorIn] = useState();
@@ -11,13 +11,6 @@ function BookingHours() {
   const [current_day, setCurrentDay] = useState("Today");
 
   const color_set_true = { backgroundColor: "green", color: "white" };
-  // Render the Calendar
-  var today = new Date();
-  var lastWeek = new Date(
-    today.getFullYear(),
-    today.getMonth(),
-    today.getDate() - 7
-  );
 
   return (
     <>
@@ -25,13 +18,31 @@ function BookingHours() {
         <div className="bsc_lower">
           <div className="bsc_lower_container">
             <div className="bsc_header">
-              <InfiniteCalendar
-                width={450}
-                height={400}
-                selected={today}
-                disabledDays={[0, 6]}
-                minDate={lastWeek}
-              />
+              <div className="appointment_hours_form">
+                <form className="form_for_booking">
+                  <div className="brand">
+                    <img src={Logo} alt="logo" />
+                    <h1>Om Dental Clinic</h1>
+                  </div>
+                  <input
+                    type="date"
+                    placeholder="Select Date"
+                    name="CalenderDate"
+                  />
+
+                  <input
+                    type="text"
+                    placeholder="Enter your full name"
+                    name="fullname"
+                    min="3"
+                  />
+                  <input type="phone" placeholder="Phone No" name="phone" />
+
+                  <button className="submit_btn" type="submit">
+                    Get OTP
+                  </button>
+                </form>
+              </div>
             </div>
             <div className="bsc_lower_morning_container">
               <span>Morning</span>

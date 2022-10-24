@@ -2,6 +2,7 @@ import React from "react";
 import "./Home.css";
 import "font-awesome/css/font-awesome.min.css";
 import slider_one from "../Pages/images/slide_one.webp";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -54,7 +55,17 @@ const Home = () => {
               We work on holidays, besides working late on regular days. In case
               of emergencies we accept bookings.
             </p>
-            <div className="transperent_btn">Chat with Doctor</div>
+            <div className="transperent_btn">
+              <span>
+                <Link
+                  to={"/dental-clinic/user_registration"}
+                  style={{ textDecoration: "none", color: "#fff" }}
+                >
+                  Chat with Docto
+                </Link>
+              </span>
+              r
+            </div>
           </div>
           <div className="basic_info" id="info_02">
             <h2>Best Price Guarantee</h2>
@@ -70,7 +81,14 @@ const Home = () => {
               Monday – Saturday: 10.00 am – 10.00 pm Sunday: 5.00 pm – 10.00 pm
             </p>
             <div className="transperent_btn" id="tr_btn_01">
-              Book An Appointment
+              <span>
+                <Link
+                  to={"/dental-clinic/appointment"}
+                  style={{ textDecoration: "none", color: "#fff" }}
+                >
+                  Book An Appointment
+                </Link>
+              </span>
             </div>
           </div>
         </div>
