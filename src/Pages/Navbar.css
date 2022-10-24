@@ -40,6 +40,7 @@
   align-items: center;
   justify-content: center;
   align-content: center;
+  transition: all 0.5s ease-in-out;
 }
 .MenuItems a {
   text-decoration: none;
@@ -50,7 +51,7 @@
 .MenuItems a:active {
   transform: scale(0.97);
   border-bottom: 6px solid blue;
-  transition: all 0.4 ease-in-out;
+  transition: ease-in-out 0.4;
 }
 .MenuItems::before {
   content: "";
@@ -73,6 +74,7 @@
   align-content: center;
   background: #2c2c2c;
   z-index: 71;
+  transition: all 0.5s ease-in-out;
 }
 .active_links::before {
   content: "";

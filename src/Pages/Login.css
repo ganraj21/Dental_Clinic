@@ -21,7 +21,7 @@
   gap: 1rem;
   justify-content: center;
 }
-img {
+.brand img {
   height: 5rem;
 }
 h1 {
@@ -52,7 +52,7 @@ input:focus {
   border: 0.1rem solid #997af0;
   outline: none;
 }
-button {
+.login_u_form button {
   background-color: #4e0eff;
   color: white;
   padding: 1rem 2rem;
@@ -63,10 +63,10 @@ button {
   font-size: 1rem;
   text-transform: uppercase;
 }
-button:hover {
+.login_u_form button:hover {
   background-color: #4e0eff;
 }
-span {
+.lower_title_login {
   color: white;
   text-transform: uppercase;
   justify-content: center;

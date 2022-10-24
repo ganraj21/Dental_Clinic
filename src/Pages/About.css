@@ -55,8 +55,8 @@
 .about_title {
   width: 80%;
 }
-.about_title span {
-  margin-right: 9px;
+.about_title .about_title_logo {
+  margin-right: 9px !important;
 }
 /* .about_image {
   /* width: 40%;

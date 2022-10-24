@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Logo from "../assets/logo.svg";
+import Logo from "../assets/logo.png";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { loginRoute } from "../utils/APIRoutes";
-import "./Login.css";
+import styles from "./Login.css";
 
 function Login() {
   const [values, setValues] = useState({
@@ -63,37 +63,39 @@ function Login() {
   };
   return (
     <>
-      <div className="login_form_section">
-        <div className="form_container_for_login">
-          <form
-            className="login_u_form"
-            onSubmit={(event) => handleSubmit(event)}
-          >
-            <div className="brand">
-              <img src={Logo} alt="logo" />
-              <h1>Om Dental Clinic</h1>
-            </div>
-            <input
-              type="text"
-              placeholder="Username"
-              name="username"
-              onChange={(e) => handleChange(e)}
-              min="3"
-            />
-            <input
-              type="Password"
-              placeholder="Password"
-              name="password"
-              onChange={(e) => handleChange(e)}
-            />
-            <button type="submit">Login In</button>
-            <span>
-              Don't have an account ?
-              <Link to="/dental-clinic/user_registration">Register</Link>
-            </span>
-          </form>
+      <div className={styles.example}>
+        <div className="login_form_section">
+          <div className="form_container_for_login">
+            <form
+              className="login_u_form"
+              onSubmit={(event) => handleSubmit(event)}
+            >
+              <div className="brand">
+                <img src={Logo} alt="logo" />
+                <h1>Om Dental Clinic</h1>
+              </div>
+              <input
+                type="text"
+                placeholder="Username"
+                name="username"
+                onChange={(e) => handleChange(e)}
+                min="3"
+              />
+              <input
+                type="Password"
+                placeholder="Password"
+                name="password"
+                onChange={(e) => handleChange(e)}
+              />
+              <button type="submit">Login In</button>
+              <span className="lower_title_login">
+                Don't have an account ?
+                <Link to="/dental-clinic/user_registration">Register</Link>
+              </span>
+            </form>
+          </div>
+          <ToastContainer />
         </div>
-        <ToastContainer />
       </div>
     </>
   );

@@ -7,20 +7,22 @@ const Appointment = () => {
   return (
     <>
       <div className="app_container">
-        <div className="upper_container_header">
+        {/* <div className="upper_container_header">
           <i className="fa-solid fa-angles-right"></i>
           <h2>Book a Clinic Appointment</h2>
-        </div>
+        </div> */}
         <div className="upper_container">
           <div className="appointment_booking_section">
-            <div className="booking_header">
-              <i className="fa-regular fa-clock"></i>
-              <span>No Slots Available for Today</span>
+            <div className="appointment_booking_container">
+              <div className="booking_header">
+                <i className="fa-regular fa-clock"></i>
+                <span>No Slots Available for Today</span>
+              </div>
+              <p className="about_info">
+                Please book for the next slot available by clicking on book Your
+                slot
+              </p>
             </div>
-            <p className="about_info">
-              Please book for the next slot available by clicking on book Your
-              slot
-            </p>
             <hr />
             <div className="booking_container">
               <div className="booking_bottom">
