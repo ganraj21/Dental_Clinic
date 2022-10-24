@@ -12,6 +12,9 @@ function BookingHours() {
 
   const color_set_true = { backgroundColor: "green", color: "white" };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
   return (
     <>
       <div className="booking_section_container">
@@ -19,7 +22,10 @@ function BookingHours() {
           <div className="bsc_lower_container">
             <div className="bsc_header">
               <div className="appointment_hours_form">
-                <form className="form_for_booking">
+                <form
+                  className="form_for_booking"
+                  onSubmit={(event) => handleSubmit(event)}
+                >
                   <div className="brand">
                     <img src={Logo} alt="logo" />
                     <h1>Om Dental Clinic</h1>
