@@ -71,7 +71,9 @@ hr {
   gap: 10px;
   margin-bottom: 45px;
 }
-
+.booking_slot_section a {
+  text-decoration: none;
+}
 .booking_container {
   display: flex;
   align-items: center;
@@ -79,13 +81,7 @@ hr {
   align-content: center;
   flex-direction: row;
 }
-button {
-  border: none;
-  outline: none;
-  color: green;
-  font-weight: 600;
-  background-color: transparent;
-}
+
 .book_slot {
   width: 223px;
   text-align: center;
@@ -94,7 +90,9 @@ button {
   display: flex;
   justify-content: center;
   align-content: center;
-  outline: 1px solid green;
+  border: 2px solid green;
+  color: green;
+  font-weight: 600;
   transition: ease-in-out 0.3s;
   border-radius: 9px;
   cursor: pointer;

@@ -30,11 +30,9 @@ const Appointment = () => {
                 <h4>No Booking Fee</h4>
               </div>
               <div className="booking_slot_section">
-                <button className="book_slot">
-                  <span>
-                    <Link to="/dental-clinic/slot">Book Your Slot</Link>
-                  </span>
-                </button>
+                <Link to="/dental-clinic/slot">
+                  <div className="book_slot"> Book Your Slot </div>
+                </Link>
               </div>
             </div>
           </div>

@@ -1,5 +1,5 @@
 .register_form_section {
-  height: 100vh;
+  height: 90vh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -8,13 +8,11 @@
   background-color: #131324;
 }
 .form_container_register {
-  height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1rem;
   align-items: center;
-  margin-bottom: 45px;
 }
 .register_u_form {
   display: flex;
@@ -24,7 +22,6 @@
   border-radius: 2rem;
   padding: 3rem 5rem;
   border-bottom: 7px solid white;
-  margin-bottom: 30px;
 }
 
 .brand {

@@ -47,51 +47,62 @@ function BookingHours() {
                   <button className="submit_btn" type="submit">
                     Get OTP
                   </button>
+
+                  <input
+                    type="number"
+                    placeholder="Enter Your OTP"
+                    name="onetimepassword"
+                    min="6"
+                  />
                 </form>
               </div>
             </div>
-            <div className="bsc_lower_morning_container">
-              <span>Morning</span>
-              <div className="morning_info_container">
-                {MorningData.map((data, index) => {
-                  return (
-                    <button
-                      id={index}
-                      className="md_data"
-                      onClick={() => {
-                        // color_seting_fun(index);
-                      }}
-                      key={index}
-                    >
-                      {data.m_slot_time}
-                    </button>
-                  );
-                })}
+            <div className="me_slot_selection">
+              <div className="bsc_lower_morning_container">
+                <span>Morning and Evening Slots</span>
+                <div className="morning_info_container">
+                  {MorningData.map((data, index) => {
+                    return (
+                      <button
+                        id={index}
+                        className="md_data"
+                        onClick={() => {
+                          // color_seting_fun(index);
+                        }}
+                        key={index}
+                      >
+                        {data.m_slot_time}
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
-            <div className="bsc_lower_evening_container">
-              <span>Evening</span>
-              <div className="evening_info_container">
-                {EveningData.map((data, index) => {
-                  return (
-                    <button className="ed_data" key={index}>
-                      {data.e_slot_time}
+              <hr />
+              <div className="bsc_lower_evening_container">
+                <div className="evening_info_container">
+                  {EveningData.map((data, index) => {
+                    return (
+                      <button className="ed_data" key={index}>
+                        {data.e_slot_time}
+                      </button>
+                    );
+                  })}
+                  <div className="submit_slot_btn">
+                    <button
+                      className="booking_c_btn"
+                      id="bcb"
+                      // disabled
+                      onClick={() => {
+                        <BookingSlotOtp />;
+                      }}
+                    >
+                      Submit
                     </button>
-                  );
-                })}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <button
-            className="booking_c_btn"
-            id="bcb"
-            // disabled
-            onClick={() => {
-              <BookingSlotOtp />;
-            }}
-          >
-            Continue
-          </button>
         </div>
       </div>
     </>
