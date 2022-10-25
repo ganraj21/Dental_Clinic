@@ -22,11 +22,11 @@ function Login() {
     theme: "dark",
   };
 
-  // useEffect(() => {
-  //   if (localStorage.getItem("chat-app-user")) {
-  //     // navigate("/dental-clinic/user/chat_section");
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (localStorage.getItem("chat-app-user")) {
+      navigate("/dental-clinic/user/chat_section");
+    }
+  }, []);
 
   const handleSubmit = async (event) => {
     event.preventDefault();

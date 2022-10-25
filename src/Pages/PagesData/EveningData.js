@@ -4,19 +4,11 @@ const EveningData =[
         e_slot_time: "05:00 PM",
           color : ["green","white"],
     },
-    // {
-    //     index:2,
-    //     e_slot_time: "05:15 PM"
-    // },
     {
         index:2,
         e_slot_time: "05:30 PM",
           color : ["green","white"],
     },
-    // {
-    //     index:4,
-    //     e_slot_time: "05:45 PM"
-    // },
     {
         index:3,
         e_slot_time: "06:00 PM",

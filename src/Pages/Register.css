@@ -111,8 +111,6 @@ input:focus {
 }
 
 @media screen and (max-width: 420px) {
-  .register_u_form {
-  }
   .brand h1 {
     font-size: 26px;
   }

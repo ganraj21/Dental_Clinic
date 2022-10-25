@@ -94,12 +94,3 @@ const Home = () => {
 };
 
 export default Home;
-
-// onClick={() => {
-//   if (selectedImage > 0) setSelectedImage(selectedImage - 1);
-// }}
-
-// onClick={() => {
-//   if (selectedImage < allImages.length - 1)
-//     setSelectedImage(selectedImage + 1);
-// }}

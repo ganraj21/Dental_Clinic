@@ -3,12 +3,10 @@ import EveningData from "./PagesData/EveningData";
 import MorningData from "./PagesData/MorningData";
 import Logo from "../assets/logo.png";
 import "./BookingHours.css";
-import BookingSlotOtp from "./BookingSlotOtp";
-function BookingHours() {
+
+const BookingHours = () => {
   const [active, setActive] = useState(-1);
   const [ace, setACE] = useState(-1);
-
-  const [current_day, setCurrentDay] = useState("Today");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -108,6 +106,6 @@ function BookingHours() {
       </div>
     </>
   );
-}
+};
 
 export default BookingHours;

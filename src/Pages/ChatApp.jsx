@@ -8,19 +8,19 @@ function ChatApp() {
   const navigate = useNavigate();
   const [contacts, setContacts] = useState();
   const [currentUser, setCurrentUser] = useState(undefined);
-  useEffect(async () => {
-    if (!localStorage.getItem("chat-app-user")) {
-      navigate("/dental-clinic/login_user");
-    } else {
-      setCurrentUser(await JSON.parse(localStorage.getItem("chat-app-user")));
-    }
-  }, []);
-  useEffect(async () => {
-    if (currentUser) {
-      const data = await axios.get(`${allUsersRoute}/${currentUser._id}`);
-      setContacts(data.data);
-    }
-  }, [currentUser]);
+  // useEffect(async () => {
+  //   if (!localStorage.getItem("chat-app-user")) {
+  //     navigate("/dental-clinic/login_user");
+  //   } else {
+  //     setCurrentUser(await JSON.parse(localStorage.getItem("chat-app-user")));
+  //   }
+  // }, []);
+  // useEffect(async () => {
+  //   if (currentUser) {
+  //     const data = await axios.get(`${allUsersRoute}/${currentUser._id}`);
+  //     setContacts(data.data);
+  //   }
+  // }, [currentUser]);
   return (
     <>
       <Container>
