@@ -48,11 +48,11 @@ const Navbar = () => {
               Contact
             </Link>
           </div>
-          {/* <div className="MenuItems" id="Appointment_menu">
+          <div className="MenuItems" id="Appointment_menu">
             <Link to="/dental-clinic/appointment" onClick={closeMobileMenu}>
               Appointment
             </Link>
-          </div> */}
+          </div>
         </div>
         <div className="toggle_menu_icons" onClick={handleClick}>
           <i className={isActive ? "fas fa-times" : "fas fa-bars"}></i>
