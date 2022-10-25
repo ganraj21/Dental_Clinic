@@ -10,7 +10,6 @@ import Login from './Pages/Login';
 import Register from './Pages/Register';
 import ChatApp from './Pages/ChatApp';
 import SetAvatar from './Pages/SetAvatar';
-import ChatImg from './Components/ChatImg.jsx';
 import BookingHours from './Pages/BookingHours';
 const App = () =>{
 
