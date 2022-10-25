@@ -23,6 +23,9 @@
   width: 30px;
   height: 30px;
 }
+.logo h2 {
+  font-weight: 500;
+}
 .links {
   display: flex;
   align-items: center;
