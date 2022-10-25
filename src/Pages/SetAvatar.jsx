@@ -27,7 +27,7 @@ export default function SetAvatar() {
         navigate("/dental-clinic/login_user");
     }
     fetchData();
-  }, []);
+  });
 
   const setProfilePicture = async () => {
     if (selectedAvatar === undefined) {
@@ -64,7 +64,7 @@ export default function SetAvatar() {
       setIsLoading(false);
     }
     fetchData();
-  }, []);
+  });
   return (
     <>
       {isLoading ? (
