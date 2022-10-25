@@ -88,7 +88,7 @@ function Register() {
             </div>
             <input
               type="text"
-              placeholder="Username"
+              placeholder="Enter Your Name"
               name="username"
               onChange={(e) => handleChange(e)}
             />

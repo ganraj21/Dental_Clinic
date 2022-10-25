@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "../assets/logo.png";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -8,6 +8,7 @@ import { loginRoute } from "../utils/APIRoutes";
 import styles from "./Login.css";
 
 function Login() {
+  const navigate = useNavigate();
   const [values, setValues] = useState({
     username: "",
     password: "",
@@ -21,11 +22,11 @@ function Login() {
     theme: "dark",
   };
 
-  useEffect(() => {
-    if (localStorage.getItem("chat-app-user")) {
-      // navigate("/dental-clinic/user/chat_section");
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (localStorage.getItem("chat-app-user")) {
+  //     // navigate("/dental-clinic/user/chat_section");
+  //   }
+  // }, []);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -41,7 +42,7 @@ function Login() {
       }
       if (data.status === true) {
         localStorage.setItem("chat-app-user", JSON.stringify(data.user));
-        // navigate("/dental-clinic/user/chat_section");
+        navigate("/dental-clinic/user/chat_section");
       }
     }
   };

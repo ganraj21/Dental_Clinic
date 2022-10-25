@@ -4,13 +4,11 @@ import MorningData from "./PagesData/MorningData";
 import Logo from "../assets/logo.png";
 import "./BookingHours.css";
 import BookingSlotOtp from "./BookingSlotOtp";
-import "react-infinite-calendar/styles.css";
 function BookingHours() {
-  const [colorIn, setColorIn] = useState();
-  const [activeState, setActiveState] = useState(false);
-  const [current_day, setCurrentDay] = useState("Today");
+  const [active, setActive] = useState(-1);
+  const [ace, setACE] = useState(-1);
 
-  const color_set_true = { backgroundColor: "green", color: "white" };
+  const [current_day, setCurrentDay] = useState("Today");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -52,7 +50,6 @@ function BookingHours() {
                     type="number"
                     placeholder="Enter Your OTP"
                     name="onetimepassword"
-                    min="6"
                   />
                 </form>
               </div>
@@ -64,11 +61,13 @@ function BookingHours() {
                   {MorningData.map((data, index) => {
                     return (
                       <button
-                        id={index}
                         className="md_data"
-                        onClick={() => {
-                          // color_seting_fun(index);
+                        style={{
+                          backgroundColor:
+                            active === index ? data.color[0] : "white",
+                          color: active === index ? data.color[1] : "black",
                         }}
+                        onClick={() => setActive(index)}
                         key={index}
                       >
                         {data.m_slot_time}
@@ -82,20 +81,22 @@ function BookingHours() {
                 <div className="evening_info_container">
                   {EveningData.map((data, index) => {
                     return (
-                      <button className="ed_data" key={index}>
+                      <button
+                        className="ed_data"
+                        key={index}
+                        style={{
+                          backgroundColor:
+                            ace === index ? data.color[0] : "white",
+                          color: ace === index ? data.color[1] : "black",
+                        }}
+                        onClick={() => setACE(index)}
+                      >
                         {data.e_slot_time}
                       </button>
                     );
                   })}
                   <div className="submit_slot_btn">
-                    <button
-                      className="booking_c_btn"
-                      id="bcb"
-                      // disabled
-                      onClick={() => {
-                        <BookingSlotOtp />;
-                      }}
-                    >
+                    <button className="booking_c_btn" id="bcb">
                       Submit
                     </button>
                   </div>

@@ -45,9 +45,10 @@
   display: flex;
   justify-content: center;
   align-content: center;
-  outline: 2px solid black;
+  border: 2px solid black;
   font-size: 15px;
   color: black;
+  background: transparent !important;
   margin-top: 19px;
   flex-direction: column;
   align-items: center;

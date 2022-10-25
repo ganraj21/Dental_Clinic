@@ -44,7 +44,7 @@
   justify-content: center;
   align-content: center;
   background: #fff;
-  border: 1px solid #d0d0d0;
+  border: 1px solid green;
   border-radius: 5px;
   cursor: pointer;
   transition: ease-in-out 0.4s;
@@ -97,13 +97,7 @@
   align-content: center;
   align-items: center;
 }
-/* .evening_info_container {
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: row;
-  align-content: center;
-  align-items: flex-start;
-} */
+
 .booking_c_btn {
   position: sticky;
   width: 345px;
@@ -121,12 +115,24 @@
   color: #fff;
   background-color: #0792e0;
 }
+
+.submit_btn:active {
+  transform: scale(0.97);
+}
 .submit_slot_btn {
   display: flex;
-  width: 363px;
+  width: 570px;
   align-items: center;
   justify-content: center;
   align-content: center;
+}
+/* .submit_slot_btn:active {
+  transform: scale(0.98);
+  transition: all 0.3s ease-in-out;
+} */
+
+.submit_slot_btn:active {
+  transform: scale(0.97);
 }
 .bsc_lower_container span {
   color: white;
@@ -138,10 +144,7 @@
   align-items: center;
   justify-content: center;
   align-content: center;
-
   width: 400px;
-  /* border-bottom: 7px solid white; */
-  /* border-radius: 2rem; */
 }
 .bsc_header {
   width: 413px;
@@ -208,20 +211,38 @@
 }
 
 @media screen and (max-width: 1023px) {
+  .booking_section_container {
+    height: 100%;
+  }
   .bsc_lower_container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
     width: 90%;
+  }
+  .bsc_header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+  }
+  .appointment_hours_form,
+  .bsc_header {
+    width: 450px;
   }
   .me_slot_selection {
     flex-direction: column;
+    width: 450px;
   }
   .bsc_lower_morning_container,
   .bsc_lower_evening_container {
-    height: 281px;
+    height: 441px;
   }
   .morning_info_container,
   .evening_info_container {
-    height: 244px;
-    justify-content: flex-start;
+    width: 450px;
   }
   .booking_c_btn {
     margin: 0;
@@ -230,9 +251,69 @@
     justify-content: center;
   }
   .bsc_lower_container {
-    height: 608px;
+    height: 100%;
+    width: 450px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
   .submit_slot_btn {
     width: 469px;
+    margin-top: 20px;
+  }
+  .bsc_lower_container span {
+    font-size: 22px;
+    margin-bottom: 17px;
+  }
+  .form_for_booking {
+    padding: 3rem;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .bsc_lower_container {
+    width: 90%;
+  }
+  .bsc_header {
+    width: 100%;
+  }
+  .me_slot_selection {
+    width: 100%;
+  }
+  .morning_info_container,
+  .evening_info_container {
+    width: 100%;
+  }
+  .submit_slot_btn {
+    width: 90%;
+  }
+  hr {
+    display: flex;
+    border-bottom: 1px solid rgb(189, 189, 189);
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .bsc_lower_morning_container,
+  .bsc_lower_evening_container {
+    height: 100%;
+  }
+  .md_data,
+  .ed_data {
+    margin: 3px;
+    margin-top: 6px;
+  }
+  .morning_info_container {
+    margin-bottom: 20px;
+  }
+  .evening_info_container {
+    margin-top: 20px;
+  }
+  .bsc_lower_container {
+    margin-top: 34px;
   }
 }

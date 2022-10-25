@@ -26,18 +26,3 @@ const server = app.listen(process.env.PORT, ()=>{
     console.log(`Server Started on Port ${process.env.PORT}`)
 })
 
-// mongoose.connect(`mongodb://${config.dbHost}`,{
-//     useNewUrlParser:true,
-//     useUnifiedTopology:true
-// })
-// .then(client =>{
-//     const db = client.db(config.dbName);
-//     const collection = db.collection(config.dbCollection);
-//     app.locals[config.dbCollection] = collection;
-// })
-
-// app.use((req,res,next)=>{
-//     const collection = req.app.locals[config.dbCollection];
-//     req.collection = collection;
-//     next();
-// })

@@ -74,7 +74,8 @@ const Home = () => {
           <div className="basic_info" id="info_03">
             <h2>Opening Hours</h2>
             <p>
-              Monday – Saturday: 10.00 am – 10.00 pm Sunday: 5.00 pm – 10.00 pm
+              Monday – Saturday : 10.00 am – 10.00 pm Sunday : 5.00 pm – 10.00
+              pm
             </p>
 
             <Link
