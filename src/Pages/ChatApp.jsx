@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import { allUsersRoute } from "../utils/APIRoutes";
-import ChatContacts from "../Components/ChatContacts";
+// import axios from "axios";
+// import { useNavigate } from "react-router-dom";
+// import { allUsersRoute } from "../utils/APIRoutes";
+// import ChatContacts from "../Components/ChatContacts";
 function ChatApp() {
-  const navigate = useNavigate();
-  const [contacts, setContacts] = useState();
-  const [currentUser, setCurrentUser] = useState(undefined);
+  // const navigate = useNavigate();
+  // const [contacts, setContacts] = useState();
+  // const [currentUser, setCurrentUser] = useState(undefined);
   // useEffect(async () => {
   //   if (!localStorage.getItem("chat-app-user")) {
   //     navigate("/dental-clinic/login_user");
@@ -25,7 +25,7 @@ function ChatApp() {
     <>
       <Container>
         <div className="container">
-          <ChatContacts contacts={contacts} currentUser={currentUser} />
+          {/* <ChatContacts contacts={contacts} currentUser={currentUser} /> */}
         </div>
       </Container>
     </>
