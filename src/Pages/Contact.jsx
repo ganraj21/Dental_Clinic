@@ -89,11 +89,10 @@ const Contact = () => {
           </div>
         </div>
         <p className="copyright_footer">
-          Copyright
           <span>
             <i className="fa-regular fa-copyright"></i>
           </span>
-          2022 Om Dental Clinic
+          2022 Om Dental Clinic All Reserved Rights
         </p>
       </div>
     </>
