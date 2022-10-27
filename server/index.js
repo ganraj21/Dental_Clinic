@@ -3,7 +3,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const userRoutes = require("./routes/userRoutes")
 
-const DB = 'mongodb+srv://ganraj21:ganraj21@cluster0.hazsbme.mongodb.net/?retryWrites=true&w=majority';
+const DB = 'mongodb+srv://ganraj21:ganraj21@cluster0.hazsbme.mongodb.net/chat?retryWrites=true&w=majority';
 
 const app = express();
 require("dotenv").config();
