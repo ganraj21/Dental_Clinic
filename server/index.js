@@ -21,7 +21,7 @@ mongoose.connect(process.env.MONGO_URL, {
     console.log(err.message)
 })
 
-// const server = app.listen(process.env.PORT, ()=>{
-//     console.log(`Server Started on Port ${process.env.PORT}`)
-// })
+const server = app.listen(process.env.PORT, ()=>{
+    console.log(`Server Started on Port ${process.env.PORT}`)
+})
 
