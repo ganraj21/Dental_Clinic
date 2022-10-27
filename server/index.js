@@ -3,6 +3,8 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const userRoutes = require("./routes/userRoutes")
 
+const DB = 'mongodb+srv://ganraj21:ganraj21@cluster0.hazsbme.mongodb.net/?retryWrites=true&w=majority';
+
 const app = express();
 require("dotenv").config();
 
@@ -12,7 +14,7 @@ app.use(express.json());
 app.use("/api/auth",userRoutes)
 
 
-mongoose.connect(process.env.MONGO_URL, {
+mongoose.connect(DB, {
     useNewUrlParser: true,
     useUnifiedTopology:true,
 }).then(()=>{

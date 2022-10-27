@@ -1,5 +1,5 @@
 import { Document, Long, ObjectId } from '../bson';
-import { MongoRuntimeError, MongoServerError } from '../error';
+import { MongoError, MongoRuntimeError, MongoServerError } from '../error';
 import { arrayStrictEqual, compareObjectId, errorStrictEqual, HostAddress, now } from '../utils';
 import type { ClusterTime } from './common';
 import { ServerType } from './common';
@@ -53,7 +53,7 @@ export class ServerDescription {
   passives: string[];
   arbiters: string[];
   tags: TagSet;
-  error: MongoServerError | null;
+  error: MongoError | null;
   topologyVersion: TopologyVersion | null;
   minWireVersion: number;
   maxWireVersion: number;
@@ -88,8 +88,8 @@ export class ServerDescription {
 
     this.address =
       typeof address === 'string'
-        ? HostAddress.fromString(address).toString(false) // Use HostAddress to normalize
-        : address.toString(false);
+        ? HostAddress.fromString(address).toString() // Use HostAddress to normalize
+        : address.toString();
     this.type = parseServerType(hello, options);
     this.hosts = hello?.hosts?.map((host: string) => host.toLowerCase()) ?? [];
     this.passives = hello?.passives?.map((host: string) => host.toLowerCase()) ?? [];
