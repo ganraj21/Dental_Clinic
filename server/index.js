@@ -11,7 +11,6 @@ app.use(express.json());
 
 app.use("/api/auth",userRoutes)
 
-const config = require("./config");
 
 mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,

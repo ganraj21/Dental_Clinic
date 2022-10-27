@@ -7,7 +7,7 @@ import axios from "axios";
 import { loginRoute } from "../utils/APIRoutes";
 import styles from "./Login.css";
 
-function Login() {
+const Login = () => {
   const navigate = useNavigate();
   const [values, setValues] = useState({
     username: "",
@@ -24,9 +24,25 @@ function Login() {
 
   useEffect(() => {
     if (localStorage.getItem("chat-app-user")) {
-      navigate("/dental-clinic/user/chat_section");
+      // navigate("/dental-clinic/user/chat_section");
     }
   });
+
+  const handleChange = (event) => {
+    setValues({ ...values, [event.target.name]: event.target.value });
+  };
+
+  const handleValidation = () => {
+    const { username, password } = values;
+    if (password === "") {
+      toast.error("username and Password is required", toastOptions);
+      return false;
+    } else if (username.length === "") {
+      toast.error("username and Password is required", toastOptions);
+      return false;
+    }
+    return true;
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -47,21 +63,6 @@ function Login() {
     }
   };
 
-  const handleValidation = () => {
-    const { password, username } = values;
-    if (password === "") {
-      toast.error("username and Password is required", toastOptions);
-      return false;
-    } else if (username.length === "") {
-      toast.error("username and Password is required", toastOptions);
-      return false;
-    }
-    return true;
-  };
-
-  const handleChange = (event) => {
-    setValues({ ...values, [event.target.name]: event.target.value });
-  };
   return (
     <>
       <div className={styles.example}>
@@ -100,6 +101,6 @@ function Login() {
       </div>
     </>
   );
-}
+};
 
 export default Login;

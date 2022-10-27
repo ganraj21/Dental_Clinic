@@ -7,14 +7,8 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { registerRoute } from "../utils/APIRoutes";
 import "./Register.css";
-function Register() {
+const Register = () => {
   const navigate = useNavigate();
-  const [values, setValues] = useState({
-    username: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-  });
 
   const toastOptions = {
     position: "top-right",
@@ -23,6 +17,12 @@ function Register() {
     draggable: true,
     theme: "dark",
   };
+  const [values, setValues] = useState({
+    username: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
 
   useEffect(() => {
     if (localStorage.getItem("chat-app-user")) {
@@ -30,24 +30,8 @@ function Register() {
     }
   }, []);
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    if (handleValidation()) {
-      console.log("In validation", registerRoute);
-      const { password, username, email } = values;
-      const { data } = await axios.post(registerRoute, {
-        username,
-        email,
-        password,
-      });
-      if (data.status === false) {
-        toast.error(data.msg, toastOptions);
-      }
-      if (data.status === true) {
-        localStorage.setItem("chat-app-user", JSON.stringify(data.user));
-        navigate("/dental-clinic/login_user");
-      }
-    }
+  const handleChange = (event) => {
+    setValues({ ...values, [event.target.name]: event.target.value });
   };
 
   const handleValidation = () => {
@@ -71,9 +55,26 @@ function Register() {
     return true;
   };
 
-  const handleChange = (event) => {
-    setValues({ ...values, [event.target.name]: event.target.value });
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (handleValidation()) {
+      console.log("In validation", registerRoute);
+      const { email, username, password } = values;
+      const { data } = await axios.post(registerRoute, {
+        username,
+        email,
+        password,
+      });
+      if (data.status === false) {
+        toast.error(data.msg, toastOptions);
+      }
+      if (data.status === true) {
+        localStorage.setItem("chat-app-user", JSON.stringify(data.user));
+        navigate("/dental-clinic/login_user");
+      }
+    }
   };
+
   return (
     <>
       <div className="register_form_section">
@@ -123,7 +124,7 @@ function Register() {
       </div>
     </>
   );
-}
+};
 
 const FormContainer = styled.div``;
 
