@@ -35,7 +35,7 @@ h1 {
   background-color: #00000076;
   border-radius: 2rem;
   padding: 3rem 5rem;
-  border-bottom: 7px solid white;
+  border-bottom: 6px solid white;
   height: 450px;
   margin-bottom: 30px;
 }
@@ -77,6 +77,9 @@ input:focus {
   color: #4e0eff;
   text-decoration: none;
   font-weight: bold;
+}
+.login_form_button:active {
+  transform: scale(0.97);
 }
 
 @media screen and (min-width: 1024px) {

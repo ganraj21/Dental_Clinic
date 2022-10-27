@@ -21,7 +21,7 @@
   background-color: #00000076;
   border-radius: 2rem;
   padding: 3rem 5rem;
-  border-bottom: 7px solid white;
+  border-bottom: 6px solid white;
 }
 
 .brand {
@@ -86,7 +86,9 @@ input:focus {
   text-decoration: none;
   font-weight: bold;
 }
-
+.submit_register_btn:active {
+  transform: scale(0.97);
+}
 @media screen and (min-width: 1024px) {
   .register_u_form {
     height: 585px;
