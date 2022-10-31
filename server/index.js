@@ -3,12 +3,11 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const userRoutes = require("./routes/userRoutes")
 
-const DB = 'mongodb+srv://ganraj21:ganraj21@cluster0.hazsbme.mongodb.net/chat?retryWrites=true&w=majority';
-// "mongodb+srv://<username>:<password>@firstcluster.4rc4s.mongodb.net/<dbname>?retryWrites=true&w=majority";
+const DB = process.env.MONGO_URL;
 const app = express();
 require("dotenv").config();
 
-app.use(cors());
+app.use(cors({'Access-Control-Allow-Origin': '*'}));
 app.use(express.json());
 
 app.use("/api/auth",userRoutes)
