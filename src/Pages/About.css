@@ -38,6 +38,7 @@
   display: flex;
   width: 99%;
 }
+
 .more_info_btn {
   width: 174px;
   height: 45px;
@@ -52,6 +53,18 @@
   margin-top: 19px;
   flex-direction: column;
   align-items: center;
+  transition: ease-in-out 0.3s;
+  box-shadow: inset 0 0 0 0 #fff;
+  font-weight: 500;
+}
+.more_info_btn:hover {
+  color: black;
+  border: 2px solid #fff;
+  box-shadow: inset 174px 0 0 0 #fff;
+}
+.more_info_btn:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
 .about_title {
   width: 80%;

@@ -2,7 +2,10 @@ import React from "react";
 import styles from "./About.css";
 import about_img from "./images/about_img.webp";
 import Profile from "./Profile";
+import { useRef } from "react";
 const About = () => {
+  const scollToRef = useRef();
+
   return (
     <>
       <div className={styles.example}>
@@ -29,14 +32,19 @@ const About = () => {
                 implement a lot of pain management and anesthesia options.
               </p>
               <div className="about_align_btn">
-                <button className="more_info_btn">Read More</button>
+                <button
+                  className="more_info_btn"
+                  onClick={() => scollToRef.current.scrollIntoView()}
+                >
+                  Read More
+                </button>
               </div>
             </div>
             <div className="about_image">
               <img src={about_img} alt="" />
             </div>
           </div>
-          <Profile />
+          <Profile ref={scollToRef} />
         </div>
       </div>
     </>

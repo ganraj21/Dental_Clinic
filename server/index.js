@@ -3,7 +3,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const userRoutes = require("./routes/userRoutes")
 
-const DB = process.env.MONGO_URL;
+// const DB = process.env.MONGO_URL;
 const app = express();
 require("dotenv").config();
 
@@ -17,7 +17,7 @@ app.use(express.json());
 
 app.use("/api/auth",userRoutes)
 
-mongoose.connect(DB, {
+mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology:true,
 }).then(()=>{

@@ -32,7 +32,6 @@
     "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4"
   },
-  "proxy": "http://localhost:5000/",
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "npm run build",

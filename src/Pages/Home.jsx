@@ -69,7 +69,12 @@ const Home = () => {
               Our reasonable prices made thousands of people smile with a new,
               beautiful, irresistible smile, as never before!!
             </p>
-            <div className="transperent_btn">Read More</div>
+            <Link
+              to={"/dental-clinic/contact"}
+              style={{ textDecoration: "none", color: "#fff" }}
+            >
+              <div className="transperent_btn">Read More</div>
+            </Link>
           </div>
           <div className="basic_info" id="info_03">
             <h2>Opening Hours</h2>
