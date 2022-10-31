@@ -17,7 +17,6 @@ app.use(express.json());
 
 app.use("/api/auth",userRoutes)
 
-
 mongoose.connect(DB, {
     useNewUrlParser: true,
     useUnifiedTopology:true,
