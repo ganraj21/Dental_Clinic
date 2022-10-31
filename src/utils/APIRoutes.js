@@ -1,7 +1,7 @@
-// export const host = "http://localhost:5000";
-export const registerRoute = `/api/auth/register`
-export const loginRoute = `/api/auth/login`
-export const setAvatarRoute = `/api/auth/setAvatar`
+export const host = "dentalclinic-snowy.vercel.app";
+export const registerRoute = `${host}/api/auth/register`
+export const loginRoute = `${host}/api/auth/login`
+export const setAvatarRoute = `${host}/api/auth/setAvatar`
 // export const appointmentRoute = `${host}/api/auth/appointment`
 // export const allUsersRoute = `${host}/api/auth/allusers`
 
