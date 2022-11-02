@@ -16,20 +16,26 @@ router.post('/register', async (req,res)=>{
     }
     const hashedPassword = await brcypt.hash(password, 10);
 
-    User.findOne({email:email})
-        .then((userExist)=>{
-            if(userExist){
-            return res.status(422).json({error:"Email already Exist"})
+
+    try{
+        const userExist = await User.findOne({email:email})
+        if(userExist){
+           return res.status(422).json({error:"Email already Exist"})
         }
-        
         const user = new User({name, email, password:hashedPassword })
 
-        user.save().then(()=>{
+        const userRegister = await user.save()
+
+        if(userRegister){
             res.status(201).json({message:"user registered successfully"})
-        }).catch((err)=>{
-            res.status(500).json({error:"Database Error"})
-        })
-    }).catch((err)=>{console.log(err)})
+        }
+    }
+    catch(err){
+        console.log(err)
+    }
+
+
+
     // try {
     //     const { name, email, password } = req.body;
     //     const usernameCheck = await User.findOne({ name });
