@@ -4,12 +4,9 @@ import styled from "styled-components";
 import Logo from "../assets/logo.png";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import axios from "axios";
-import { registerRoute } from "../utils/APIRoutes";
 import "./Register.css";
 const Register = () => {
   const navigate = useNavigate();
-
   const toastOptions = {
     position: "top-right",
     autoClose: 8000,
@@ -17,12 +14,49 @@ const Register = () => {
     draggable: true,
     theme: "dark",
   };
-  const [values, setValues] = useState({
+  const [user, setUser] = useState({
     username: "",
     email: "",
     password: "",
     confirmPassword: "",
   });
+
+  let name, value;
+  const handleInputs = (e) => {
+    console.log(e);
+    name = e.target.name;
+    value = e.target.value;
+
+    setUser({ ...user, [name]: value });
+  };
+
+  const PostData = async (e) => {
+    e.preventDefault();
+    const { name, email, password, confirmPassword } = user;
+
+    const res = await fetch("/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      // if key and values are same then dont write it again eg -> name: name
+      body: JSON.stringify({
+        name,
+        email,
+        password,
+        confirmPassword,
+      }),
+    });
+    handleValidation();
+    const data = await res.json();
+    if (data.status === false) {
+      toast.error(data.msg, toastOptions);
+    }
+    if (data.status === true) {
+      localStorage.setItem("chat-app-user", JSON.stringify(data.user));
+      navigate("/dental-clinic/login_user");
+    }
+  };
 
   useEffect(() => {
     if (localStorage.getItem("chat-app-user")) {
@@ -30,12 +64,12 @@ const Register = () => {
     }
   }, []);
 
-  const handleChange = (event) => {
-    setValues({ ...values, [event.target.name]: event.target.value });
-  };
+  // const handleChange = (event) => {
+  //   setValues({ ...values, [event.target.name]: event.target.value });
+  // };
 
   const handleValidation = () => {
-    const { password, confirmPassword, username, email } = values;
+    const { password, confirmPassword, username, email } = user;
     if (password !== confirmPassword) {
       toast.error(
         "password and confirm password should be same.",
@@ -55,38 +89,35 @@ const Register = () => {
     return true;
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    try {
-      if (handleValidation()) {
-        console.log("In validation", registerRoute);
-        const { email, username, password } = values;
-        const { data } = await axios.post(registerRoute, {
-          username,
-          email,
-          password,
-        });
-        if (data.status === false) {
-          toast.error(data.msg, toastOptions);
-        }
-        if (data.status === true) {
-          localStorage.setItem("chat-app-user", JSON.stringify(data.user));
-          navigate("/dental-clinic/login_user");
-        }
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault();
+  //   try {
+  //     if (handleValidation()) {
+  //       console.log("In validation", registerRoute);
+  //       const { email, username, password } = user;
+  //       const { data } = await axios.post(registerRoute, {
+  //         username,
+  //         email,
+  //         password,
+  //       });
+  //       if (data.status === false) {
+  //         toast.error(data.msg, toastOptions);
+  //       }
+  //       if (data.status === true) {
+  //         localStorage.setItem("chat-app-user", JSON.stringify(data.user));
+  //         navigate("/dental-clinic/login_user");
+  //       }
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   return (
     <>
       <div className="register_form_section">
         <FormContainer className="form_container_register">
-          <form
-            className="register_u_form"
-            onSubmit={(event) => handleSubmit(event)}
-          >
+          <form className="register_u_form" method="POST" onSubmit={PostData}>
             <div className="brand">
               <img src={Logo} alt="logo" />
               <h1>Om Dental Clinic</h1>
@@ -95,25 +126,33 @@ const Register = () => {
               type="text"
               placeholder="Enter Your Name"
               name="username"
-              onChange={(e) => handleChange(e)}
+              value={user.name}
+              onChange={handleInputs}
+              autoComplete="off"
             />
             <input
               type="email"
               placeholder="Email"
               name="email"
-              onChange={(e) => handleChange(e)}
+              value={user.email}
+              onChange={handleInputs}
+              autoComplete="off"
             />
             <input
               type="Password"
               placeholder="Password"
               name="password"
-              onChange={(e) => handleChange(e)}
+              value={user.password}
+              onChange={handleInputs}
+              autoComplete="off"
             />
             <input
               type="Password"
               placeholder="Confirm Password"
               name="confirmPassword"
-              onChange={(e) => handleChange(e)}
+              value={user.confirmPassword}
+              onChange={handleInputs}
+              autoComplete="off"
             />
             <button className="submit_register_btn" type="submit">
               Create User

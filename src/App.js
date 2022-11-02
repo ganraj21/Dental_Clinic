@@ -27,7 +27,7 @@ const App = () =>{
       <Route exact path='/dental-clinic/user_registration' element={<Register/>}/>
       <Route exact path='/dental-clinic/login_user' element={<Login/>}/>
       <Route exact path='/dental-clinic/user/chat_section' element={<ChatApp/>}/>
-      <Route exact path='/dental-clinic/set_avatar' element={<SetAvatar/>}/>
+      {/* <Route exact path='/dental-clinic/set_avatar' element={<SetAvatar/>}/> */}
       <Route exact path='/dental-clinic/slot' element={<BookingHours/>}/>
     </Routes>
 

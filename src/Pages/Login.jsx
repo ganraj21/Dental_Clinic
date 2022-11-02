@@ -4,7 +4,7 @@ import Logo from "../assets/logo.png";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
-import { loginRoute } from "../utils/APIRoutes";
+// import { loginRoute } from "../utils/APIRoutes";
 import "./Login.css";
 
 const Login = () => {
@@ -44,28 +44,28 @@ const Login = () => {
     return true;
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    try {
-      if (handleValidation()) {
-        console.log("In validation", loginRoute);
-        const { password, username } = values;
-        const { data } = await axios.post(loginRoute, {
-          username,
-          password,
-        });
-        if (data.status === false) {
-          toast.error(data.msg, toastOptions);
-        }
-        if (data.status === true) {
-          localStorage.setItem("chat-app-user", JSON.stringify(data.user));
-          navigate("/dental-clinic/user/chat_section");
-        }
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault();
+  //   try {
+  //     if (handleValidation()) {
+  //       // console.log("In validation", loginRoute);
+  //       const { password, username } = values;
+  //       const { data } = await fetch.post(loginRoute, {
+  //         username,
+  //         password,
+  //       });
+  //       if (data.status === false) {
+  //         toast.error(data.msg, toastOptions);
+  //       }
+  //       if (data.status === true) {
+  //         localStorage.setItem("chat-app-user", JSON.stringify(data.user));
+  //         navigate("/dental-clinic/user/chat_section");
+  //       }
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   return (
     <>
@@ -74,7 +74,7 @@ const Login = () => {
           <form
             action=""
             className="login_u_form"
-            onSubmit={(event) => handleSubmit(event)}
+            // onSubmit={(event) => handleSubmit(event)}
           >
             <div className="brand">
               <img src={Logo} alt="logo" />
