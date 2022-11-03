@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Logo from "../assets/logo.png";
@@ -15,7 +15,7 @@ const Register = () => {
     theme: "dark",
   };
   const [user, setUser] = useState({
-    username: "",
+    name: "",
     email: "",
     password: "",
     confirmPassword: "",
@@ -34,7 +34,7 @@ const Register = () => {
     e.preventDefault();
     const { name, email, password, confirmPassword } = user;
 
-    const res = await fetch("/register", {
+    const res = await fetch("http://localhost:5000/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -47,7 +47,6 @@ const Register = () => {
         confirmPassword,
       }),
     });
-    handleValidation();
     const data = await res.json();
     if (data.status === false) {
       toast.error(data.msg, toastOptions);
@@ -56,17 +55,14 @@ const Register = () => {
       localStorage.setItem("chat-app-user", JSON.stringify(data.user));
       navigate("/dental-clinic/login_user");
     }
+    handleValidation();
   };
 
-  useEffect(() => {
-    if (localStorage.getItem("chat-app-user")) {
-      // navigate("/dental-clinic/user/chat_section");
-    }
-  }, []);
-
-  // const handleChange = (event) => {
-  //   setValues({ ...values, [event.target.name]: event.target.value });
-  // };
+  // useEffect(() => {
+  //   if (localStorage.getItem("chat-app-user")) {
+  //     // navigate("/dental-clinic/user/chat_section");
+  //   }
+  // }, []);
 
   const handleValidation = () => {
     const { password, confirmPassword, username, email } = user;
@@ -125,7 +121,7 @@ const Register = () => {
             <input
               type="text"
               placeholder="Enter Your Name"
-              name="username"
+              name="name"
               value={user.name}
               onChange={handleInputs}
               autoComplete="off"

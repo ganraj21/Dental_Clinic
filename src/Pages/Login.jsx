@@ -97,8 +97,7 @@ const Login = () => {
               Login In
             </button>
             <span className="lower_title_login">
-              Don't have an account ?
-              <Link to="/dental-clinic/user_registration">Register</Link>
+              Don't have an account ?<Link to="/register">Register</Link>
             </span>
           </form>
         </div>
