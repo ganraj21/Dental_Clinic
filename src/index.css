@@ -22,3 +22,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+::-webkit-input-placeholder {
+  color: #fff;
+}

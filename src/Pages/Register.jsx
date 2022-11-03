@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Logo from "../assets/logo.png";
@@ -47,7 +47,9 @@ const Register = () => {
         confirmPassword,
       }),
     });
+
     const data = await res.json();
+
     if (data.status === false) {
       toast.error(data.msg, toastOptions);
     }
@@ -58,11 +60,11 @@ const Register = () => {
     handleValidation();
   };
 
-  // useEffect(() => {
-  //   if (localStorage.getItem("chat-app-user")) {
-  //     // navigate("/dental-clinic/user/chat_section");
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (localStorage.getItem("chat-app-user")) {
+      navigate("/dental-clinic/login_user");
+    }
+  }, []);
 
   const handleValidation = () => {
     const { password, confirmPassword, username, email } = user;
@@ -84,31 +86,6 @@ const Register = () => {
     }
     return true;
   };
-
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault();
-  //   try {
-  //     if (handleValidation()) {
-  //       console.log("In validation", registerRoute);
-  //       const { email, username, password } = user;
-  //       const { data } = await axios.post(registerRoute, {
-  //         username,
-  //         email,
-  //         password,
-  //       });
-  //       if (data.status === false) {
-  //         toast.error(data.msg, toastOptions);
-  //       }
-  //       if (data.status === true) {
-  //         localStorage.setItem("chat-app-user", JSON.stringify(data.user));
-  //         navigate("/dental-clinic/login_user");
-  //       }
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
   return (
     <>
       <div className="register_form_section">
