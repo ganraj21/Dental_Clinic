@@ -6,7 +6,6 @@ const userSchema = new mongoose.Schema({
         required:true,
         min:3,
         max:20,
-        unique:true,
     },
     email:{
         type:String,
@@ -19,7 +18,7 @@ const userSchema = new mongoose.Schema({
         required:true,
         min:6,
         max:12,
-        unique:true,
+        unique:false,
     },
     isAvatarImageSet:{
         type:Boolean,

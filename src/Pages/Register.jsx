@@ -34,7 +34,7 @@ const Register = () => {
     e.preventDefault();
     const { name, email, password, confirmPassword } = user;
 
-    const res = await fetch("http://localhost:5000/register", {
+    const res = await fetch("/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -49,7 +49,7 @@ const Register = () => {
     });
 
     const data = await res.json();
-
+    handleValidation();
     if (data.status === false) {
       toast.error(data.msg, toastOptions);
     }
@@ -57,14 +57,13 @@ const Register = () => {
       localStorage.setItem("chat-app-user", JSON.stringify(data.user));
       navigate("/dental-clinic/login_user");
     }
-    handleValidation();
   };
 
   useEffect(() => {
     if (localStorage.getItem("chat-app-user")) {
       navigate("/dental-clinic/login_user");
     }
-  }, []);
+  });
 
   const handleValidation = () => {
     const { password, confirmPassword, username, email } = user;
