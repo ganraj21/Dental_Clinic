@@ -9,7 +9,7 @@ require("dotenv").config({"path":"./.env"});
 app.use(cors());
 app.use(express.json());
 
-// link the router files to make our route easy
+
 // app.use(require('./router/auth'));
 
 mongoose.connect(process.env.MONGO_URL, {
@@ -22,16 +22,9 @@ mongoose.connect(process.env.MONGO_URL, {
 })
 
 app.post('/register', async (req,res)=>{
-    
-    // const { name, email, password } = req.body;
 
-    // console.log(req.body)
-    // if(!name || !email || !password){
-    //     return res.status(422).json({error:"Plz filled the data"})
-    // }
     console.log(req.body)
     const hashedPassword = await brcypt.hash(req.body.password, 10);
-
 
     try{
         const userExist = await User.findOne({email:req.body.email})

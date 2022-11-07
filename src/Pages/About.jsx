@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./About.css";
 import about_img from "./images/about_img.webp";
-import Profile from "./Profile";
 import { useRef } from "react";
 const About = () => {
   const scollToRef = useRef();
@@ -44,7 +43,6 @@ const About = () => {
               <img src={about_img} alt="" />
             </div>
           </div>
-          <Profile ref={scollToRef} />
         </div>
       </div>
     </>

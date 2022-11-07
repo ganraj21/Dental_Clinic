@@ -9,6 +9,7 @@
 .services_container h2 {
   width: 90%;
   color: #232323;
+  font-size: 27px;
 }
 .services_header {
   margin: 30px;
@@ -99,5 +100,8 @@
   .services_header {
     margin-top: 42px;
     margin-bottom: 45px;
+  }
+  .service_info_container {
+    height: 100%;
   }
 }

@@ -44,12 +44,14 @@
   justify-content: center;
   align-content: center;
   transition: all 0.5s ease-in-out;
+  cursor: pointer;
 }
 .MenuItems a {
   text-decoration: none;
   font-family: Poppins, sans-serif;
   font-weight: 600;
   color: black;
+  cursor: pointer;
 }
 .MenuItems a:active {
   transform: scale(0.97);

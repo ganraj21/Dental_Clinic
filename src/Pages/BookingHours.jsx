@@ -5,11 +5,34 @@ import Logo from "../assets/logo.png";
 import "./BookingHours.css";
 
 const BookingHours = () => {
-  const [active, setActive] = useState(-1);
+  const [moreven, setMoreven] = useState(0);
+  const [activeUser, setActiveUser] = useState({
+    date: "",
+    firstname: "",
+    lastname: "",
+    phone: "",
+    time: { moreven },
+  });
   const [ace, setACE] = useState(-1);
+
+  let name, value;
+  const handleInputs = (e) => {
+    console.log(e);
+    name = e.target.name;
+    value = e.target.value;
+    setActiveUser({ ...activeUser, [name]: value });
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
+  };
+
+  const in_data = (data) => {
+    var inner_data = moreven === 0 ? data.m_slot_time : data.e_slot_time;
+    console.log(inner_data);
+  };
+  const conpileData = () => {
+    console.log(activeUser);
   };
   return (
     <>
@@ -29,26 +52,37 @@ const BookingHours = () => {
                   <input
                     type="date"
                     placeholder="Select Date"
-                    name="CalenderDate"
+                    name="date"
+                    value={activeUser.date}
+                    onChange={handleInputs}
                   />
-
                   <input
                     type="text"
-                    placeholder="Enter your full name"
-                    name="fullname"
+                    placeholder="Enter your first name"
+                    name="firstname"
                     min="3"
+                    value={activeUser.firstname}
+                    onChange={handleInputs}
                   />
-                  <input type="phone" placeholder="Phone No" name="phone" />
+                  <input
+                    type="text"
+                    placeholder="Enter your last name"
+                    name="lastname"
+                    min="3"
+                    value={activeUser.lastname}
+                    onChange={handleInputs}
+                  />
+                  <input
+                    type="phone"
+                    placeholder="Phone No"
+                    name="phone"
+                    value={activeUser.phone}
+                    onChange={handleInputs}
+                  />
 
                   <button className="submit_btn" type="submit">
-                    Get OTP
+                    Continue
                   </button>
-
-                  <input
-                    type="number"
-                    placeholder="Enter Your OTP"
-                    name="onetimepassword"
-                  />
                 </form>
               </div>
             </div>
@@ -59,13 +93,20 @@ const BookingHours = () => {
                   {MorningData.map((data, index) => {
                     return (
                       <button
+                        name="time"
+                        value={activeUser.time}
+                        onChange={handleInputs}
                         className="md_data"
                         style={{
                           backgroundColor:
-                            active === index ? data.color[0] : "white",
-                          color: active === index ? data.color[1] : "black",
+                            activeUser === index ? data.color[0] : "white",
+                          color: activeUser === index ? data.color[1] : "black",
                         }}
-                        onClick={() => setActive(index)}
+                        onClick={() => {
+                          setActiveUser(index);
+                          setMoreven(data.m_slot_time);
+                          in_data(data);
+                        }}
                         key={index}
                       >
                         {data.m_slot_time}
@@ -80,6 +121,9 @@ const BookingHours = () => {
                   {EveningData.map((data, index) => {
                     return (
                       <button
+                        name="time"
+                        value={activeUser.time}
+                        onChange={handleInputs}
                         className="ed_data"
                         key={index}
                         style={{
@@ -87,14 +131,22 @@ const BookingHours = () => {
                             ace === index ? data.color[0] : "white",
                           color: ace === index ? data.color[1] : "black",
                         }}
-                        onClick={() => setACE(index)}
+                        onClick={() => {
+                          setACE(index);
+                          setMoreven(data.e_slot_time);
+                          in_data(data);
+                        }}
                       >
                         {data.e_slot_time}
                       </button>
                     );
                   })}
                   <div className="submit_slot_btn">
-                    <button className="booking_c_btn" id="bcb">
+                    <button
+                      className="booking_c_btn"
+                      id="bcb"
+                      onClick={conpileData}
+                    >
                       Submit
                     </button>
                   </div>

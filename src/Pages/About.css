@@ -111,7 +111,7 @@
   .about_title {
     width: 90%;
     margin-top: 50px;
-    margin-bottom: -20px;
+    margin-bottom: -39px;
   }
 }
 
@@ -140,15 +140,19 @@
   .about_container {
     margin-top: 46px;
   }
-  .about_image,
   .about_infos {
     margin-top: 20px;
+  }
+  .about_image {
+    margin-top: 20px;
+    margin-bottom: 55px !important;
   }
 }
 
 @media screen and (max-width: 480px) {
   .about_title {
-    margin-bottom: 10px;
+    font-size: 27px;
+    margin: 53px 0px 0px 0px !important;
   }
   .about_infos {
     margin-bottom: 20px;
@@ -176,6 +180,6 @@
 
 @media screen and (max-width: 480px) {
   .about_container {
-    height: 844px;
+    height: 100%;
   }
 }
