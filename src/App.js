@@ -24,7 +24,7 @@ const App = () =>{
       <Route exact path='/dental-clinic/contact' element={<Contact/>}/>
       <Route exact path='/dental-clinic/team' element={<Profile/>}/>
       <Route exact path='/register' element={<Register/>}/>
-      <Route exact path='/dental-clinic/login_user' element={<Login/>}/>
+      <Route exact path='/login_user' element={<Login/>}/>
       <Route exact path='/dental-clinic/user/chat_section' element={<ChatApp/>}/>
       <Route exact path='/dental-clinic/slot' element={<BookingHours/>}/>
     </Routes>

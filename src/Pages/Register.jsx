@@ -7,13 +7,6 @@ import "react-toastify/dist/ReactToastify.css";
 import "./Register.css";
 const Register = () => {
   const navigate = useNavigate();
-  const toastOptions = {
-    position: "top-right",
-    autoClose: 8000,
-    pauseOnHover: true,
-    draggable: true,
-    theme: "dark",
-  };
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -21,20 +14,51 @@ const Register = () => {
     confirmPassword: "",
   });
 
-  let name, value;
-  const handleInputs = (e) => {
-    console.log(e);
-    name = e.target.name;
-    value = e.target.value;
+  const toastOptions = {
+    position: "top-right",
+    autoClose: 8000,
+    pauseOnHover: true,
+    draggable: true,
+    theme: "dark",
+  };
 
-    setUser({ ...user, [name]: value });
+  useEffect(() => {
+    if (localStorage.getItem("chat-app-user")) {
+      navigate("/dental-clinic/login_user");
+    }
+  });
+
+  const handleInputs = (event) => {
+    setUser({ ...user, [event.target.name]: event.target.value });
+  };
+
+  const handleValidation = () => {
+    const { password, confirmPassword, name, email } = user;
+    if (password !== confirmPassword) {
+      toast.error(
+        "password and confirm password should be same.",
+        toastOptions
+      );
+      return false;
+    } else if (name.length <= 2) {
+      toast.error("Enter your full name", toastOptions);
+      return false;
+    } else if (password.length < 6) {
+      toast.error("Password should be greater than 6 character", toastOptions);
+      return false;
+    } else if (email === "") {
+      toast.error("Email is required", toastOptions);
+      return false;
+    }
+    return true;
   };
 
   const PostData = async (e) => {
     e.preventDefault();
+
     const { name, email, password, confirmPassword } = user;
 
-    const res = await fetch("/register", {
+    const res = await fetch("http://localhost:5000/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -49,42 +73,18 @@ const Register = () => {
     });
 
     const data = await res.json();
-    handleValidation();
-    if (data.status === false) {
-      toast.error(data.msg, toastOptions);
-    }
+
     if (data.status === true) {
       localStorage.setItem("chat-app-user", JSON.stringify(data.user));
       navigate("/dental-clinic/login_user");
     }
+    if (data.status === false) {
+      toast.error(data.msg, toastOptions);
+    } else {
+      handleValidation();
+    }
   };
 
-  useEffect(() => {
-    if (localStorage.getItem("chat-app-user")) {
-      navigate("/dental-clinic/login_user");
-    }
-  });
-
-  const handleValidation = () => {
-    const { password, confirmPassword, username, email } = user;
-    if (password !== confirmPassword) {
-      toast.error(
-        "password and confirm password should be same.",
-        toastOptions
-      );
-      return false;
-    } else if (username.length <= 2) {
-      toast.error("Enter your full name", toastOptions);
-      return false;
-    } else if (password.length < 6) {
-      toast.error("Password should be greater than 6 character", toastOptions);
-      return false;
-    } else if (email === "") {
-      toast.error("Email is required", toastOptions);
-      return false;
-    }
-    return true;
-  };
   return (
     <>
       <div className="register_form_section">
@@ -130,8 +130,7 @@ const Register = () => {
               Create User
             </button>
             <span className="lower_title_register">
-              Already have an account ?
-              <Link to="/dental-clinic/login_user">Login</Link>
+              Already have an account ?<Link to="/login_user">Login</Link>
             </span>
           </form>
         </FormContainer>

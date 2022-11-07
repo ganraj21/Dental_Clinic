@@ -24,6 +24,7 @@ mongoose.connect(process.env.MONGO_URL, {
 app.post('/register', async (req,res)=>{
 
     console.log(req.body)
+    
     const hashedPassword = await brcypt.hash(req.body.password, 10);
 
     try{
@@ -43,6 +44,30 @@ app.post('/register', async (req,res)=>{
         console.log(err)
     }
 });
+
+app.post('/login_user', async (req,res)=>{
+    console.log(req.body)
+    
+    try{
+          const { name, password } = req.body;
+          const user = await User.findOne({ name });
+
+          if (!user)
+            return res.json({ msg: "Incorrect Username or Password", status: false });
+          const isPasswordValid = await brcypt.compare(password, user.password);
+
+          if (!isPasswordValid)
+            return res.json({ msg: "Incorrect Username or Password", status: false });
+          delete user.password;
+
+          return res.json({ status: true, user });
+        }
+        catch(err){
+            console.log(err)
+        }
+    }
+)
+
 
 app.listen(process.env.PORT, ()=>{
     console.log(`Server Started on Port ${process.env.PORT}`)
