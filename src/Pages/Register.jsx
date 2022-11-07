@@ -24,7 +24,7 @@ const Register = () => {
 
   useEffect(() => {
     if (localStorage.getItem("chat-app-user")) {
-      navigate("/dental-clinic/login_user");
+      // navigate("/dental-clinic/login_user");
     }
   });
 
@@ -57,31 +57,33 @@ const Register = () => {
     e.preventDefault();
 
     const { name, email, password, confirmPassword } = user;
+    if (handleValidation()) {
+      const res = await fetch("http://localhost:5000/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        // if key and values are same then dont write it again eg -> name: name
+        body: JSON.stringify({
+          name,
+          email,
+          password,
+          confirmPassword,
+        }),
+      });
 
-    const res = await fetch("http://localhost:5000/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      // if key and values are same then dont write it again eg -> name: name
-      body: JSON.stringify({
-        name,
-        email,
-        password,
-        confirmPassword,
-      }),
-    });
+      const data = await res.json();
 
-    const data = await res.json();
+      console.log(data);
 
-    if (data.status === true) {
-      localStorage.setItem("chat-app-user", JSON.stringify(data.user));
-      navigate("/dental-clinic/login_user");
-    }
-    if (data.status === false) {
-      toast.error(data.msg, toastOptions);
-    } else {
-      handleValidation();
+      if (data.status === false) {
+        toast.error(data.msg, toastOptions);
+      }
+      if (data.message === "user registered successfully") {
+        toast.error(data.msg, toastOptions);
+        localStorage.setItem("chat-app-user", user);
+        navigate("/login_user");
+      }
     }
   };
 

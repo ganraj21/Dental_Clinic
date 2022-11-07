@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../assets/logo.png";
 import { ToastContainer, toast } from "react-toastify";
@@ -20,11 +20,11 @@ const Login = () => {
     theme: "dark",
   };
 
-  useEffect(() => {
-    if (localStorage.getItem("chat-app-user")) {
-      navigate("/dental-clinic/user/chat_section");
-    }
-  });
+  // useEffect(() => {
+  //   if (localStorage.getItem("chat-app-user")) {
+  //     // navigate("/dental-clinic/user/chat_section");
+  //   }
+  // });
 
   const handleChange = (event) => {
     setValues({ ...values, [event.target.name]: event.target.value });
