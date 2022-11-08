@@ -73,7 +73,10 @@ const Register = () => {
             confirmPassword,
           }),
         }
-      );
+      )
+        .then((response) => response.json)
+        .then((data) => console.log("Success ", data))
+        .catch((err) => console.log(err));
 
       const data = await res.json();
 
