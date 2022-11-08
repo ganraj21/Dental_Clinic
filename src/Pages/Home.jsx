@@ -58,7 +58,7 @@ const Home = () => {
               </p>
 
               <Link
-                to={"/dental-clinic/user_registration"}
+                to={"/register"}
                 style={{ textDecoration: "none", color: "#fff" }}
               >
                 <div className="transperent_btn"> Chat with Doctor</div>
