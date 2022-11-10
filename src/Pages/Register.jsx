@@ -58,22 +58,19 @@ const Register = () => {
 
     const { name, email, password, confirmPassword } = user;
     if (handleValidation()) {
-      const res = await fetch(
-        "https://omdentalclinic.vercel.app/register.json",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          // if key and values are same then dont write it again eg -> name: name
-          body: JSON.stringify({
-            name,
-            email,
-            password,
-            confirmPassword,
-          }),
-        }
-      )
+      const res = await fetch("https://omdentalclinic.vercel.app/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        // if key and values are same then dont write it again eg -> name: name
+        user: JSON.stringify({
+          name,
+          email,
+          password,
+          confirmPassword,
+        }),
+      })
         .then((response) => response.json)
         .then((data) => console.log("Success ", data))
         .catch((err) => console.log(err));
