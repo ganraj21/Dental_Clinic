@@ -58,7 +58,9 @@ const Register = () => {
 
     const { name, email, password, confirmPassword } = user;
     if (handleValidation()) {
-      const res = await fetch("https://omdentalclinic.vercel.app/register", {
+      // https://omdentalclinic.vercel.app/register
+      const res = await fetch("http://localhost:5000/register", {
+        mode: "no-cors",
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -70,10 +72,7 @@ const Register = () => {
           password,
           confirmPassword,
         }),
-      })
-        .then((response) => response.json)
-        .then((data) => console.log("Success ", data))
-        .catch((err) => console.log(err));
+      });
 
       const data = await res.json();
 

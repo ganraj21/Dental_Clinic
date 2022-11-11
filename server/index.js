@@ -2,13 +2,12 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const brcypt = require("bcrypt")
-const app = express();
 const User = require("./model/userModel")
 require("dotenv").config({"path":"./.env"});
 
+const app = express();
 app.use(cors());
 app.use(express.json());
-
 
 // app.use(require('./router/auth'));
 
@@ -20,6 +19,10 @@ mongoose.connect(process.env.MONGO_URL, {
 }).catch((err)=>{
     console.log(err.message)
 })
+
+app.get('/', (req, res) => {
+    res.json({ message: "Hello from server!" });
+});
 
 app.post('/register', async (req,res)=>{
 
@@ -51,7 +54,6 @@ app.post('/login_user', async (req,res)=>{
     try{
           const { name, password } = req.body;
           const user = await User.findOne({ name });
-
           if (!user)
             return res.json({ msg: "Incorrect Username or Password", status: false });
           const isPasswordValid = await brcypt.compare(password, user.password);
