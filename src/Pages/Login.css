@@ -86,12 +86,15 @@ input:focus {
   .login_u_form {
     height: 459px !important;
     gap: 2rem;
+    width: 395px !important;
+    padding: 37px !important;
   }
 }
 
 @media screen and (max-width: 1023px) {
   .login_u_form {
-    padding: 35px 43px;
+    width: 395px;
+    padding: 37px;
     height: 459px !important;
   }
 }

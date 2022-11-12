@@ -5,6 +5,8 @@ import Logo from "../assets/logo.png";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./Register.css";
+// import axios from "axios";
+
 const Register = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState({
@@ -55,41 +57,40 @@ const Register = () => {
 
   const PostData = async (e) => {
     e.preventDefault();
-    try {
-      const { name, email, password, confirmPassword } = user;
-      if (handleValidation()) {
-        // https://omdentalclinic.vercel.app/register
+    const { name, email, password, confirmPassword } = user;
+    const requestOptions = {
+      mode: "no-cors",
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      // if key and values are same then dont write it again eg -> name: name
+      body: JSON.stringify({
+        name,
+        email,
+        password,
+        confirmPassword,
+      }),
+    };
+    if (handleValidation()) {
+      const res = await fetch(
+        "http://localhost:5000/register",
+        requestOptions
+      ).then((response) => response.json());
 
-        const res = await fetch("https://omdentalclinic.vercel.app/register", {
-          mode: "no-cors",
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          // if key and values are same then dont write it again eg -> name: name
-          user: JSON.stringify({
-            name,
-            email,
-            password,
-            confirmPassword,
-          }),
-        });
+      const data = await res.json();
 
-        const data = await res.json();
+      toast.error(data.msg, toastOptions);
+      console.log(data);
 
-        console.log(data);
-
-        if (data.status === false) {
-          toast.error(data.msg, toastOptions);
-        }
-        if (data.message === "user registered successfully") {
-          toast.error(data.msg, toastOptions);
-          localStorage.setItem("chat-app-user", user);
-          navigate("/login_user");
-        }
+      if (data.status === false) {
+        toast.error(data.msg, toastOptions);
       }
-    } catch (err) {
-      console.log(err);
+      if (data.message === "user registered successfully") {
+        toast.error(data.msg, toastOptions);
+        localStorage.setItem("chat-app-user", user);
+        navigate("/login_user");
+      }
     }
   };
 

@@ -5,7 +5,7 @@
   align-content: center;
   flex-direction: column;
   width: 100%;
-  height: 700px;
+  gap: 2rem;
 }
 
 .profile_details {
@@ -17,12 +17,13 @@
   width: 400px;
   height: 500px;
   padding: 15px 20px;
-  background: aliceblue;
+  background-color: #e5e5e5;
   border-radius: 6px;
 }
 .profile_details img {
   border-radius: 50%;
-  width: 196px;
+  width: 185px;
+  height: 185px;
   border: 7px solid #29b300;
 }
 .profile_info {
@@ -37,7 +38,8 @@
   font-weight: 500;
 }
 .profile_description {
-  width: 95%;
+  width: 86%;
+  text-align: justify;
 }
 .p_info_container {
   display: flex;
@@ -46,6 +48,7 @@
   justify-content: center;
   align-content: center;
   gap: 27px;
+  margin-bottom: 10px;
 }
 .profile_section_container h2 span {
   margin-right: 9px;
@@ -53,6 +56,7 @@
 
 .profile_section_container h2 {
   width: 85%;
+  margin-top: 42px;
 }
 
 @media screen and (max-width: 1023px) {
@@ -71,12 +75,13 @@
 @media screen and (max-width: 580px) {
   .profile_section_container {
     margin-bottom: 30px;
-    margin-top: 45px;
-    height: 100%;
+    gap: 0;
+    margin-top: 0px;
   }
   .p_info_container {
     flex-direction: column;
     margin-top: 39px;
+    margin-bottom: 30px;
   }
   .profile_section_container h2 {
     margin-top: 41px;

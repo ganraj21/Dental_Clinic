@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const brcypt = require("bcrypt")
+const bcrypt = require("bcrypt")
 const User = require("./model/userModel")
 require("dotenv").config({"path":"./.env"});
 
@@ -28,7 +28,10 @@ app.post('/register', async (req,res)=>{
 
     console.log(req.body)
     
-    const hashedPassword = await brcypt.hash(req.body.password, 10);
+//     let saltRounds = await bcrypt.genSalt(10);
+// let hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
+
+    const hashedPassword = await bcrypt.hash(req.body.password, 10);
 
     try{
         const userExist = await User.findOne({email:req.body.email})
@@ -56,7 +59,7 @@ app.post('/login_user', async (req,res)=>{
           const user = await User.findOne({ name });
           if (!user)
             return res.json({ msg: "Incorrect Username or Password", status: false });
-          const isPasswordValid = await brcypt.compare(password, user.password);
+          const isPasswordValid = await bcrypt.compare(password, user.password);
 
           if (!isPasswordValid)
             return res.json({ msg: "Incorrect Username or Password", status: false });

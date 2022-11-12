@@ -1,13 +1,11 @@
 import React from "react";
 import styles from "./About.css";
 import about_img from "./images/about_img.webp";
-import { useRef } from "react";
+import { Link } from "react-router-dom";
 const About = () => {
-  const scollToRef = useRef();
-
   return (
     <>
-      <div className={styles.example}>
+      <div className={styles.example} style={{ backgroundColor: "#e5e5e5" }}>
         <div className="about_section_container">
           <h2 className="about_title">
             <span className="about_title_logo">
@@ -31,12 +29,12 @@ const About = () => {
                 implement a lot of pain management and anesthesia options.
               </p>
               <div className="about_align_btn">
-                <button
-                  className="more_info_btn"
-                  onClick={() => scollToRef.current.scrollIntoView()}
+                <Link
+                  to={"/dental-clinic/team"}
+                  style={{ textDecoration: "none", color: "#fff" }}
                 >
-                  Read More
-                </button>
+                  <button className="more_info_btn">Read More</button>
+                </Link>
               </div>
             </div>
             <div className="about_image">
