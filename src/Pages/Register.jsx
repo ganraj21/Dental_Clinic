@@ -9,7 +9,7 @@ import "./Register.css";
 
 const Register = () => {
   // const url = "http://localhost:5000/register";
-  const url = "https://dentalclinic-snowy.vercel.app/register";
+  const url = "https://dentalclinic-ganraj21.vercel.app/register";
 
   const navigate = useNavigate();
   const [user, setUser] = useState({
@@ -29,7 +29,7 @@ const Register = () => {
 
   useEffect(() => {
     if (localStorage.getItem("chat-app-user")) {
-      navigate("/dental-clinic/login_user");
+      navigate("/login_user");
     }
   });
 
