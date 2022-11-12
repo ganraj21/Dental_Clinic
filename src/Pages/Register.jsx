@@ -55,14 +55,12 @@ const Register = () => {
 
   const PostData = async (e) => {
     e.preventDefault();
-
-    const { name, email, password, confirmPassword } = user;
-    if (handleValidation()) {
-      // https://omdentalclinic.vercel.app/register
-      const res = await fetch(
-        "https://dentalclinic-snowy.vercel.app/register",
-        {
-          mode: "no-cors",
+    try {
+      const { name, email, password, confirmPassword } = user;
+      if (handleValidation()) {
+        // https://omdentalclinic.vercel.app/register
+        // mode: "no-cors",
+        const res = await fetch("https://omdentalclinic.vercel.app/register", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -74,21 +72,23 @@ const Register = () => {
             password,
             confirmPassword,
           }),
+        });
+
+        const data = await res.json();
+
+        console.log(data);
+
+        if (data.status === false) {
+          toast.error(data.msg, toastOptions);
         }
-      );
-
-      const data = await res.json();
-
-      console.log(data);
-
-      if (data.status === false) {
-        toast.error(data.msg, toastOptions);
+        if (data.message === "user registered successfully") {
+          toast.error(data.msg, toastOptions);
+          localStorage.setItem("chat-app-user", user);
+          navigate("/login_user");
+        }
       }
-      if (data.message === "user registered successfully") {
-        toast.error(data.msg, toastOptions);
-        localStorage.setItem("chat-app-user", user);
-        navigate("/login_user");
-      }
+    } catch (err) {
+      console.log(err);
     }
   };
 
