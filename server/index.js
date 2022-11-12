@@ -28,10 +28,10 @@ app.post('/register', async (req,res)=>{
 
     console.log(req.body)
     
-//     let saltRounds = await bcrypt.genSalt(10);
-// let hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
+    let saltRounds = await bcrypt.genSalt(10);
+let hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
 
-    const hashedPassword = await bcrypt.hash(req.body.password, 10);
+    // const hashedPassword = await bcrypt.hash(req.body.password, 10);
 
     try{
         const userExist = await User.findOne({email:req.body.email})

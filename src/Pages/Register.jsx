@@ -8,6 +8,9 @@ import "./Register.css";
 // import axios from "axios";
 
 const Register = () => {
+  // const url = "http://localhost:5000/register";
+  const url = "https://dentalclinic-snowy.vercel.app/register";
+
   const navigate = useNavigate();
   const [user, setUser] = useState({
     name: "",
@@ -26,7 +29,7 @@ const Register = () => {
 
   useEffect(() => {
     if (localStorage.getItem("chat-app-user")) {
-      // navigate("/dental-clinic/login_user");
+      navigate("/dental-clinic/login_user");
     }
   });
 
@@ -59,24 +62,20 @@ const Register = () => {
     e.preventDefault();
     const { name, email, password, confirmPassword } = user;
     const requestOptions = {
-      mode: "no-cors",
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
       // if key and values are same then dont write it again eg -> name: name
-      body: JSON.stringify({
-        name,
-        email,
-        password,
-        confirmPassword,
-      }),
+      name,
+      email,
+      password,
+      confirmPassword,
     };
     if (handleValidation()) {
-      const res = await fetch(
-        "http://localhost:5000/register",
-        requestOptions
-      ).then((response) => response.json());
+      const res = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(requestOptions),
+      });
 
       const data = await res.json();
 
