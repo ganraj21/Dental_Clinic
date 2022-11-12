@@ -60,41 +60,41 @@ const Register = () => {
 
   const PostData = async (e) => {
     e.preventDefault();
-    try {
-      const { name, email, password, confirmPassword } = user;
-      const requestOptions = {
-        // if key and values are same then dont write it again eg -> name: name
-        name,
-        email,
-        password,
-        confirmPassword,
-      };
-      if (handleValidation()) {
-        const res = await fetch(url, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(requestOptions),
-        });
+    // try {
+    const { name, email, password, confirmPassword } = user;
+    const requestOptions = {
+      // if key and values are same then dont write it again eg -> name: name
+      name,
+      email,
+      password,
+      confirmPassword,
+    };
+    if (handleValidation()) {
+      const res = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(requestOptions),
+      });
 
-        const data = await res.json();
+      const data = await res.json();
 
+      toast.error(data.msg, toastOptions);
+      console.log(data);
+
+      if (data.status === false) {
         toast.error(data.msg, toastOptions);
-        console.log(data);
-
-        if (data.status === false) {
-          toast.error(data.msg, toastOptions);
-        }
-        if (data.message === "user registered successfully") {
-          toast.error(data.msg, toastOptions);
-          localStorage.setItem("chat-app-user", user);
-          navigate("/login_user");
-        }
       }
-    } catch (err) {
-      console.log(err);
+      if (data.message === "user registered successfully") {
+        toast.error(data.msg, toastOptions);
+        localStorage.setItem("chat-app-user", user);
+        navigate("/login_user");
+      }
     }
+    // } catch (err) {
+    //   console.log(err);
+    // }
   };
 
   return (
