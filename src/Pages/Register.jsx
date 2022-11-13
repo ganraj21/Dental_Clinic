@@ -9,7 +9,7 @@ import "./Register.css";
 
 const Register = () => {
   // const url = "http://localhost:5000/register";
-  const url = "https://dentalclinic-snowy.vercel.app/register";
+  const url = "https://dental-service.onrender.com/register";
 
   const navigate = useNavigate();
   const [user, setUser] = useState({
