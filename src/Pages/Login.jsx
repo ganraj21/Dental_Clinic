@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./Login.css";
 
 const Login = () => {
+  const url = "https://dental-service.onrender.com/login_user";
   const navigate = useNavigate();
   const [values, setValues] = useState({
     name: "",
@@ -22,7 +23,7 @@ const Login = () => {
 
   // useEffect(() => {
   //   if (localStorage.getItem("chat-app-user")) {
-  //     // navigate("/dental-clinic/user/chat_section");
+  //     navigate("/dental-clinic/user/chat_section");
   //   }
   // });
 
@@ -45,20 +46,18 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (handleValidation()) {
-      const { name, password } = values;
-      const { data } = await fetch(
-        "http://localhost:5000/login_user",
-        {
-          name,
-          password,
+      const { email, password } = values;
+      const request_login_options = { email, password };
+      const res = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+        body: JSON.stringify(request_login_options),
+      });
+
+      const data = await res.json();
+
       if (data.status === false) {
         toast.error(data.msg, toastOptions);
       }
@@ -84,10 +83,9 @@ const Login = () => {
             </div>
             <input
               type="text"
-              placeholder="Username"
-              name="name"
+              placeholder="Enter your Email"
+              name="email"
               onChange={(e) => handleChange(e)}
-              min="3"
             />
             <input
               type="Password"
