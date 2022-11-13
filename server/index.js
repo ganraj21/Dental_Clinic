@@ -29,7 +29,7 @@ app.post('/register', async (req,res)=>{
     console.log(req.body)
     
     let saltRounds = await bcrypt.genSalt(10);
-let hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
+    let hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
 
     // const hashedPassword = await bcrypt.hash(req.body.password, 10);
 
@@ -52,8 +52,6 @@ let hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
 });
 
 app.post('/login_user', async (req,res)=>{
-    console.log(req.body)
-    
     try{
           const { email, password } = req.body;
           const user = await User.findOne({ email });
@@ -65,7 +63,7 @@ app.post('/login_user', async (req,res)=>{
             return res.json({ msg: "Incorrect Password", status: false });
             delete user.password;
 
-          return res.json({ status: true, user },{message: "Login Successfully"});
+          return res.json({ status: true, user },{msg: "Login Successfully"});
         }
         catch(err){
             console.log(err)
