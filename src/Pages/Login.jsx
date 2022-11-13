@@ -58,6 +58,7 @@ const Login = () => {
       });
 
       const data = await res.json();
+      console.log(data);
 
       if (data.status === false) {
         toast.error(data.msg, toastOptions);

@@ -81,7 +81,7 @@ const Register = () => {
 
       const data = await res.json();
 
-      // console.log(data);
+      console.log(data);
       toast.error(data.error, toastOptions);
       toast.error(data.message, toastOptions);
 
