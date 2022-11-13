@@ -9,7 +9,7 @@ import "./Register.css";
 
 const Register = () => {
   // const url = "http://localhost:5000/register";
-  const url = "https://dentalclinic-ganraj21.vercel.app/register";
+  const url = "https://dentalclinic-snowy.vercel.app/register";
 
   const navigate = useNavigate();
   const [user, setUser] = useState({
@@ -69,6 +69,8 @@ const Register = () => {
       password,
       confirmPassword,
     };
+    console.log(requestOptions);
+
     if (handleValidation()) {
       const res = await fetch(url, {
         method: "POST",
@@ -80,7 +82,6 @@ const Register = () => {
 
       const data = await res.json();
 
-      toast.error(data.msg, toastOptions);
       console.log(data);
 
       if (data.status === false) {
