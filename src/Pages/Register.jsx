@@ -60,7 +60,6 @@ const Register = () => {
 
   const PostData = async (e) => {
     e.preventDefault();
-    // try {
     const { name, email, password, confirmPassword } = user;
     const requestOptions = {
       // if key and values are same then dont write it again eg -> name: name
@@ -82,20 +81,16 @@ const Register = () => {
 
       const data = await res.json();
 
-      console.log(data);
+      // console.log(data);
+      toast.error(data.error, toastOptions);
+      toast.error(data.message, toastOptions);
 
-      if (data.status === false) {
-        toast.error(data.msg, toastOptions);
-      }
       if (data.message === "user registered successfully") {
-        toast.error(data.msg, toastOptions);
+        toast.success(data.message, toastOptions);
         localStorage.setItem("chat-app-user", user);
         navigate("/login_user");
       }
     }
-    // } catch (err) {
-    //   console.log(err);
-    // }
   };
 
   return (
