@@ -63,7 +63,7 @@ app.post('/login_user', async (req,res)=>{
             return res.json({ msg: "Incorrect Password", status: false });
             delete user.password;
 
-          return res.json({ status: true, user },{msg: "Login Successfully"});
+          return res.status(201).json({ status: true, user },{msg: "Login Successfully"});
         }
         catch(err){
             console.log(err)
