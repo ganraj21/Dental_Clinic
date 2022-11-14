@@ -5,14 +5,22 @@ import Logo from "../assets/logo.png";
 import "./BookingHours.css";
 
 const BookingHours = () => {
-  const [moreven, setMoreven] = useState(0);
+  const [moreven, setMoreven] = useState({
+    time: "",
+  });
   const [activeUser, setActiveUser] = useState({
     date: "",
     firstname: "",
     lastname: "",
     phone: "",
-    time: { moreven },
   });
+
+  // const [userdata, setUserData] = useState({
+  //   d: "",
+  //   i: "",
+  // });
+
+  const [aces, setACES] = useState(-1);
   const [ace, setACE] = useState(-1);
 
   let name, value;
@@ -27,12 +35,14 @@ const BookingHours = () => {
     event.preventDefault();
   };
 
-  const in_data = (data) => {
-    var inner_data = moreven === 0 ? data.m_slot_time : data.e_slot_time;
-    console.log(inner_data);
-  };
   const conpileData = () => {
     console.log(activeUser);
+  };
+  const conpiletime = () => {
+    setMoreven({ time: moreven.time });
+    // setUserData({ d: activeUser, i: moreven });
+    console.log({ activeUser, moreven });
+    // console.log(userdata);
   };
   return (
     <>
@@ -80,7 +90,11 @@ const BookingHours = () => {
                     onChange={handleInputs}
                   />
 
-                  <button className="submit_btn" type="submit">
+                  <button
+                    className="submit_btn"
+                    type="submit"
+                    onClick={conpileData}
+                  >
                     Continue
                   </button>
                 </form>
@@ -93,19 +107,15 @@ const BookingHours = () => {
                   {MorningData.map((data, index) => {
                     return (
                       <button
-                        name="time"
-                        value={activeUser.time}
-                        onChange={handleInputs}
                         className="md_data"
                         style={{
                           backgroundColor:
-                            activeUser === index ? data.color[0] : "white",
-                          color: activeUser === index ? data.color[1] : "black",
+                            aces === index ? data.color[0] : "white",
+                          color: aces === index ? data.color[1] : "black",
                         }}
                         onClick={() => {
-                          setActiveUser(index);
-                          setMoreven(data.m_slot_time);
-                          in_data(data);
+                          setACES(index);
+                          setMoreven({ time: data.m_slot_time });
                         }}
                         key={index}
                       >
@@ -121,9 +131,6 @@ const BookingHours = () => {
                   {EveningData.map((data, index) => {
                     return (
                       <button
-                        name="time"
-                        value={activeUser.time}
-                        onChange={handleInputs}
                         className="ed_data"
                         key={index}
                         style={{
@@ -133,8 +140,7 @@ const BookingHours = () => {
                         }}
                         onClick={() => {
                           setACE(index);
-                          setMoreven(data.e_slot_time);
-                          in_data(data);
+                          setMoreven({ time: data.e_slot_time });
                         }}
                       >
                         {data.e_slot_time}
@@ -145,7 +151,7 @@ const BookingHours = () => {
                     <button
                       className="booking_c_btn"
                       id="bcb"
-                      onClick={conpileData}
+                      onClick={conpiletime}
                     >
                       Submit
                     </button>

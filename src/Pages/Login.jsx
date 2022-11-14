@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./Login.css";
 
 const Login = () => {
+  //  https://dental-service.onrender.com/login_user
   const url = "https://dental-service.onrender.com/login_user";
   const navigate = useNavigate();
   const [values, setValues] = useState({
@@ -28,10 +29,10 @@ const Login = () => {
   const handleValidation = () => {
     const { email, password } = values;
     if (password === "") {
-      toast.error("username and Password is required", toastOptions);
+      toast.error("Password is required", toastOptions);
       return false;
     } else if (email.length === "") {
-      toast.error("username and Password is required", toastOptions);
+      toast.error("email and Password is required", toastOptions);
       return false;
     }
     return true;
@@ -40,19 +41,26 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    const { email, password } = values;
+
+    const request_login_options = { email, password };
+    console.log(request_login_options);
+
     if (handleValidation()) {
-      const { email, password } = values;
-      const request_login_options = { email, password };
       const res = await fetch(url, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
         },
         body: JSON.stringify(request_login_options),
       });
 
       const data = await res.json();
+
       console.log(data);
+      toast.error(data.error, toastOptions);
+      toast.error(data.msg, toastOptions);
 
       if (data.status === false) {
         toast.error(data.msg, toastOptions);
