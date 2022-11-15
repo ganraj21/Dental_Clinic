@@ -48,7 +48,7 @@ const Login = () => {
 
     if (handleValidation()) {
       const res = await fetch(url, {
-        method: "GET",
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
           mode: "no-cors",
