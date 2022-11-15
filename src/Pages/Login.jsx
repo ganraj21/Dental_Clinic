@@ -44,11 +44,11 @@ const Login = () => {
     const { email, password } = values;
 
     const request_login_options = { email, password };
-    console.log(request_login_options);
+    // console.log(request_login_options);
 
     if (handleValidation()) {
       const res = await fetch(url, {
-        method: "POST",
+        method: "GET",
         headers: {
           "Content-Type": "application/json",
           mode: "no-cors",
@@ -58,7 +58,7 @@ const Login = () => {
 
       const data = await res.json();
 
-      console.log(data);
+      // console.log(data);
       toast.error(data.error, toastOptions);
       toast.error(data.msg, toastOptions);
 
