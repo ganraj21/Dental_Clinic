@@ -52,18 +52,25 @@ app.post('/register', async (req,res)=>{
 });
 
 app.post('/login_user', async (req,res)=>{
+
+    console.log(req.body)
+    
     try{
-          const { email, password } = req.body;
-          const user = await User.findOne({ email });
+        //   const { email, password } = req.body;
+          const user = await User.findOne({ email:req.body.email });
+
           if (!user)
-            return res.json({ msg: "Incorrect Username or Password", status: false });
-            const isPasswordValid = await bcrypt.compare(password, user.password);
+            return res.json({ msg: "Incorrect Email or Password", status: false });
+
+          const isPasswordValid = await bcrypt.compare(req.body.password, user.password);
 
           if (!isPasswordValid)
             return res.json({ msg: "Incorrect Password", status: false });
-            delete user.password;
 
-          return res.status(201).json({ status: true, user },{msg: "Login Successfully"});
+        delete user.password;
+        if (user && isPasswordValid){ 
+        return res.status(201).json({message: "Login Successfully"});
+        }
         }
         catch(err){
             console.log(err)

@@ -31,41 +31,37 @@ const Login = () => {
     if (password === "") {
       toast.error("Password is required", toastOptions);
       return false;
-    } else if (email.length === "") {
+    } else if (email === "") {
       toast.error("email and Password is required", toastOptions);
       return false;
     }
     return true;
   };
 
-  const handleSubmit = async (event) => {
+  const PostData = async (event) => {
     event.preventDefault();
 
     const { email, password } = values;
 
     const request_login_options = { email, password };
-    // console.log(request_login_options);
 
     if (handleValidation()) {
       const res = await fetch(url, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          mode: "no-cors",
         },
         body: JSON.stringify(request_login_options),
       });
 
       const data = await res.json();
 
-      // console.log(data);
-      toast.error(data.error, toastOptions);
-      toast.error(data.msg, toastOptions);
+      console.log(data);
 
       if (data.status === false) {
         toast.error(data.msg, toastOptions);
       }
-      if (data.status === true) {
+      if (data.message === "Login Successfully") {
         localStorage.setItem("chat-app-user", data);
         navigate("/dental-clinic/user/chat_section");
       }
@@ -76,10 +72,7 @@ const Login = () => {
     <>
       <div className="login_form_section">
         <div className="form_container_for_login">
-          <form
-            className="login_u_form"
-            onSubmit={(event) => handleSubmit(event)}
-          >
+          <form method="POST" className="login_u_form" onSubmit={PostData}>
             <div className="brand">
               <img src={Logo} alt="logo" />
               <h1>Om Dental Clinic</h1>
