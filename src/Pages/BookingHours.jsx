@@ -121,6 +121,7 @@ const BookingHours = () => {
                       type="date"
                       placeholder="Select Date"
                       name="date"
+                      style={{ color: "White" }}
                       value={activeUser.date}
                       onChange={handleInputs}
                     />
@@ -148,14 +149,23 @@ const BookingHours = () => {
                       onChange={handleInputs}
                     />
 
-                    <div className="submit_btn">Next</div>
+                    <a
+                      className="submit_btn"
+                      href="#container45"
+                      style={{
+                        scrollBehavior: "smooth",
+                        textDecoration: "none",
+                      }}
+                    >
+                      Next
+                    </a>
                   </div>
                 </div>
               </div>
               <div className="me_slot_selection">
                 <div className="bsc_lower_morning_container">
                   <span>Morning and Evening Slots</span>
-                  <div className="morning_info_container">
+                  <div className="morning_info_container" id="container45">
                     {MorningData.map((data, index) => {
                       return (
                         <div
