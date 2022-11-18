@@ -1,5 +1,5 @@
 .booking_section_container {
-  height: 90vh;
+  height: 100vh;
   width: 100%;
   display: flex;
 }
@@ -156,6 +156,12 @@
   padding: 3rem 5rem;
   height: 573px;
   border-radius: 0;
+  background-color: #00000076;
+  border-bottom: 7px solid white;
+}
+form {
+  background: none !important;
+  border-bottom: none !important;
 }
 .submit_btn {
   display: flex;
@@ -191,7 +197,7 @@
     flex-direction: column;
     gap: 9px;
   }
-  form {
+  .form_for_booking {
     height: 585px;
     padding: 2rem 3rem !important;
     gap: 1.5rem !important;

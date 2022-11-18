@@ -3,6 +3,8 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt")
 const User = require("./model/userModel")
+const appointment_info = require("./model/appointmentCheck")
+
 require("dotenv").config({"path":"./.env"});
 
 const app = express();
@@ -78,6 +80,25 @@ app.post('/login_user', async (req,res)=>{
     }
 )
 
+app.post('/dental-clinic/slot', async (req,res)=>{
+    console.log(req.body)
+    try{
+        // const user = await appointment_info.findOne({ phone:req.body.phone });
+
+        //   if (!user)
+        //     return res.json({ msg: "Incorrect Email or Password", status: false });
+
+        const Appointment_info = new appointment_info({date:req.body.date, firstname:req.body.firstname,lastname:req.body.lastname ,phone:req.body.phone ,time:req.body.time})
+        const userAppointment = await Appointment_info.save()
+        if(userAppointment){
+            res.status(201).json({message:"successfully Make An Appointment"})
+        }
+    }
+    catch(err){
+        console.log(err)
+    }
+
+})
 
 app.listen(process.env.PORT, ()=>{
     console.log(`Server Started on Port ${process.env.PORT}`)
