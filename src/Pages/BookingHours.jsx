@@ -143,7 +143,7 @@ const BookingHours = () => {
                       onChange={handleInputs}
                     />
 
-                    <button className="submit_btn">Next</button>
+                    <div className="submit_btn">Next</div>
                   </div>
                 </div>
               </div>
