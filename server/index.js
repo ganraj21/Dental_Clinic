@@ -83,11 +83,6 @@ app.post('/login_user', async (req,res)=>{
 app.post('/dental-clinic/slot', async (req,res)=>{
     console.log(req.body)
     try{
-        // const user = await appointment_info.findOne({ phone:req.body.phone });
-
-        //   if (!user)
-        //     return res.json({ msg: "Incorrect Email or Password", status: false });
-
         const Appointment_info = new appointment_info({date:req.body.date, firstname:req.body.firstname,lastname:req.body.lastname ,phone:req.body.phone ,time:req.body.time})
         const userAppointment = await Appointment_info.save()
         if(userAppointment){
