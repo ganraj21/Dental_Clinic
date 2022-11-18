@@ -4,11 +4,12 @@ import MorningData from "./PagesData/MorningData";
 import Logo from "../assets/logo.png";
 import { ToastContainer, toast } from "react-toastify";
 import "./BookingHours.css";
+import { useNavigate } from "react-router-dom";
 
 const BookingHours = () => {
-  // const url = "http://localhost:5000/dental-clinic/slot";
-  const url = "https://dental-service.onrender.com/dental-clinic/slot";
-
+  const url = "http://localhost:5000/dental-clinic/slot";
+  // const url = "https://dental-service.onrender.com/dental-clinic/slot";
+  const navigate = useNavigate();
   const [activeUser, setActiveUser] = useState({
     date: "",
     firstname: "",
@@ -30,7 +31,6 @@ const BookingHours = () => {
 
   let name, value;
   const handleInputs = (e) => {
-    // console.log(e);
     name = e.target.name;
     value = e.target.value;
     setActiveUser({ ...activeUser, [name]: value });
@@ -95,6 +95,9 @@ const BookingHours = () => {
       if (data.message === "successfully Make An Appointment") {
         console.log("Your data submitted to me it's server");
         toast.success(data.message, toastOptions);
+        setTimeout(() => {
+          navigate("/login_user");
+        }, 4000);
       }
     }
   };
