@@ -153,7 +153,7 @@ const BookingHours = () => {
                   <div className="morning_info_container">
                     {MorningData.map((data, index) => {
                       return (
-                        <button
+                        <div
                           className="md_data"
                           style={{
                             backgroundColor:
@@ -170,7 +170,7 @@ const BookingHours = () => {
                           key={index}
                         >
                           {data.m_slot_time}
-                        </button>
+                        </div>
                       );
                     })}
                   </div>
@@ -180,7 +180,7 @@ const BookingHours = () => {
                   <div className="evening_info_container">
                     {EveningData.map((data, index) => {
                       return (
-                        <button
+                        <div
                           className="ed_data"
                           key={index}
                           style={{
@@ -197,7 +197,7 @@ const BookingHours = () => {
                           }}
                         >
                           {data.e_slot_time}
-                        </button>
+                        </div>
                       );
                     })}
                     <div className="submit_slot_btn">
