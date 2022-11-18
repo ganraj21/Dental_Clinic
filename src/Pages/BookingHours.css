@@ -160,8 +160,14 @@
   border-bottom: 7px solid white;
 }
 form {
-  background: none !important;
-  border-bottom: none !important;
+  background: none;
+  border-bottom: none;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
 }
 .submit_btn {
   display: flex;
