@@ -204,7 +204,6 @@ form {
     gap: 9px;
   }
   .form_for_booking {
-    height: 585px;
     padding: 2rem 3rem !important;
     gap: 1.5rem !important;
   }
