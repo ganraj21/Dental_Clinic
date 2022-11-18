@@ -98,6 +98,8 @@ const BookingHours = () => {
         setTimeout(() => {
           navigate("/login_user");
         }, 4000);
+      } else if (data.message === "This slot is already Booked") {
+        toast.error(data.message, toastOptions);
       }
     }
   };

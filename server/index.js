@@ -83,11 +83,11 @@ app.post('/login_user', async (req,res)=>{
 app.post('/dental-clinic/slot', async (req,res)=>{
     console.log(req.body)
     try{
-        // const user = await appointment_info.findOne({ time:req.body.time});
+        const user = await appointment_info.findOne({ time:req.body.time});
 
-        // if (!user){
-        //     return res.json({ msg: "This slot is already Booked", status: false });
-        // }
+        if (user){
+            return res.status(401).json({ message: "This slot is already Booked"});
+        }
 
         const Appointment_info = new appointment_info({date:req.body.date, firstname:req.body.firstname,lastname:req.body.lastname ,phone:req.body.phone ,time:req.body.time})
         const userAppointment = await Appointment_info.save()
