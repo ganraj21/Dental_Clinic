@@ -5,6 +5,7 @@
   padding: 0;
   -ms-overflow-style: none;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 ::-webkit-scrollbar {
   display: none;

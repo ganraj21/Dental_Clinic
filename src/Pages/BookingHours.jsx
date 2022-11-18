@@ -155,6 +155,7 @@ const BookingHours = () => {
                       style={{
                         scrollBehavior: "smooth",
                         textDecoration: "none",
+                        transition: "2s all ease",
                       }}
                     >
                       Next
