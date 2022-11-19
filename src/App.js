@@ -11,6 +11,7 @@ import Register from './Pages/Register';
 import ChatApp from './Pages/ChatApp';
 import BookingHours from './Pages/BookingHours';
 import Profile from './Pages/Profile';
+import UserProfile from './Pages/UserProfile';
 const App = () =>{
 
   return(
@@ -25,6 +26,7 @@ const App = () =>{
       <Route exact path='/dental-clinic/team' element={<Profile/>}/>
       <Route exact path='/register' element={<Register/>}/>
       <Route exact path='/login_user' element={<Login/>}/>
+      <Route exact path='/dental-clinic/user/profile' element={<UserProfile/>}/>
       <Route exact path='/dental-clinic/user/chat_section' element={<ChatApp/>}/>
       <Route exact path='/dental-clinic/slot' element={<BookingHours/>}/>
     </Routes>

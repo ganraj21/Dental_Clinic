@@ -96,7 +96,7 @@ const BookingHours = () => {
         console.log("Your data submitted to me it's server");
         toast.success(data.message, toastOptions);
         setTimeout(() => {
-          navigate("/login_user");
+          navigate("/dental-clinic/user/profile");
         }, 4000);
       } else if (data.message === "This slot is already Booked") {
         toast.error(data.message, toastOptions);
