@@ -1,7 +1,15 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./Appointment.css";
 const Appointment = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (localStorage.getItem("chat-app-user")) {
+      setTimeout(() => {
+        navigate("/dental-clinic/slot");
+      }, 4000);
+    }
+  }, []);
   return (
     <>
       <div className="app_container">
@@ -10,7 +18,7 @@ const Appointment = () => {
             <div className="appointment_booking_container">
               <div className="booking_header">
                 <i className="fa-regular fa-clock"></i>
-                <span>No Slots Available for Today</span>
+                <span>Only few Slots Available for Today</span>
               </div>
               <p className="about_info">
                 Please book for the next slot available by clicking on book Your

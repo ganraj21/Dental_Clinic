@@ -135,7 +135,7 @@ const Register = () => {
               autoComplete="off"
             />
             <button className="submit_register_btn" type="submit">
-              Create User
+              Sign Up
             </button>
             <span className="lower_title_register">
               Already have an account ?<Link to="/login_user">Login</Link>
