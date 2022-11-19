@@ -4,11 +4,9 @@ import "./Appointment.css";
 const Appointment = () => {
   const navigate = useNavigate();
   useEffect(() => {
-    if (localStorage.getItem("chat-app-user")) {
-      setTimeout(() => {
-        navigate("/dental-clinic/slot");
-      }, 4000);
-    }
+    setTimeout(() => {
+      navigate("/dental-clinic/slot");
+    }, 4000);
   }, []);
   return (
     <>

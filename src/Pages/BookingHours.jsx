@@ -39,19 +39,19 @@ const BookingHours = () => {
   const handleValidation = () => {
     const { date, firstname, lastname, phone, time } = activeUser;
     if (date === "") {
-      toast.error("Plz Enter Date", toastOptions);
+      toast.error("Choose the Date", toastOptions);
       return false;
     } else if (firstname === "") {
-      toast.error("Plz Enter your first name", toastOptions);
+      toast.error("Enter your first name", toastOptions);
       return false;
     } else if (lastname === "") {
-      toast.error("Plz Enter your last name", toastOptions);
+      toast.error("Enter your last name", toastOptions);
       return false;
     } else if (phone === "") {
-      toast.error("Plz Enter your phone no", toastOptions);
+      toast.error("Enter your phone no", toastOptions);
       return false;
     } else if (time === "") {
-      toast.error("Plz Enter your slot timing", toastOptions);
+      toast.error("Choose your slot timing", toastOptions);
       return false;
     } else if (
       date === "" ||

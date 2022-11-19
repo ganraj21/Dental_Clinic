@@ -3,6 +3,11 @@
   width: 100%;
   display: flex;
 }
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
 .bsc_lower {
   display: flex;
   width: 100%;
