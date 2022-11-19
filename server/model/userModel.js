@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema({
         max:12,
         unique:false,
     },
-    admin_person:{
+    isAvatarImageSet:{
         type:Boolean,
         default:false
     },

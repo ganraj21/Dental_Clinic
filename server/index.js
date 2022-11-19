@@ -58,9 +58,13 @@ app.post('/login_user', async (req,res)=>{
     console.log(req.body)
     
     try{
-        //   const { email, password } = req.body;
+        //   const admin = await User.findOne({admin_person:req.body.admin_person})
           const user = await User.findOne({ email:req.body.email });
 
+        //   console.log(admin)
+        //   if(admin ){
+        //     res.render('/dental-clinic/team/admin-dashboard');
+        //   }
           if (!user)
             return res.json({ msg: "Incorrect Email or Password", status: false });
 
