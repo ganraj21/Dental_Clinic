@@ -18,6 +18,10 @@ const App = () =>{
   return(
     <>
     <Navbar/>
+    {/* <Home/>
+    <About/>
+    <Services/>
+    <Contact/> */}
     <Routes>
       <Route exact path='/' element={<Home/>}/>
       <Route exact path='/dental-clinic/about' element={<About/>}/>
