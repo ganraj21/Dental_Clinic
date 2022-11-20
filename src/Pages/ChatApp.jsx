@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-// import axios from "axios";
 // import { useNavigate } from "react-router-dom";
 // import { allUsersRoute } from "../utils/APIRoutes";
 // import ChatContacts from "../Components/ChatContacts";
@@ -17,7 +16,7 @@ function ChatApp() {
   // }, []);
   // useEffect(async () => {
   //   if (currentUser) {
-  //     const data = await axios.get(`${allUsersRoute}/${currentUser._id}`);
+  //     const data = await fetch(`${allUsersRoute}/${currentUser._id}`);
   //     setContacts(data.data);
   //   }
   // }, [currentUser]);

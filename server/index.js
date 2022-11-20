@@ -105,6 +105,21 @@ app.post('/dental-clinic/slot', async (req,res)=>{
 
 })
 
+
+app.get('/dental-clinic/user/chat_section/:id', async (req,res)=>{
+    try{
+        const users = await User.find({_id: {$ne:req.params.id}}).select([
+            "email",
+            "name",
+            "_id"
+        ])
+    }
+    catch(error){
+       console.log(error)
+    }
+})
+
+
 app.listen(process.env.PORT, ()=>{
     console.log(`Server Started on Port ${process.env.PORT}`)
 })
