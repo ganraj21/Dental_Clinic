@@ -9,7 +9,7 @@ function UserProfile() {
 
     const getDatas = async () => {
       const response = await fetch(url, {
-        method: "POST",
+        method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
