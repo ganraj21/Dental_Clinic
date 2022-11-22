@@ -116,10 +116,8 @@ app.post("/dental-clinic/slot", async (req, res) => {
 
 app.get("/dental-clinic/user/profile", async (req, res) => {
   try {
-    // res.send({ message: "Hii I am Server right now i'm fetching your data !" });
     const Appointment_info = await appointment_info.find();
     res.send(Appointment_info);
-    // console.log(Appointment_info);
   } catch (err) {
     console.log(err);
   }
