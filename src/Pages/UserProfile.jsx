@@ -8,7 +8,12 @@ function UserProfile() {
     // const url = "https://dental-service.onrender.com/dental-clinic/slot";
 
     const getDatas = async () => {
-      const response = await fetch(url);
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
       console.log(response);
       const data = await response.json();
       setApiData(data);
