@@ -28,6 +28,7 @@
     "react-scripts": "5.0.1",
     "react-scroll": "^1.8.8",
     "react-slick": "^0.29.0",
+    "react-super-responsive-table": "^5.2.1",
     "react-toastify": "^9.0.8",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.6",

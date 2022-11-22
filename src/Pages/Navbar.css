@@ -36,7 +36,7 @@
 .MenuItems {
   margin: 10px 20px;
   font-size: 18px;
-  line-height: 39px;
+  line-height: 45px;
   text-align: left;
   width: 100%;
   display: flex;
@@ -69,7 +69,7 @@
 
 .active_links {
   position: absolute;
-  height: 512px;
+  height: 550px;
   width: 100%;
   top: 72px;
   display: flex;
@@ -77,9 +77,10 @@
   justify-content: center;
   align-items: center;
   align-content: center;
-  background: #2c2c2c;
+  background-color: #e5e5e5;
   z-index: 71;
-  transition: all 0.5s ease-in-out;
+  transition-delay: 0.6s;
+  transition: all 300ms ease-in;
 }
 .active_links::before {
   content: "";
@@ -89,6 +90,7 @@
   animation: gradient 6s ease infinite;
   position: absolute;
   top: -3px;
+  transition: all 400ms ease-in;
 }
 
 @keyframes gradient {
@@ -115,7 +117,15 @@
     display: none;
   }
   .MenuItems a {
-    color: #fff;
+    color: black;
+    text-align: center;
+    border-radius: 50px;
+    width: 90%;
+    background: #00d1d1;
+    box-shadow: 0px 0px 9px 1px rgb(0 0 0 / 44%);
+  }
+  .MenuItems a:hover {
+    text-align: center;
   }
   .toggle_menu_icons {
     display: flex;
@@ -127,11 +137,8 @@
   }
 
   #Appointment_menu {
-    border: 1px solid #fff;
-    width: 213px;
     height: 45px;
     border-radius: 3px;
-    outline: 1px solid white;
     box-shadow: inset 0 0 0 0 #f43e04;
     transition: ease-in-out 0.3s;
   }

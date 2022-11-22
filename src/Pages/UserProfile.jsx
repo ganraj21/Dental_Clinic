@@ -22,57 +22,39 @@ function UserProfile() {
     getDatas();
   }, []);
 
-  const data = [
-    {
-      name: "Anom",
-      email: "abc@gmail.com",
-      phone: "1221211212",
-      date: "2022-11-27",
-      time: "04:45 PM",
-    },
-    {
-      name: "Anom",
-      email: "abc@gmail.com",
-      phone: "1221211212",
-      date: "2022-11-29",
-      time: "02:45 PM",
-    },
-    {
-      name: "Anom",
-      email: "abc@gmail.com",
-      phone: "1221211212",
-      date: "2022-11-26",
-      time: "03:45 PM",
-    },
-  ];
   return (
-    <div>
-      <h2>This is your profile</h2>
-
-      <div className="user_data_container">
-        <table>
-          <tr>
-            <th>Name</th>
-            <th>email</th>
-            <th>phone</th>
-            <th>Date</th>
-            <th>Time</th>
-          </tr>
-
+    <>
+      <div className="profile_section_container">
+        <div className="user_data_container">
           {apiData.map((val, key) => {
             return (
-              <tr key={key}>
-                <td>{val.name}</td>
-                <td>{val.email}</td>
-                <td>{val.phone}</td>
-                <td>{val.date}</td>
-                <td>{val.time}</td>
-              </tr>
+              <div key={key} className="data_values">
+                <p>
+                  <span className="your_name">Name : </span>
+                  {val.name}
+                </p>
+                <p>
+                  <span className="your_email">Email : </span>
+                  {val.email}
+                </p>
+                <p>
+                  <span className="your_phone">Phone : </span>
+                  {val.phone}
+                </p>
+                <p>
+                  <span className="your_date">Date : </span>
+                  {val.date}
+                </p>
+                <p>
+                  <span className="your_time">Time : </span>
+                  {val.time}
+                </p>
+              </div>
             );
           })}
-        </table>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
