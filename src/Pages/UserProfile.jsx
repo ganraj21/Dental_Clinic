@@ -4,8 +4,8 @@ function UserProfile() {
   const [apiData, setApiData] = useState([]);
 
   useEffect(() => {
-    const url = "http://localhost:5000/dental-clinic/slot";
-    // const url = "https://dental-service.onrender.com/dental-clinic/slot";
+    const url = "http://localhost:5000/dental-clinic/user/profile";
+    // const url = "https://dental-service.onrender.com/dental-clinic/user/profile";
 
     const getDatas = async () => {
       const response = await fetch(url, {

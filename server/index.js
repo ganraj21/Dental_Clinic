@@ -114,7 +114,7 @@ app.post("/dental-clinic/slot", async (req, res) => {
   }
 });
 
-app.get("/dental-clinic/user", async (req, res) => {
+app.get("/dental-clinic/user/profile", async (req, res) => {
   try {
     // res.send({ message: "Hii I am Server right now i'm fetching your data !" });
     const Appointment_info = await appointment_info.find();
