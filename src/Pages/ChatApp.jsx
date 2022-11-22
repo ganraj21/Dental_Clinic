@@ -24,6 +24,7 @@ function ChatApp() {
     <>
       <Container>
         <div className="container">
+          <h1>Chat component is under construction</h1>
           {/* <ChatContacts contacts={contacts} currentUser={currentUser} /> */}
         </div>
       </Container>
