@@ -11,6 +11,7 @@ import Register from './Pages/Register';
 import ChatApp from './Pages/ChatApp';
 import BookingHours from './Pages/BookingHours';
 import Profile from './Pages/Profile';
+import User from './Pages/PagesData/User';
 import UserProfile from './Pages/UserProfile';
 import Dashboard from './Pages/PagesData/Dashboard';
 const App = () =>{
@@ -34,6 +35,7 @@ const App = () =>{
       <Route exact path='/dental-clinic/user/profile' element={<UserProfile/>}/>
       <Route exact path='/dental-clinic/user/chat_section' element={<ChatApp/>}/>
       <Route exact path='/dental-clinic/slot' element={<BookingHours/>}/>
+      <Route exact path='/dental-clinic/user' element={<User/>}/>
       <Route exact path='/dental-clinic/team/admin-dashboard' element={<Dashboard/>}/>
     </Routes>
 

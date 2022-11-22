@@ -7,16 +7,15 @@ const userAppointment = new mongoose.Schema({
         min:4,
         max:15,
     },
-    firstname:{
+    name:{
         type:String,
         required:true,
         min:3,
         max:20,
     },
-    lastname:{
+    email:{
         type:String,
         required:true,
-        min:3,
         max:20,
     },
     phone:{

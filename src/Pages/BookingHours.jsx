@@ -7,13 +7,13 @@ import "./BookingHours.css";
 import { useNavigate } from "react-router-dom";
 
 const BookingHours = () => {
-  // const url = "http://localhost:5000/dental-clinic/slot";
-  const url = "https://dental-service.onrender.com/dental-clinic/slot";
+  const url = "http://localhost:5000/dental-clinic/slot";
+  // const url = "https://dental-service.onrender.com/dental-clinic/slot";
   const navigate = useNavigate();
   const [activeUser, setActiveUser] = useState({
     date: "",
-    firstname: "",
-    lastname: "",
+    name: "",
+    email: "",
     phone: "",
     time: "",
   });
@@ -37,15 +37,15 @@ const BookingHours = () => {
   };
 
   const handleValidation = () => {
-    const { date, firstname, lastname, phone, time } = activeUser;
+    const { date, name, email, phone, time } = activeUser;
     if (date === "") {
       toast.error("Choose the Date", toastOptions);
       return false;
-    } else if (firstname === "") {
-      toast.error("Enter your first name", toastOptions);
+    } else if (name === "") {
+      toast.error("Enter your name", toastOptions);
       return false;
-    } else if (lastname === "") {
-      toast.error("Enter your last name", toastOptions);
+    } else if (email === "") {
+      toast.error("Enter your Email", toastOptions);
       return false;
     } else if (phone === "") {
       toast.error("Enter your phone no", toastOptions);
@@ -55,8 +55,8 @@ const BookingHours = () => {
       return false;
     } else if (
       date === "" ||
-      firstname === "" ||
-      lastname === "" ||
+      name === "" ||
+      email === "" ||
       phone === "" ||
       time === ""
     ) {
@@ -69,12 +69,12 @@ const BookingHours = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const { date, firstname, lastname, phone, time } = activeUser;
+    const { date, name, email, phone, time } = activeUser;
 
     const requestOptions = {
       date,
-      firstname,
-      lastname,
+      name,
+      email,
       phone,
       time,
     };
@@ -127,18 +127,18 @@ const BookingHours = () => {
                     />
                     <input
                       type="text"
-                      placeholder="Enter your first name"
-                      name="firstname"
+                      placeholder="Enter your name"
+                      name="name"
                       min="3"
-                      value={activeUser.firstname}
+                      value={activeUser.name}
                       onChange={handleInputs}
                     />
                     <input
-                      type="text"
-                      placeholder="Enter your last name"
-                      name="lastname"
+                      type="email"
+                      placeholder="Enter your Email"
+                      name="email"
                       min="3"
-                      value={activeUser.lastname}
+                      value={activeUser.email}
                       onChange={handleInputs}
                     />
                     <input
