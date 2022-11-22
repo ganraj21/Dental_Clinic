@@ -1,11 +1,12 @@
 .login_form_section {
-  height: 90vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   align-content: center;
   width: 100%;
   background-color: #131324;
+  position: absolute;
 }
 .form_container_for_login {
   /* width: 100%; */
@@ -128,6 +129,7 @@ input:focus {
   }
   .brand h1 {
     font-size: 30px;
+    width: 173px;
   }
 }
 

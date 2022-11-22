@@ -1,14 +1,14 @@
 .register_form_section {
-  height: 90vh;
-  width: 100%;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   align-content: center;
+  width: 100%;
   background-color: #131324;
+  position: absolute;
 }
 .form_container_register {
-  /* width: 100%; */
   display: flex;
   flex-direction: column;
   justify-content: center;

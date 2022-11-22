@@ -26,6 +26,12 @@
 .logo h2 {
   font-weight: 500;
 }
+.logo a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
 .links {
   display: flex;
   align-items: center;
@@ -55,7 +61,6 @@
 }
 .MenuItems a:active {
   transform: scale(0.97);
-  border-bottom: 6px solid blue;
   transition: ease-in-out 0.4;
 }
 .MenuItems::before {
@@ -117,6 +122,11 @@
     display: none;
   }
   .MenuItems a {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
     color: black;
     text-align: center;
     border-radius: 50px;
