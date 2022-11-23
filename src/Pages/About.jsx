@@ -28,7 +28,7 @@ const About = () => {
                 relaxation for all our young and adult customers! Also we
                 implement a lot of pain management and anesthesia options.
               </p>
-              <div className="about_align_btn">
+              <div className="about_align_btn" data-aos="fade-down">
                 <Link
                   to={"/dental-clinic/team"}
                   style={{ textDecoration: "none", color: "#fff" }}
@@ -37,7 +37,7 @@ const About = () => {
                 </Link>
               </div>
             </div>
-            <div className="about_image">
+            <div className="about_image" data-aos="fade-left">
               <img src={about_img} alt="" />
             </div>
           </div>
