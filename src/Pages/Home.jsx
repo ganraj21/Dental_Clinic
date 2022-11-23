@@ -56,7 +56,7 @@ const Home = () => {
 
         <div className="clinic_container">
           <div className="clinic_info">
-            <div className="basic_info" id="info_01" data-aos="fade-right">
+            <div className="basic_info" id="info_01" data-aos="fade-down">
               <h2>Flexible Schedule</h2>
               <p>
                 We work on holidays, besides working late on regular days. In
