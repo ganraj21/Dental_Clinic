@@ -7,7 +7,7 @@ const About = () => {
     <>
       <div className={styles.example} style={{ backgroundColor: "#e5e5e5" }}>
         <div className="about_section_container">
-          <h2 className="about_title">
+          <h2 className="about_title" data-aos="fade-right">
             <span className="about_title_logo">
               <i class="fa-solid fa-angles-right"></i>
             </span>
@@ -15,11 +15,11 @@ const About = () => {
           </h2>
           <div className="about_container">
             <div className="about_infos">
-              <p className="about_short_descrp">
+              <p className="about_short_descrp" data-aos="fade-down">
                 We’re glad you hand your dental health concerns to our skilled
                 hands.
               </p>
-              <p className="about_long_descrp">
+              <p className="about_long_descrp" data-aos="fade-down">
                 We’ll make sure to deliver the best possible healthcare to all
                 our patients! Of course, we always complement our main services
                 with a customer service oriented approach. We sincerely believe

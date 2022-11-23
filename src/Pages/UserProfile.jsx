@@ -29,7 +29,7 @@ function UserProfile() {
         <div className="user_data_container">
           {apiData.map((val, key) => {
             return (
-              <div key={key} className="data_values">
+              <div key={key} className="data_values" data-aos="fade-right">
                 <p>
                   <span className="your_name">Name : </span>
                   {val.name}

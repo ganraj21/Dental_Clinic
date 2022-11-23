@@ -14,7 +14,7 @@ const Services = () => {
           </h2>
           <div className="service_info_container">
             {ServiceData.map((e, index) => (
-              <div className="service_info" key={index}>
+              <div className="service_info" key={index} data-aos="fade-right">
                 <img
                   className="service_image_details"
                   src={e.img_src}
