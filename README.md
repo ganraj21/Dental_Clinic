@@ -32,6 +32,7 @@ Registration
 # 📝 Features
 ✅ If you have a toothache, you can schedule an appointment on this website.<br/> 
 ✅ Login and Registration system for Authentication.<br/> 
+✅ Chat with Doctor option available.<br/> 
 ✅ This website is compatible with mobile devices. 
 
 
