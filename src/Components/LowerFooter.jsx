@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import about_long_des_data from "../Pages/PagesData/AboutData";
 import "./LowerFooter.css";
-import footer_01 from "../Pages/images/footer_01.png";
-import footer_02 from "../Pages/images/footer_01.png";
+import footer_01 from "../Pages/images/footer_01.jpg";
+import footer_02 from "../Pages/images/footer_01.jpg";
 
 function LowerFooter() {
   const contact_recent_data = [
@@ -11,14 +11,14 @@ function LowerFooter() {
       index: 1,
       rp_img: footer_01,
       rp_text:
-        "If you have any questions that are beyond the scope of this help file, please refer to the Support section. Thanks so much",
+        "Tooth problems are nothing less than an emergency no matter how minor or major the problem might be. Dental problems are varied and knowing how to handle them can actually go a long way in preventing long term damage.",
       rp_btn: "read more",
     },
     {
       index: 2,
       rp_img: footer_02,
       rp_text:
-        "If you have any questions that are beyond the scope of this help file, please refer to the Support section. Thanks so much",
+        "Although brushing and flossing are two important daily oral hygiene routines for maintaining the health of your teeth and gums, there are a few other simple things you can do to prevent tooth decay.",
       rp_btn: "read more",
     },
   ];
