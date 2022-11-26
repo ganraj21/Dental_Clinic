@@ -97,7 +97,12 @@ const Register = () => {
     <>
       <div className="register_form_section">
         <FormContainer className="form_container_register">
-          <form className="register_u_form" method="POST" onSubmit={PostData}>
+          <form
+            className="register_u_form"
+            method="POST"
+            onSubmit={PostData}
+            data-aos="fade-right"
+          >
             <div className="brand">
               <img src={Logo} alt="logo" />
               <h1>Om Dental Clinic</h1>

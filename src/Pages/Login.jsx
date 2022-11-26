@@ -72,7 +72,7 @@ const Login = () => {
     <>
       <div className="login_form_section">
         <div className="form_container_for_login">
-          <form method="POST" className="login_u_form" onSubmit={PostData}>
+          <form method="POST" className="login_u_form" onSubmit={PostData} data-aos="fade-right">
             <div className="brand">
               <img src={Logo} alt="logo" />
               <h1>Om Dental Clinic</h1>
