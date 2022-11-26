@@ -1,11 +1,13 @@
 .profile_section_container {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   align-content: center;
   flex-direction: column;
   width: 100%;
   gap: 2rem;
+  height: 100vh;
+  position: absolute;
 }
 
 .profile_details {
@@ -56,7 +58,6 @@
 
 .profile_section_container h2 {
   width: 85%;
-  margin-top: 42px;
 }
 
 @media screen and (max-width: 1023px) {
