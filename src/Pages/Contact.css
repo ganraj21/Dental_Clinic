@@ -8,8 +8,6 @@
   background-color: #e5e5e5;
 }
 .container_container {
-  box-shadow: 0 0 25px 0 #cbcbcbbf;
-  background-color: #fff;
   width: 80%;
   display: flex;
   flex-direction: row-reverse;
@@ -17,12 +15,13 @@
   align-items: center;
   align-content: center;
   padding: 15px;
-  /* border-radius: 12px; */
+  margin: 50px 0 50px 0;
 }
 .gmap {
   display: flex;
-  width: 90%;
-  height: 284px;
+  width: 100%;
+  height: 327px;
+  margin-bottom: 27px;
 }
 .google_map_location {
   width: 50%;
@@ -35,6 +34,7 @@
   width: 50%;
   padding: 50px;
   border-radius: 9px;
+  background: #fff;
 }
 .clinic_time_table h2 span {
   margin-right: 9px;
@@ -48,8 +48,7 @@
 .d_and_c {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 350px;
+  justify-content: space-around;
   align-content: center;
   height: 115px;
 }
@@ -103,21 +102,22 @@
 }
 @media screen and (min-width: 1024px) {
   .container_container {
-    width: 1028px;
+    width: 90%;
     height: 527px;
-    margin-top: 49px;
   }
   .gmap {
-    height: 284px;
-    width: 429px;
+    width: 100%;
+    height: 547px;
+    border-radius: 9px;
   }
   .basic_contact_user_form {
-    width: 500px;
     padding: 25px;
+    width: 490px;
+    margin-right: 20px;
   }
   .google_map_location {
-    width: 498px;
-    margin-top: 75px;
+    width: 80%;
+    margin-bottom: 30px;
   }
   .clinic_timing {
     height: 52px;
@@ -126,7 +126,7 @@
 
 @media screen and (max-width: 1023px) {
   .container_container {
-    width: 90%;
+    width: 100%;
     box-shadow: none;
     margin-top: 20px;
   }
@@ -138,7 +138,6 @@
   }
   .google_map_location {
     width: 100%;
-    margin-top: 30px;
   }
   .basic_contact_user_form {
     width: 100%;
@@ -156,7 +155,7 @@
     justify-content: space-evenly;
     height: 153px;
     flex-direction: column;
-    width: 90%;
+    width: 100%;
     margin-top: 10px;
   }
   .direction_to_clinic,

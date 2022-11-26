@@ -56,20 +56,6 @@ const Contact = () => {
                 src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=plot no 178, Om Dental Clinic, Ulwe, Shop- C13, Sai Sapphire, 180, Sector 20, Ulwe, Maharashtra 410206, India&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
               ></iframe>
             </div>
-            <div className="d_and_c">
-              <div className="direction_to_clinic">
-                <a
-                  href="https://www.google.com/maps?ll=18.978293,73.030934&z=14&t=m&hl=en&gl=US&mapclient=embed&cid=2928691504663646078"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Clinic Direction
-                </a>
-              </div>
-              <div className="call_to_clinic">
-                <a href="tel:9892729909">Call Clinic</a>
-              </div>
-            </div>
           </div>
           <div className="basic_contact_user_form">
             <div className="clinic_time_table">
@@ -87,6 +73,20 @@ const Contact = () => {
                 <p className="current_day_timing">{e.c_time}</p>
               </div>
             ))}
+            <div className="d_and_c">
+              <div className="direction_to_clinic">
+                <a
+                  href="https://www.google.com/maps?ll=18.978293,73.030934&z=14&t=m&hl=en&gl=US&mapclient=embed&cid=2928691504663646078"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Clinic Direction
+                </a>
+              </div>
+              <div className="call_to_clinic">
+                <a href="tel:9892729909">Call Clinic</a>
+              </div>
+            </div>
           </div>
         </div>
         <LowerFooter />
