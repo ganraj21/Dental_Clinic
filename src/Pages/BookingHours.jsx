@@ -5,6 +5,9 @@ import Logo from "../assets/logo.png";
 import { ToastContainer, toast } from "react-toastify";
 import "./BookingHours.css";
 import { useNavigate } from "react-router-dom";
+// import logo_img from "./images/logo.png";
+// import { Notifications } from "react-push-notification";
+// import addNotification from "react-push-notification";
 
 const BookingHours = () => {
   // const url = "http://localhost:5000/dental-clinic/slot";
@@ -66,6 +69,16 @@ const BookingHours = () => {
     return true;
   };
 
+  // const clickToNotify = () => {
+  //   addNotification({
+  //     title: "Om Dental Clinic",
+  //     message: "Appointment booking notification ",
+  //     duration: 8000,
+  //     icon: logo_img,
+  //     native: true,
+  //   });
+  // };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -95,6 +108,7 @@ const BookingHours = () => {
       if (data.message === "successfully Make An Appointment") {
         console.log("Your data submitted to me it's server");
         toast.success(data.message, toastOptions);
+        // clickToNotify(); // Notification message
         setTimeout(() => {
           navigate("/dental-clinic/user/profile");
         }, 4000);

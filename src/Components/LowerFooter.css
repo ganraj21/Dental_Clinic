@@ -1,0 +1,149 @@
+.lower_outer_footer_container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background: #3c3c3c;
+  align-content: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.wrapper_container_ab {
+  display: flex;
+  flex-direction: column;
+}
+.wrapper_container_ab h2 {
+  margin-bottom: 10px;
+}
+.recent_posts {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+.rp_data {
+  display: flex;
+  align-content: center;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+}
+.rp_compile_container {
+  display: flex;
+  flex-direction: column;
+}
+.rp_compile_container a {
+  text-decoration: none;
+  color: #0396fe;
+}
+.rp_compile_container p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 73px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.rp_data img {
+  height: 80px;
+  width: 80px;
+}
+
+.footer_menu {
+  width: 237px;
+  padding: 0 10px 0 30px;
+}
+.footer_data_menu {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: black;
+  gap: 9px;
+}
+.footer_data_menu a {
+  text-decoration: none;
+}
+.contact_links {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-direction: row;
+  margin-left: -10px;
+}
+.contact_address,
+.contact_data,
+.cs_data,
+.footer_data_menu,
+.rp_data {
+  margin: 10px 0 10px 0;
+}
+
+.recent_posts h2,
+.wrapper_container_ab h2,
+.wrapper_container_fm h2,
+.wrapper_container_cu h2 {
+  color: #fff;
+  font-weight: 500;
+}
+
+.footer_data_menu a,
+.contact_address,
+.cs_data,
+.rp_compile_container p,
+.wrapper_container_ab p {
+  line-height: 27px;
+  color: #b1b1b1;
+  font-weight: 500;
+}
+
+.contact_data_links {
+  width: 50px;
+  height: 50px;
+  margin: 8px;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background: #2a2828;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-family: "Poppins";
+  text-decoration: none;
+}
+
+.contact_us {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 1024px) {
+  .wrapper_container_ab {
+    width: 350px;
+  }
+  .recent_posts {
+    width: 323px;
+    margin-left: 20px;
+  }
+  .footer_menu {
+    width: 237px;
+  }
+  .contact_us {
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .lower_outer_footer_container {
+    flex-direction: column;
+  }
+  .footer_menu {
+    padding: 0;
+  }
+  .recent_posts,
+  .footer_menu,
+  .contact_us {
+    margin-top: 20px;
+  }
+}

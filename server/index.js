@@ -92,10 +92,13 @@ app.post("/login_user", async (req, res) => {
 app.post("/dental-clinic/slot", async (req, res) => {
   console.log(req.body);
   try {
-    const user = await appointment_info.findOne({ time: req.body.time });
+    const user_date = await appointment_info.findOne({ date: req.body.date });
+    const user_time = await appointment_info.findOne({ time: req.body.time });
 
-    if (user) {
-      return res.status(401).json({ message: "This slot is already Booked" });
+    if (user_date) {
+      if (user_time) {
+        return res.status(401).json({ message: "This slot is already Booked" });
+      }
     }
 
     const Appointment_info = new appointment_info({
@@ -122,6 +125,8 @@ app.get("/dental-clinic/user/profile", async (req, res) => {
     console.log(err);
   }
 });
+
+app.get("/dental-clinic/admin-person", async (req, res) => {});
 
 app.listen(process.env.PORT, () => {
   console.log(`Server Started on Port ${process.env.PORT}`);

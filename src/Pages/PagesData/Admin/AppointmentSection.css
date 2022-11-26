@@ -1,0 +1,17 @@
+.ap_lower_container {
+  width: 300px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  outline: none;
+  border: none;
+}
+.ap_lower_container img {
+  width: 160px;
+  height: 80px;
+}
+.ap_lower_container h3 {
+  font-size: 21px;
+}

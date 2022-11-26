@@ -12,7 +12,7 @@ import ChatApp from "./Pages/ChatApp";
 import BookingHours from "./Pages/BookingHours";
 import Profile from "./Pages/Profile";
 import UserProfile from "./Pages/UserProfile";
-import Dashboard from "./Pages/PagesData/Dashboard";
+import Dashboard from "./Pages/PagesData/Admin/Dashboard";
 const App = () => {
   return (
     <>
@@ -44,7 +44,7 @@ const App = () => {
         <Route exact path="/dental-clinic/slot" element={<BookingHours />} />
         <Route
           exact
-          path="/dental-clinic/team/admin-dashboard"
+          path="/dental-clinic/admin-person"
           element={<Dashboard />}
         />
       </Routes>

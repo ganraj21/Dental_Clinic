@@ -1,4 +1,5 @@
 import React from "react";
+import LowerFooter from "../Components/LowerFooter";
 import "./Contact.css";
 const Contact = () => {
   const clinic_data = [
@@ -88,12 +89,15 @@ const Contact = () => {
             ))}
           </div>
         </div>
-        <p className="copyright_footer">
+        <LowerFooter />
+
+        <div className="copyright_footer">
           <span>
             <i className="fa-regular fa-copyright"></i>
           </span>
-          2022 Om Dental Clinic All Reserved Rights
-        </p>
+          2022 <span id="clinic_name">Om Dental Clinic.</span> All Rights
+          Reserved
+        </div>
       </div>
     </>
   );
