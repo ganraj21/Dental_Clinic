@@ -10,23 +10,20 @@ In it you can register as a client and, once registered, you log in to see your 
 In the user profile you can delete appointments from the client himself.
 <!-- It has an Administrator view, in which you can see all the appointments that the clinic has and all the clients that the clinic has. -->
 
-<div>
- 
-</div>
 
 
 ## Screenshots 📸
 Home
 
- <img src="https://user-images.githubusercontent.com/89139437/197844688-e1dddb4b-735b-4e21-a10f-43bc3a4a4b2b.png" width="1000" />
+ <img src="https://user-images.githubusercontent.com/89139437/204083518-b5a52350-7cef-4891-9f22-9c55dbb7a9db.png" width="1000" />
  
 Appointments
 
- <img src="https://user-images.githubusercontent.com/89139437/197850447-deb75e0d-35c2-42e6-bbc5-9c903118a247.png" width="1000" />
+ <img src="https://user-images.githubusercontent.com/89139437/204083629-5c53ac75-645f-4ab2-b788-772cd89a9486.png" width="1000" />
 
 Registration 
 
- <img src="https://user-images.githubusercontent.com/89139437/197850953-8c7f071e-499f-4434-985c-d8847dfc94fc.png" width="1000" />
+ <img src="https://user-images.githubusercontent.com/89139437/204083557-8859e4a1-91b1-4459-a123-441746e16e55.png" width="1000" />
 
 
 # 📝 Features
