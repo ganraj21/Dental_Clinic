@@ -110,7 +110,7 @@ const BookingHours = () => {
         toast.success(data.message, toastOptions);
         // clickToNotify(); // Notification message
         setTimeout(() => {
-          navigate("/dental-clinic/user/profile");
+          navigate("/");
         }, 4000);
       } else if (data.message === "This slot is already Booked") {
         toast.error(data.message, toastOptions);
