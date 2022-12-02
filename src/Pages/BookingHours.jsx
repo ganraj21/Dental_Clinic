@@ -91,7 +91,6 @@ const BookingHours = () => {
       phone,
       time,
     };
-
     console.log(requestOptions);
 
     if (handleValidation()) {
