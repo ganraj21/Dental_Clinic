@@ -116,7 +116,7 @@ app.post("/dental-clinic/slot", async (req, res) => {
     //message to admin for appointment
     client.messages
       .create({
-        body: userAppointment,
+        body: "An appointment slot is booked",
         from: "+12058983398",
         to: "+918010844174",
       })
