@@ -5,12 +5,12 @@ const bcrypt = require("bcrypt");
 const User = require("./model/userModel");
 const appointment_info = require("./model/appointmentCheck");
 
-const client = require("twilio")(
-  "AC74a3154c38b43e069713d06ac3c75798",
-  "14b63a790ac78ae3edfe48a09cb9b2de"
-);
-
 require("dotenv").config({ path: "./.env" });
+
+var accountSid = "AC74a3154c38b43e069713d06ac3c75798";
+var authToken = "14b63a790ac78ae3edfe48a09cb9b2de";
+
+const client = require("twilio")(accountSid, authToken);
 
 const app = express();
 app.use(cors());
@@ -114,11 +114,13 @@ app.post("/dental-clinic/slot", async (req, res) => {
 
     const userAppointment = await Appointment_info.save();
     //message to admin for appointment
-    await client.messages.create({
-      from: "+12058983398",
-      to: "+918010844174",
-      body: userAppointment,
-    });
+    client.messages
+      .create({
+        body: userAppointment,
+        from: "+12058983398",
+        to: "+918010844174",
+      })
+      .then((message) => console.log(message.sid));
 
     // -----||
     if (userAppointment) {
