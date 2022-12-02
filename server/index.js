@@ -113,19 +113,21 @@ app.post("/dental-clinic/slot", async (req, res) => {
     });
 
     const userAppointment = await Appointment_info.save();
+    //message to admin for appointment
+    twilio.messages
+      .create({
+        from: "+12058983398",
+        to: "+918010844174",
+        body: userAppointment,
+      })
+      .then((res) => console.log("message has sent !"))
+      .catch((err) => {
+        console.log(err);
+      });
+
+    // -----||
     if (userAppointment) {
       res.status(201).json({ message: "successfully Make An Appointment" });
-
-      twilio.messages
-        .create({
-          from: "+12058983398",
-          to: "+918010844174",
-          body: `This is message from Om Dental Clinic, Ulwe ${userAppointment}`,
-        })
-        .then((res) => console.log("message has sent !"))
-        .catch((err) => {
-          console.log(err);
-        });
     }
   } catch (err) {
     console.log(err);
