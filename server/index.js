@@ -4,17 +4,17 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const User = require("./model/userModel");
 const appointment_info = require("./model/appointmentCheck");
-const twilio = require("twilio")(
-  process.env.ACCOUNT_SID,
-  process.env.AUTH_TOKEN
+
+const client = require("twilio")(
+  "AC74a3154c38b43e069713d06ac3c75798",
+  "14b63a790ac78ae3edfe48a09cb9b2de"
 );
+
 require("dotenv").config({ path: "./.env" });
 
 const app = express();
 app.use(cors());
 app.use(express.json());
-
-// app.use(require('./router/auth'));
 
 mongoose
   .connect(process.env.MONGO_URL, {
@@ -113,23 +113,22 @@ app.post("/dental-clinic/slot", async (req, res) => {
     });
 
     const userAppointment = await Appointment_info.save();
-    //message to admin for appointment
-    const user_msg = await twilio.messages
-      .create({
-        from: "+12058983398",
-        to: "+918010844174",
-        body: userAppointment,
-      })
-      .then((res) => console.log("message has sent !"))
-      .catch((err) => {
-        console.log(err);
-      });
 
-    // -----||
     if (userAppointment) {
-      res
-        .status(201)
-        .json({ message: "successfully Make An Appointment", user_msg });
+      //message to admin for appointment
+      client.messages
+        .create({
+          from: "+12058983398",
+          to: "+918010844174",
+          body: userAppointment,
+        })
+        .then((res) => console.log("message has sent !"))
+        .catch((err) => {
+          console.log(err);
+        });
+
+      // -----||
+      res.status(201).json({ message: "successfully Make An Appointment" });
     }
   } catch (err) {
     console.log(err);
