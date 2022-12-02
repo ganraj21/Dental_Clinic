@@ -4,7 +4,10 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const User = require("./model/userModel");
 const appointment_info = require("./model/appointmentCheck");
-
+const twilio = require("twilio")(
+  process.env.ACCOUNT_SID,
+  process.env.AUTH_TOKEN
+);
 require("dotenv").config({ path: "./.env" });
 
 const app = express();
@@ -108,9 +111,20 @@ app.post("/dental-clinic/slot", async (req, res) => {
       phone: req.body.phone,
       time: req.body.time,
     });
+
     const userAppointment = await Appointment_info.save();
     if (userAppointment) {
       res.status(201).json({ message: "successfully Make An Appointment" });
+      twilio.messages
+        .create({
+          from: "+12058983398",
+          to: "+918010844174",
+          body: `This is message from Om Dental Clinic, Ulwe ${userAppointment}`,
+        })
+        .then((res) => console.log("message has sent !"))
+        .catch((err) => {
+          console.log(err);
+        });
     }
   } catch (err) {
     console.log(err);
