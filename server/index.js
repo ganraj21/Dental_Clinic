@@ -114,7 +114,7 @@ app.post("/dental-clinic/slot", async (req, res) => {
 
     const userAppointment = await Appointment_info.save();
     //message to admin for appointment
-    twilio.messages
+    const user_msg = await twilio.messages
       .create({
         from: "+12058983398",
         to: "+918010844174",
@@ -127,7 +127,9 @@ app.post("/dental-clinic/slot", async (req, res) => {
 
     // -----||
     if (userAppointment) {
-      res.status(201).json({ message: "successfully Make An Appointment" });
+      res
+        .status(201)
+        .json({ message: "successfully Make An Appointment", user_msg });
     }
   } catch (err) {
     console.log(err);
