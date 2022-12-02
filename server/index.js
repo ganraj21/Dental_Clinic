@@ -113,22 +113,18 @@ app.post("/dental-clinic/slot", async (req, res) => {
     });
 
     const userAppointment = await Appointment_info.save();
+    //message to admin for appointment
+    const user_msg = await client.messages.create({
+      from: "+12058983398",
+      to: "+918010844174",
+      body: userAppointment,
+    });
 
+    // -----||
     if (userAppointment) {
-      //message to admin for appointment
-      client.messages
-        .create({
-          from: "+12058983398",
-          to: "+918010844174",
-          body: userAppointment,
-        })
-        .then((res) => console.log("message has sent !"))
-        .catch((err) => {
-          console.log(err);
-        });
-
-      // -----||
-      res.status(201).json({ message: "successfully Make An Appointment" });
+      res
+        .status(201)
+        .json({ message: "successfully Make An Appointment", user_msg });
     }
   } catch (err) {
     console.log(err);
