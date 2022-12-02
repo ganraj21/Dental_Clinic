@@ -114,7 +114,7 @@ app.post("/dental-clinic/slot", async (req, res) => {
 
     const userAppointment = await Appointment_info.save();
     //message to admin for appointment
-    const user_msg = await client.messages.create({
+    await client.messages.create({
       from: "+12058983398",
       to: "+918010844174",
       body: userAppointment,
@@ -122,9 +122,7 @@ app.post("/dental-clinic/slot", async (req, res) => {
 
     // -----||
     if (userAppointment) {
-      res
-        .status(201)
-        .json({ message: "successfully Make An Appointment", user_msg });
+      res.status(201).json({ message: "successfully Make An Appointment" });
     }
   } catch (err) {
     console.log(err);
