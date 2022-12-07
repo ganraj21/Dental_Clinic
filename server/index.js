@@ -33,6 +33,8 @@ app.post("/register", async (req, res) => {
   let saltRounds = await bcrypt.genSalt(10);
   let hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
 
+  // const hashedPassword = await bcrypt.hash(req.body.password, 10);
+
   try {
     const userExist = await User.findOne({ email: req.body.email });
     if (userExist) {
@@ -58,6 +60,7 @@ app.post("/login_user", async (req, res) => {
   console.log(req.body);
 
   try {
+    //   const admin = await User.findOne({admin_person:req.body.admin_person})
     const user = await User.findOne({ email: req.body.email });
 
     //   console.log(admin)
@@ -105,7 +108,7 @@ app.post("/dental-clinic/slot", async (req, res) => {
     });
 
     const userAppointment = await Appointment_info.save();
-
+    // -----||
     if (userAppointment) {
       res.status(201).json({ message: "successfully Make An Appointment" });
     }
