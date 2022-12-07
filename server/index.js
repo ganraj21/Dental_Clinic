@@ -58,7 +58,6 @@ app.post("/login_user", async (req, res) => {
   console.log(req.body);
 
   try {
-    //   const admin = await User.findOne({admin_person:req.body.admin_person})
     const user = await User.findOne({ email: req.body.email });
 
     //   console.log(admin)
