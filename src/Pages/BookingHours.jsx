@@ -10,8 +10,8 @@ import { useNavigate } from "react-router-dom";
 // import addNotification from "react-push-notification";
 
 const BookingHours = () => {
-  // const url = "http://localhost:5000/dental-clinic/slot";
-  const url = "https://dental-service.onrender.com/dental-clinic/slot";
+  const url = "http://localhost:5000/dental-clinic/slot";
+  // const url = "https://dental-service.onrender.com/dental-clinic/slot";
   const navigate = useNavigate();
   const [activeUser, setActiveUser] = useState({
     date: "",

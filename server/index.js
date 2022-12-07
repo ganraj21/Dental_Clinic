@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 const User = require("./model/userModel");
 const appointment_info = require("./model/appointmentCheck");
 
-require("dotenv").config({ path: "./.env" });
+require("dotenv").config({ path: "../.env" });
 
 var accountSid = "AC74a3154c38b43e069713d06ac3c75798";
 var authToken = "14b63a790ac78ae3edfe48a09cb9b2de";
