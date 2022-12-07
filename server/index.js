@@ -32,7 +32,6 @@ app.post("/register", async (req, res) => {
 
   let saltRounds = await bcrypt.genSalt(10);
   let hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
-
   // const hashedPassword = await bcrypt.hash(req.body.password, 10);
 
   try {
