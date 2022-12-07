@@ -7,8 +7,6 @@ const appointment_info = require("./model/appointmentCheck");
 
 require("dotenv").config({ path: "../.env" });
 
-// const client = require("twilio")(process.env.ACCOUNTSID, process.env.AUTHTOKEN);
-
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -34,8 +32,6 @@ app.post("/register", async (req, res) => {
 
   let saltRounds = await bcrypt.genSalt(10);
   let hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
-
-  // const hashedPassword = await bcrypt.hash(req.body.password, 10);
 
   try {
     const userExist = await User.findOne({ email: req.body.email });
@@ -110,16 +106,7 @@ app.post("/dental-clinic/slot", async (req, res) => {
     });
 
     const userAppointment = await Appointment_info.save();
-    //message to admin for appointment
-    // client.messages
-    //   .create({
-    //     body: "An appointment slot is booked",
-    //     from: "+12058983398",
-    //     to: "+918010844174",
-    //   })
-    //   .then((message) => console.log(message.sid));
 
-    // -----||
     if (userAppointment) {
       res.status(201).json({ message: "successfully Make An Appointment" });
     }
