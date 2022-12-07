@@ -5,9 +5,6 @@ import Logo from "../assets/logo.png";
 import { ToastContainer, toast } from "react-toastify";
 import "./BookingHours.css";
 import { useNavigate } from "react-router-dom";
-// import logo_img from "./images/logo.png";
-// import { Notifications } from "react-push-notification";
-// import addNotification from "react-push-notification";
 
 const BookingHours = () => {
   const url = "https://dental-service.onrender.com/dental-clinic/slot";
@@ -106,7 +103,7 @@ const BookingHours = () => {
       if (data.message === "successfully Make An Appointment") {
         console.log("Your data submitted to me it's server");
         toast.success(data.message, toastOptions);
-        // clickToNotify(); // Notification message
+
         setTimeout(() => {
           navigate("/");
         }, 4000);
