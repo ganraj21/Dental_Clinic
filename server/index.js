@@ -7,10 +7,7 @@ const appointment_info = require("./model/appointmentCheck");
 
 require("dotenv").config({ path: "../.env" });
 
-var accountSid = "AC74a3154c38b43e069713d06ac3c75798";
-var authToken = "14b63a790ac78ae3edfe48a09cb9b2de";
-
-const client = require("twilio")(accountSid, authToken);
+// const client = require("twilio")(process.env.ACCOUNTSID, process.env.AUTHTOKEN);
 
 const app = express();
 app.use(cors());
@@ -114,13 +111,13 @@ app.post("/dental-clinic/slot", async (req, res) => {
 
     const userAppointment = await Appointment_info.save();
     //message to admin for appointment
-    client.messages
-      .create({
-        body: "An appointment slot is booked",
-        from: "+12058983398",
-        to: "+918010844174",
-      })
-      .then((message) => console.log(message.sid));
+    // client.messages
+    //   .create({
+    //     body: "An appointment slot is booked",
+    //     from: "+12058983398",
+    //     to: "+918010844174",
+    //   })
+    //   .then((message) => console.log(message.sid));
 
     // -----||
     if (userAppointment) {
