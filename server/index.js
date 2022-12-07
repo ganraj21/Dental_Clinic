@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 const User = require("./model/userModel");
 const appointment_info = require("./model/appointmentCheck");
 
-require("dotenv").config({ path: "./router/.env" });
+require("dotenv").config({ path: "./.env" });
 
 const app = express();
 app.use(cors());
