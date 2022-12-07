@@ -8,7 +8,6 @@ import "./Register.css";
 // import axios from "axios";
 
 const Register = () => {
-  // const url = "http://localhost:5000/register";
   const url = "https://dental-service.onrender.com/register";
 
   const navigate = useNavigate();

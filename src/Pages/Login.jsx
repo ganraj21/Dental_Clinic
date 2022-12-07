@@ -6,7 +6,6 @@ import "react-toastify/dist/ReactToastify.css";
 import "./Login.css";
 
 const Login = () => {
-  // const url = "http://localhost:5000/login_user";
   const url = "https://dental-service.onrender.com/login_user";
   const navigate = useNavigate();
   const [values, setValues] = useState({
