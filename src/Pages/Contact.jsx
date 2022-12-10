@@ -92,11 +92,13 @@ const Contact = () => {
         <LowerFooter />
 
         <div className="copyright_footer">
-          <span>
-            <i className="fa-regular fa-copyright"></i>
-          </span>
-          2022 <span id="clinic_name">Om Dental Clinic.</span> All Rights
-          Reserved
+          <p>
+            <span>
+              <i className="fa-regular fa-copyright"></i>
+            </span>
+            2022 <span id="clinic_name">Om Dental Clinic.</span> All Rights
+            Reserved
+          </p>
         </div>
       </div>
     </>

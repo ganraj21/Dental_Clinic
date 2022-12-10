@@ -169,6 +169,10 @@
     justify-content: center;
     align-content: center;
   }
+  .copyright_footer p {
+    width: 80%;
+    text-align: center;
+  }
   .contact_section_container {
     height: 100%;
   }
