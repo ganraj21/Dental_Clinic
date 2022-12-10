@@ -131,10 +131,6 @@
   justify-content: center;
   align-content: center;
 }
-/* .submit_slot_btn:active {
-  transform: scale(0.98);
-  transition: all 0.3s ease-in-out;
-} */
 
 .submit_slot_btn:active {
   transform: scale(0.97);
@@ -287,6 +283,9 @@ form {
 }
 
 @media screen and (max-width: 480px) {
+  form {
+    padding: 60px 0 10px 0;
+  }
   .bsc_lower_container {
     width: 90%;
   }
