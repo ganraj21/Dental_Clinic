@@ -76,13 +76,14 @@
 }
 @media screen and (max-width: 480px) {
   .service_info_container {
-    display: grid;
+    display: flex;
     width: 100%;
     height: 100%;
     flex-wrap: wrap;
     justify-items: stretch;
     justify-content: center;
     margin-bottom: 30px;
+    gap: 0px;
   }
   .service_info {
     width: 382px;
@@ -91,7 +92,7 @@
 
 @media screen and (max-width: 420px) {
   .service_info {
-    width: 320px;
+    width: 90%;
     height: 312px;
   }
   .service_detail_info {
