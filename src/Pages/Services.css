@@ -78,7 +78,7 @@
   .service_info_container {
     display: grid;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     flex-wrap: wrap;
     justify-items: stretch;
     justify-content: center;
