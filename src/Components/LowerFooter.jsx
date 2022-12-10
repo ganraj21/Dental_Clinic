@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import about_long_des_data from "../Pages/PagesData/AboutData";
 import "./LowerFooter.css";
 import footer_01 from "../Pages/images/footer_01.jpg";
@@ -24,15 +24,15 @@ function LowerFooter() {
   ];
 
   const nav_data = [
-    { index: 1, link_to: "/", nav_name: "Home" },
-    { index: 2, link_to: "/dental-clinic/about", nav_name: "About" },
-    { index: 3, link_to: "/dental-clinic/treatments", nav_name: "Treatments" },
+    { index: 1, link_to: "/#home", nav_name: "Home" },
+    { index: 2, link_to: "/#about-doctors", nav_name: "About" },
+    { index: 3, link_to: "/#our-services", nav_name: "Treatments" },
     {
       index: 4,
       link_to: "/dental-clinic/appointment",
       nav_name: "Appointment",
     },
-    { index: 5, link_to: "/dental-clinic/contact", nav_name: "Contact Us" },
+    { index: 5, link_to: "/#contact-us", nav_name: "Contact Us" },
   ];
   const contact_data = [
     {
@@ -98,14 +98,14 @@ function LowerFooter() {
             <div className="footer_data_menu">
               {nav_data.map((data, index) => {
                 return (
-                  <Link
+                  <HashLink
                     className="nav_data"
                     key={index}
                     to={data.link_to}
                     data-aos="fade-down"
                   >
                     {data.nav_name}
-                  </Link>
+                  </HashLink>
                 );
               })}
             </div>

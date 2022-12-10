@@ -6,7 +6,11 @@ import about_long_des_data from "./PagesData/AboutData";
 const About = () => {
   return (
     <>
-      <div className={styles.example} style={{ backgroundColor: "#e5e5e5" }}>
+      <div
+        className={styles.example}
+        style={{ backgroundColor: "#fff" }}
+        id="about-doctors"
+      >
         <div className="about_section_container">
           <h2 className="about_title" data-aos="fade-right">
             <span className="about_title_logo">

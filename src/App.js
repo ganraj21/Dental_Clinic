@@ -19,15 +19,25 @@ const App = () => {
       <Navbar />
 
       <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/dental-clinic/about" element={<About />} />
+        <Route
+          exact
+          path="/"
+          element={
+            <>
+              <Home />
+              <About />
+              <Services />
+              <Contact />
+            </>
+          }
+        />
         <Route
           exact
           path="/dental-clinic/appointment"
           element={<Appointment />}
         />
-        <Route exact path="/dental-clinic/treatments" element={<Services />} />
-        <Route exact path="/dental-clinic/contact" element={<Contact />} />
+        {/* <Route exact path="/dental-clinic/treatments" element={} /> */}
+        {/* <Route exact path="/dental-clinic/contact" element={} /> */}
         <Route exact path="/dental-clinic/team" element={<Profile />} />
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/login_user" element={<Login />} />

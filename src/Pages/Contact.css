@@ -82,14 +82,14 @@
   padding: 12px;
 }
 .copyright_footer {
-  color: #b1b1b1;
+  color: #fff;
   width: 100%;
   height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
   align-content: center;
-  background: #222222;
+  background: #141b2c;
   flex-wrap: wrap;
 }
 #clinic_name {

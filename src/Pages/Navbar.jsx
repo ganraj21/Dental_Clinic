@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import logo_img from "./images/logo.png";
-import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import "font-awesome/css/font-awesome.min.css";
 import "./Navbar.css";
 const Navbar = () => {
@@ -17,41 +17,41 @@ const Navbar = () => {
     <>
       <div className="nav-container">
         <div className="logo">
-          <Link to="/">
+          <HashLink to="/#home">
             <img src={logo_img} alt="om dental clinic logo" />
-          </Link>
+          </HashLink>
           <h2>Dental Clinic</h2>
         </div>
         <div className={isActive ? "active_links" : "links"}>
           <div className="MenuItems">
-            <Link to="/" onClick={closeMobileMenu}>
+            <HashLink to="/#home" onClick={closeMobileMenu}>
               Home
-            </Link>
+            </HashLink>
           </div>
           <div className="MenuItems">
-            <Link to="/dental-clinic/about" onClick={closeMobileMenu}>
+            <HashLink to="/#about-doctors" onClick={closeMobileMenu}>
               About
-            </Link>
+            </HashLink>
           </div>
           <div className="MenuItems">
-            <Link to="/dental-clinic/treatments" onClick={closeMobileMenu}>
+            <HashLink to="/#our-services" onClick={closeMobileMenu}>
               Treatments
-            </Link>
+            </HashLink>
           </div>
           <div className="MenuItems">
-            <Link to="/login_user" onClick={closeMobileMenu}>
+            <HashLink to="/login_user" onClick={closeMobileMenu}>
               Login
-            </Link>
+            </HashLink>
           </div>
           <div className="MenuItems">
-            <Link to="/dental-clinic/contact" onClick={closeMobileMenu}>
+            <HashLink to="/#contact-us" onClick={closeMobileMenu}>
               Contact
-            </Link>
+            </HashLink>
           </div>
           <div className="MenuItems" id="Appointment_menu">
-            <Link to="/dental-clinic/appointment" onClick={closeMobileMenu}>
+            <HashLink to="/dental-clinic/appointment" onClick={closeMobileMenu}>
               Appointment
-            </Link>
+            </HashLink>
           </div>
         </div>
         <div className="toggle_menu_icons" onClick={handleClick}>

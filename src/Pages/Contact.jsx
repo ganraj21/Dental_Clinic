@@ -41,7 +41,7 @@ const Contact = () => {
   ];
   return (
     <>
-      <div className="contact_section_container">
+      <div className="contact_section_container" id="contact-us">
         <div className="container_container">
           <div className="google_map_location" data-aos="fade-down">
             <div className="gmap">

@@ -74,7 +74,7 @@
 
 .active_links {
   position: absolute;
-  height: 550px;
+  height: 100vh;
   width: 100%;
   top: 72px;
   display: flex;
