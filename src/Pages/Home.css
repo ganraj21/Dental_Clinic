@@ -3,6 +3,9 @@
   display: none;
 }
 
+#home {
+  padding: 60px 0 10px 0;
+}
 .slider_image img {
   width: 100%;
   margin-top: 10px;

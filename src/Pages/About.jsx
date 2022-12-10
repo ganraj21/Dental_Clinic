@@ -36,8 +36,8 @@ const About = () => {
                 </Link>
               </div>
             </div>
-            <div className="about_image" data-aos="fade-left">
-              <img src={about_img} alt="" />
+            <div className="about_image">
+              <img src={about_img} alt="about img" />
             </div>
           </div>
         </div>

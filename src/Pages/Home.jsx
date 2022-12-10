@@ -22,7 +22,6 @@ const Home = () => {
             <div className="front_container">
               <div className="front_page_info">
                 <h2
-                  data-aos="fade-right"
                   style={{
                     fontSize: "51px",
                     margin: "0",
@@ -33,7 +32,7 @@ const Home = () => {
                 >
                   We Care For Your Smile
                 </h2>
-                <p data-aos="fade-left">
+                <p>
                   We Believe Everyone should have easy access to great dental
                   clinic
                 </p>
@@ -56,7 +55,7 @@ const Home = () => {
 
         <div className="clinic_container">
           <div className="clinic_info">
-            <div className="basic_info" id="info_01" data-aos="fade-down">
+            <div className="basic_info" id="info_01">
               <h2>Flexible Schedule</h2>
               <p>
                 We work on holidays, besides working late on regular days. In
@@ -70,7 +69,7 @@ const Home = () => {
                 <div className="transperent_btn"> Chat with Doctor</div>
               </Link>
             </div>
-            <div className="basic_info" id="info_02" data-aos="fade-left">
+            <div className="basic_info" id="info_02">
               <h2>Best Price Guarantee</h2>
               <p>
                 Our reasonable prices made thousands of people smile with a new,
@@ -83,7 +82,7 @@ const Home = () => {
                 <div className="transperent_btn">Read More</div>
               </Link>
             </div>
-            <div className="basic_info" id="info_03" data-aos="fade-right">
+            <div className="basic_info" id="info_03">
               <h2>Opening Hours</h2>
               <p>
                 Monday – Saturday : 10.00 am – 10.00 pm Sunday : 5.00 pm – 10.00
