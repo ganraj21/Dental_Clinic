@@ -6,7 +6,7 @@
   flex-direction: column;
   width: 100%;
   gap: 2rem;
-  height: 100vh;
+  height: 100%;
   position: absolute;
 }
 
@@ -75,9 +75,8 @@
 }
 @media screen and (max-width: 580px) {
   .profile_section_container {
-    margin-bottom: 30px;
     gap: 0;
-    margin-top: 0px;
+    padding: 60px 0;
   }
   .p_info_container {
     flex-direction: column;
