@@ -165,6 +165,7 @@
   .copyright_footer {
     width: 100%;
     display: flex;
+    height: 72px;
     align-items: center;
     justify-content: center;
     align-content: center;
