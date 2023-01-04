@@ -7,12 +7,14 @@
 /* ::-webkit-calendar-picker-indicator {
   filter: invert(1);
 } */
-/* [Type="Date"]::-webkit-inner-spin-button {
-  display: None;
+input[type="date"] {
+  background: transparent;
+  color: white;
 }
-[Type="Date"]::-webkit-calendar-picker-indicator {
-  opacity: 0;
-} */
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(100%);
+}
 .bsc_lower {
   display: flex;
   width: 100%;
