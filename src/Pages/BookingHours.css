@@ -143,7 +143,7 @@
   margin-bottom: 10px;
 }
 .appointment_hours_form {
-  background-color: #00000076;
+  /* background-color: #00000076; */
   display: flex;
   align-items: center;
   justify-content: center;
