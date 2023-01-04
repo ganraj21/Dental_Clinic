@@ -71,6 +71,10 @@ input:focus {
   font-size: 1rem;
   width: 100%;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
 }
 .submit_register_btn:hover {
   background-color: #4e0eff;

@@ -4,11 +4,13 @@ import Logo from "../assets/logo.png";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./Login.css";
-
+import Spinner from "../Components/Spinner";
 const Login = () => {
   // const url = "http://localhost:5000/login_user";
   const url = "https://dental-service.onrender.com/login_user";
   const navigate = useNavigate();
+
+  const [loader, setLoader] = useState("none");
   const [values, setValues] = useState({
     email: "",
     password: "",
@@ -46,6 +48,7 @@ const Login = () => {
     const request_login_options = { email, password };
 
     if (handleValidation()) {
+      setLoader("flex");
       const res = await fetch(url, {
         method: "POST",
         headers: {
@@ -56,6 +59,9 @@ const Login = () => {
 
       const data = await res.json();
 
+      if (data) {
+        setLoader("none");
+      }
       console.log(data);
 
       if (data.status === false) {
@@ -96,6 +102,7 @@ const Login = () => {
             />
             <button className="login_form_button" type="submit">
               Login In
+              <Spinner id="login_loder" style={loader} />
             </button>
             <span className="lower_title_login">
               Don't have an account ?<Link to="/register">Register</Link>

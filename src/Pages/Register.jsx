@@ -5,12 +5,14 @@ import Logo from "../assets/logo.png";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./Register.css";
+import Spinner from "../Components/Spinner";
 // import axios from "axios";
 
 const Register = () => {
   const url = "https://dental-service.onrender.com/register";
 
   const navigate = useNavigate();
+  const [loader, setLoader] = useState("none");
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -70,6 +72,7 @@ const Register = () => {
     console.log(requestOptions);
 
     if (handleValidation()) {
+      setLoader("flex");
       const res = await fetch(url, {
         method: "POST",
         headers: {
@@ -79,7 +82,9 @@ const Register = () => {
       });
 
       const data = await res.json();
-
+      if (data) {
+        setLoader("none");
+      }
       console.log(data);
       toast.error(data.error, toastOptions);
       toast.error(data.message, toastOptions);
@@ -140,6 +145,7 @@ const Register = () => {
             />
             <button className="submit_register_btn" type="submit">
               Sign Up
+              <Spinner id="rg_loder" style={loader} />
             </button>
             <span className="lower_title_register">
               Already have an account ?<Link to="/login_user">Login</Link>

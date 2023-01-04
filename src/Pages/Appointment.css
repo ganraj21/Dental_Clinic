@@ -9,6 +9,10 @@
   position: absolute;
   background-color: #e5e5e5;
 }
+
+/* ::-webkit-input-placeholder {
+  color: #000;
+} */
 .upper_container {
   display: flex;
   flex-direction: column;
