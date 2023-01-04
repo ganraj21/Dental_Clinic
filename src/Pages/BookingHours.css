@@ -140,6 +140,7 @@
   margin-bottom: 10px;
 }
 .appointment_hours_form {
+  background-color: #00000076;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -184,9 +185,9 @@ form {
 .form_for_booking input {
   padding: 1rem;
   border: none;
-  background-color: #fff !important;
+  /* background-color: #fff !important; */
   border-radius: 0.4rem;
-  color: #000 !important;
+  border: 1px solid #d9d9d9;
   width: 100%;
   font-size: 1rem;
 }
@@ -281,12 +282,17 @@ form {
     margin-bottom: 17px;
   }
   .form_for_booking {
-    padding: 2.7rem;
     height: 100%;
+    padding: 40px 35px;
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 480px) {
+  .appointment_hours_form {
+    width: 100%;
+    border-radius: 10px;
+  }
   .bsc_lower_container {
     width: 90%;
   }
