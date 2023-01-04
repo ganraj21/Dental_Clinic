@@ -24,6 +24,6 @@ code {
     monospace;
 }
 
-/* ::-webkit-input-placeholder {
+::-webkit-input-placeholder {
   color: #fff;
-} */
+}
