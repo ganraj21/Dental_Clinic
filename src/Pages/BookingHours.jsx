@@ -5,10 +5,12 @@ import Logo from "../assets/logo.png";
 import { ToastContainer, toast } from "react-toastify";
 import "./BookingHours.css";
 import { useNavigate } from "react-router-dom";
+import Spinner from "../Components/Spinner";
 
 const BookingHours = () => {
   const url = "https://dental-service.onrender.com/dental-clinic/slot";
   const navigate = useNavigate();
+  const [loader, setLoader] = useState("none");
   const [activeUser, setActiveUser] = useState({
     date: "",
     name: "",
@@ -90,6 +92,7 @@ const BookingHours = () => {
     console.log(requestOptions);
 
     if (handleValidation()) {
+      setLoader("flex");
       const res = await fetch(url, {
         method: "POST",
         headers: {
@@ -100,6 +103,9 @@ const BookingHours = () => {
 
       const data = await res.json();
 
+      if (data) {
+        setLoader("none");
+      }
       if (data.message === "successfully Make An Appointment") {
         console.log("Your data submitted to me it's server");
         toast.success(data.message, toastOptions);
@@ -228,6 +234,7 @@ const BookingHours = () => {
                     <div className="submit_slot_btn">
                       <button className="booking_c_btn" id="bcb" type="submit">
                         Submit
+                        <Spinner id="sb_loader" style={loader} />
                       </button>
                     </div>
                   </div>
