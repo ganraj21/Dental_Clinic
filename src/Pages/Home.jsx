@@ -1,7 +1,7 @@
 import React from "react";
 import "./Home.css";
 import "font-awesome/css/font-awesome.min.css";
-import slider_one from "../Pages/images/slide_one.webp";
+import slider_one from "../Pages/images/slide_one.png";
 import { Link } from "react-router-dom";
 
 const Home = () => {

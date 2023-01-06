@@ -4,7 +4,7 @@
 }
 
 #home {
-  padding: 60px 0 10px 0;
+  padding: 0 0 10px 0;
 }
 .slider_image img {
   width: 100%;
@@ -169,8 +169,8 @@
     align-content: center;
   }
   .slider_image img {
-    width: 578px !important;
-    height: 400px;
+    width: 594px !important;
+    height: 409px;
     padding: 0;
     margin: 0;
   }
