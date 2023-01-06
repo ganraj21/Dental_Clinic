@@ -1,4 +1,4 @@
-<h1>🦷 Dental clinic Website</h1>
+<h1>🦷 Dental Clinic Web-Application</h1>
 <div>
 <img src="https://img.shields.io/badge/status-active-success.svg"/>
 <img src="https://img.shields.io/badge/license-MIT-blue.svg"/>
