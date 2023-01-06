@@ -11,10 +11,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const MONGO_URL =
-  "mongodb+srv://ganraj21:ganraj21@cluster0.hazsbme.mongodb.net/chat?retryWrites=true&w=majority";
 mongoose
-  .connect(MONGO_URL, {
+  .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
