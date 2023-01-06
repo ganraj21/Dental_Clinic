@@ -25,7 +25,11 @@ function ChatApp() {
     <>
       <Container>
         <div className="container">
-          <img src={site_c} alt="" />
+          <img
+            src={site_c}
+            alt=" site under construction "
+            // style={{ width: "100%" }}
+          />
           {/* <ChatContacts contacts={contacts} currentUser={currentUser} /> */}
         </div>
       </Container>
@@ -44,15 +48,23 @@ const Container = styled.div`
   background-color: #131324;
   position: absolute;
   .container {
-    // height: 85vh;
-    // width: 85vw;
-    // background-color: #00000076;
-    display: grid;
-    grid-template-columns: 25% 75%;
-    @media screen and (min-width: 720px) and (max-width: 1080px) {
-      grid-template-columns: 35% 65%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+
+    @media screen and (max-width: 620px) {
+      img {
+        width: 100%;
+      }
     }
-    @media screen and (min-width: 360px) and (max-width: 480px) {
+    @media screen and (min-width: 1024px) {
+      .container {
+        img {
+          max-width: 600px;
+        }
+      }
     }
   }
 `;
