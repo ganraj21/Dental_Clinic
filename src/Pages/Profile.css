@@ -51,6 +51,9 @@
   gap: 27px;
   margin-bottom: 10px;
 }
+.profile_section_container {
+  background-color: #e5e5e5;
+}
 .profile_section_container h2 span {
   margin-right: 9px;
 }
@@ -59,7 +62,15 @@
   width: 85%;
 }
 
+@media screen and (min-width: 1024px) {
+  .profile_section_container {
+    height: 100vh;
+  }
+}
 @media screen and (max-width: 1023px) {
+  .profile_section_container {
+    height: 100vh;
+  }
 }
 @media screen and (max-width: 940px) {
   .profile_section_container h2 {
@@ -75,7 +86,7 @@
 @media screen and (max-width: 580px) {
   .profile_section_container {
     gap: 0;
-    padding: 60px 0;
+    height: auto;
   }
   .p_info_container {
     flex-direction: column;
