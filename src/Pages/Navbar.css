@@ -132,10 +132,10 @@
     align-content: center;
     color: black;
     text-align: center;
-    border-radius: 50px;
+    border-radius: 10px;
     width: 90%;
-    background: #00d1d1;
-    box-shadow: 0px 0px 9px 1px rgb(0 0 0 / 44%);
+    background: transparent;
+    box-shadow: 0px 0px 9px 1px rgb(140 140 140 / 44%);
   }
   .MenuItems a:hover {
     text-align: center;
