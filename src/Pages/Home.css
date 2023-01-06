@@ -230,7 +230,7 @@
   }
   .front_container,
   .slider_image {
-    width: 80%;
+    width: 90%;
   }
   .slider_controls {
     display: none;
@@ -266,10 +266,10 @@
     margin: 0;
     margin-bottom: -50px !important;
     height: 694px;
-    width: 90%;
+    width: 100%;
   }
   .front_container {
-    width: 100%;
+    width: 90%;
   }
   .front_page_info p {
     width: 85%;
