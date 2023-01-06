@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import site_c from "../assets/istockphoto-542175174-612x612.jpg";
 // import { useNavigate } from "react-router-dom";
 // import { allUsersRoute } from "../utils/APIRoutes";
 // import ChatContacts from "../Components/ChatContacts";
@@ -24,7 +25,7 @@ function ChatApp() {
     <>
       <Container>
         <div className="container">
-          <h1>Chat component is under construction</h1>
+          <img src={site_c} alt="" />
           {/* <ChatContacts contacts={contacts} currentUser={currentUser} /> */}
         </div>
       </Container>
@@ -41,10 +42,11 @@ const Container = styled.div`
   gap: 1rem;
   align-items: center;
   background-color: #131324;
+  position: absolute;
   .container {
-    height: 85vh;
-    width: 85vw;
-    background-color: #00000076;
+    // height: 85vh;
+    // width: 85vw;
+    // background-color: #00000076;
     display: grid;
     grid-template-columns: 25% 75%;
     @media screen and (min-width: 720px) and (max-width: 1080px) {
