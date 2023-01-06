@@ -211,9 +211,8 @@
 @media screen and (max-width: 580px) {
   .slider-images {
     flex-direction: column-reverse;
-    gap: 30px;
-    height: 100vh;
-    width: 90%;
+    margin-bottom: -50px !important;
+    height: 694px;
   }
   .slider_image img {
     background-size: cover;
