@@ -13,9 +13,8 @@ In the user profile you can delete appointments from the client himself.
 
 
 ## Screenshots 📸
-Home
 
- <img src="https://user-images.githubusercontent.com/89139437/204083518-b5a52350-7cef-4891-9f22-9c55dbb7a9db.png" width="1000" />
+ <img src="https://user-images.githubusercontent.com/89139437/211010754-62560ee8-8c19-4cd4-b599-182c6ac38f4f.png" width="1000" />
  
 Appointments
 
