@@ -78,8 +78,8 @@
 
 .about_image img {
   width: 403px;
-  outline: 16px solid #c6c6c6;
-  border-radius: 40px;
+  /* outline: 16px solid #c6c6c6; */
+  border-radius: 9px;
   transition: ease-in-out 0.3s;
 }
 .about_image img:hover {
@@ -170,7 +170,7 @@
     align-content: center;
   }
   .about_image img {
-    width: 90%;
+    width: 100%;
   }
 }
 
