@@ -16,6 +16,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   filter: invert(100%);
 }
 .bsc_lower {
+  background-color: #131324;
   display: flex;
   width: 100%;
   align-items: center;
@@ -309,6 +310,7 @@ form {
   }
   .bsc_header {
     width: 100%;
+    background: #49494985;
   }
   .me_slot_selection {
     width: 100%;
