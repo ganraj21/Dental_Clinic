@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import site_c from "../assets/istockphoto-542175174-612x612.jpg";
+import site_c from "../assets/site_con.jpg";
 // import { useNavigate } from "react-router-dom";
 // import { allUsersRoute } from "../utils/APIRoutes";
 // import ChatContacts from "../Components/ChatContacts";
