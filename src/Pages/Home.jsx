@@ -90,7 +90,7 @@ const Home = () => {
               </p>
 
               <Link
-                to={"/dental-clinic/appointment"}
+                to={"/dental-clinic/slot"}
                 style={{ textDecoration: "none", color: "#fff" }}
               >
                 <div className="transperent_btn" id="tr_btn_01">

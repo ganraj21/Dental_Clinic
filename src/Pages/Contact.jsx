@@ -74,11 +74,7 @@ const Contact = () => {
               </div>
             ))}
             <div className="d_and_c">
-              <div
-                className="direction_to_clinic"
-                data-aos="fade-up"
-                data-aos-duration="1000"
-              >
+              <div className="direction_to_clinic">
                 <a
                   href="https://www.google.com/maps?ll=18.978293,73.030934&z=14&t=m&hl=en&gl=US&mapclient=embed&cid=2928691504663646078"
                   target="_blank"
@@ -87,7 +83,7 @@ const Contact = () => {
                   Clinic Direction
                 </a>
               </div>
-              <div className="call_to_clinic" data-aos="fade-up">
+              <div className="call_to_clinic">
                 <a href="tel:9892729909">Call Clinic</a>
               </div>
             </div>
