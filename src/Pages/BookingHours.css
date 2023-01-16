@@ -30,7 +30,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   justify-content: center;
   align-content: center;
   height: 573px;
-  background: #332144;
 }
 .bsc_lower_evening_container,
 .bsc_lower_morning_container {
@@ -44,6 +43,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .me_slot_selection {
   display: flex;
   padding: 20px 15px 15px 15px;
+  background: #332144;
 }
 .md_data,
 .ed_data {
@@ -168,7 +168,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   padding: 3rem 5rem;
   height: 573px;
   border-radius: 0;
-  /* background-color: #00000076; */
+  background: #2a2a2a70;
   border-bottom: 7px solid white;
 }
 form {
@@ -199,7 +199,7 @@ form {
   /* background-color: #fff !important; */
   color: white !important;
   border-radius: 0.4rem;
-  border: 1px solid #d9d9d9;
+  border: 1px solid #8b8b8ba1;
   width: 100%;
   font-size: 1rem;
 }
@@ -223,7 +223,7 @@ form {
     gap: 9px;
   }
   .form_for_booking {
-    background-color: #00000076;
+    background: #2a2a2a70;
     padding: 2rem 3rem !important;
     gap: 1.5rem !important;
   }
@@ -310,7 +310,7 @@ form {
   }
   .bsc_header {
     width: 100%;
-    background: #49494985;
+    backdrop-filter: blur(0px);
   }
   .me_slot_selection {
     width: 100%;
