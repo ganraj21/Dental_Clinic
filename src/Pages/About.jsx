@@ -12,7 +12,7 @@ const About = () => {
         id="about-doctors"
       >
         <div className="about_section_container">
-          <h2 className="about_title" data-aos="fade-right">
+          <h2 className="about_title">
             <span className="about_title_logo">
               <i class="fa-solid fa-angles-right"></i>
             </span>
@@ -20,14 +20,12 @@ const About = () => {
           </h2>
           <div className="about_container">
             <div className="about_infos">
-              <p className="about_short_descrp" data-aos="fade-down">
+              <p className="about_short_descrp">
                 We’re glad you hand your dental health concerns to our skilled
                 hands.
               </p>
-              <p className="about_long_descrp" data-aos="fade-down">
-                {about_long_des_data.text}
-              </p>
-              <div className="about_align_btn" data-aos="fade-down">
+              <p className="about_long_descrp">{about_long_des_data.text}</p>
+              <div className="about_align_btn">
                 <Link
                   to={"/dental-clinic/team"}
                   style={{ textDecoration: "none", color: "#fff" }}

@@ -82,7 +82,12 @@ function LowerFooter() {
           <h2>Recent Post</h2>
           {contact_recent_data.map((data, index) => {
             return (
-              <div className="rp_data" key={index} data-aos="fade-down">
+              <div
+                className="rp_data"
+                key={index}
+                data-aos="fade-down"
+                data-aos-duration="1000"
+              >
                 <img src={data.rp_img} alt="" />
                 <div className="rp_compile_container">
                   <p>{data.rp_text}</p>
@@ -103,6 +108,7 @@ function LowerFooter() {
                     key={index}
                     to={data.link_to}
                     data-aos="fade-down"
+                    data-aos-duration="1000"
                   >
                     {data.nav_name}
                   </HashLink>
@@ -114,7 +120,11 @@ function LowerFooter() {
         <div className="contact_us">
           <div className="wrapper_container_cu">
             <h2>Contact Us</h2>
-            <div className="contact_address" data-aos="fade-down">
+            <div
+              className="contact_address"
+              data-aos="fade-down"
+              data-aos-duration="1000"
+            >
               <address>
                 plot no 178, Shop- C13, Sai Sapphire, 180, Sector 20, Ulwe,
                 Maharashtra 410206, India
@@ -123,7 +133,12 @@ function LowerFooter() {
             <div className="contact_data">
               {contact_data.map((data, index) => {
                 return (
-                  <p className="cs_data" key={index} data-aos="fade-down">
+                  <p
+                    className="cs_data"
+                    key={index}
+                    data-aos="fade-down"
+                    data-aos-duration="1000"
+                  >
                     <span style={{ color: "#0396fe" }}>{data.title} </span>
                     {data.cu_data}
                   </p>
@@ -138,6 +153,7 @@ function LowerFooter() {
                     key={index}
                     href={data.on_link}
                     data-aos="fade-left"
+                    data-aos-duration="1000"
                   >
                     {data.img}
                   </a>

@@ -43,7 +43,7 @@ const Contact = () => {
     <>
       <div className="contact_section_container" id="contact-us">
         <div className="container_container">
-          <div className="google_map_location" data-aos="fade-down">
+          <div className="google_map_location">
             <div className="gmap">
               <iframe
                 title="gmap_location"
@@ -58,7 +58,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="basic_contact_user_form">
-            <div className="clinic_time_table" data-aos="fade-right">
+            <div className="clinic_time_table">
               <h2>
                 <span>
                   <i className="fa-solid fa-angles-right"></i>
@@ -68,13 +68,17 @@ const Contact = () => {
             </div>
             <hr />
             {clinic_data.map((e, index) => (
-              <div className="clinic_timing" key={index} data-aos="fade-down">
+              <div className="clinic_timing" key={index}>
                 <p className="current_day">{e.c_day}</p>
                 <p className="current_day_timing">{e.c_time}</p>
               </div>
             ))}
             <div className="d_and_c">
-              <div className="direction_to_clinic" data-aos="fade-up">
+              <div
+                className="direction_to_clinic"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+              >
                 <a
                   href="https://www.google.com/maps?ll=18.978293,73.030934&z=14&t=m&hl=en&gl=US&mapclient=embed&cid=2928691504663646078"
                   target="_blank"
