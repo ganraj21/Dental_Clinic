@@ -5,7 +5,8 @@
   align-content: center;
   width: 100%;
   flex-direction: column;
-  background-color: #e5e5e5;
+  background-color: #ffffff;
+  padding: 30px 0;
 }
 .container_container {
   width: 80%;
@@ -103,7 +104,7 @@
 @media screen and (min-width: 1024px) {
   .container_container {
     width: 90%;
-    height: 527px;
+    height: 617px;
   }
   .gmap {
     width: 100%;
@@ -114,6 +115,7 @@
     padding: 25px;
     width: 490px;
     margin-right: 20px;
+    background: #d0d0d078;
   }
   .google_map_location {
     width: 80%;
