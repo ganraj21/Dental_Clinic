@@ -8,7 +8,8 @@ import { useNavigate } from "react-router-dom";
 import Spinner from "../Components/Spinner";
 
 const BookingHours = () => {
-  const url = "https://dental-service.onrender.com/dental-clinic/slot";
+  const url =
+    "https://dental-service.onrender.com/dental-clinic/slot#container45";
   const navigate = useNavigate();
   const [loader, setLoader] = useState("none");
   const [activeUser, setActiveUser] = useState({
