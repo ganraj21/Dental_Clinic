@@ -2,7 +2,7 @@ import React from "react";
 import "./Home.css";
 import "font-awesome/css/font-awesome.min.css";
 import slider_one from "../Pages/images/slide_one.png";
-import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 const Home = () => {
   return (
@@ -62,12 +62,12 @@ const Home = () => {
                 case of emergencies we accept bookings.
               </p>
 
-              <Link
+              <HashLink
                 to={"/register"}
                 style={{ textDecoration: "none", color: "#fff" }}
               >
                 <div className="transperent_btn"> Chat with Doctor</div>
-              </Link>
+              </HashLink>
             </div>
             <div className="basic_info" id="info_02">
               <h2>Best Price Guarantee</h2>
@@ -75,12 +75,12 @@ const Home = () => {
                 Our reasonable prices made thousands of people smile with a new,
                 beautiful, irresistible smile, as never before!!
               </p>
-              <Link
-                to={"/dental-clinic/contact"}
+              <HashLink
+                to={"/#contact-us"}
                 style={{ textDecoration: "none", color: "#fff" }}
               >
                 <div className="transperent_btn">Read More</div>
-              </Link>
+              </HashLink>
             </div>
             <div className="basic_info" id="info_03">
               <h2>Opening Hours</h2>
@@ -89,14 +89,14 @@ const Home = () => {
                 pm
               </p>
 
-              <Link
+              <HashLink
                 to={"/dental-clinic/slot"}
                 style={{ textDecoration: "none", color: "#fff" }}
               >
                 <div className="transperent_btn" id="tr_btn_01">
                   Book An Appointment
                 </div>
-              </Link>
+              </HashLink>
             </div>
           </div>
         </div>
