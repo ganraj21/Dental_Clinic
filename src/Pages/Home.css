@@ -255,6 +255,7 @@
   .basic_info {
     height: 260px;
     width: 90%;
+    box-shadow: 0px 0px 2px #3a3939;
   }
   .transperent_btn {
     color: #000;
