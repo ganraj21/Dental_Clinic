@@ -12,7 +12,7 @@ const apBooking = () => {
           justifyContent: "center",
           alignContent: "center",
           width: "100%",
-          height: "60px",
+          height: "69px",
           position: "fixed",
           zIndex: "100",
           background: "rgb(21 130 247)",
