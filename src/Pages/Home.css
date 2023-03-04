@@ -249,12 +249,15 @@
   .clinic_info {
     width: 100%;
     flex-direction: column;
-    margin: 10px 0px 40px 0px;
+    margin: 30px 0px 40px 0px;
   }
 
   .basic_info {
     height: 260px;
     width: 90%;
+  }
+  #info_03 {
+    display: none;
   }
 }
 
