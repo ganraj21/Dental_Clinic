@@ -256,6 +256,15 @@
     height: 260px;
     width: 90%;
   }
+  .transperent_btn {
+    color: #000;
+    outline: 1px solid #000;
+  }
+  #info_01,
+  #info_02 {
+    background-color: #ffffff;
+    color: #000;
+  }
   #info_03 {
     display: none;
   }
@@ -278,8 +287,5 @@
   }
   .front_page_info h2 {
     width: 90%;
-  }
-  .clinic_container {
-    margin-top: -30px;
   }
 }
