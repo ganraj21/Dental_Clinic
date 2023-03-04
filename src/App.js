@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import "./App.css";
 import Navbar from "./Pages/Navbar";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
@@ -12,6 +13,7 @@ import ChatApp from "./Pages/ChatApp";
 import BookingHours from "./Pages/BookingHours";
 import Profile from "./Pages/Profile";
 import UserProfile from "./Pages/UserProfile";
+import ApBooking from "./Components/ApBooking";
 import Dashboard from "./Pages/PagesData/Admin/Dashboard";
 const App = () => {
   return (
@@ -25,6 +27,7 @@ const App = () => {
           element={
             <>
               <Home />
+              <ApBooking />
               <About />
               <Services />
               <Contact />

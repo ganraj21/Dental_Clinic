@@ -251,9 +251,7 @@
     flex-direction: column;
     margin: 10px 0px 40px 0px;
   }
-  .front_container {
-    margin-top: -42px;
-  }
+
   .basic_info {
     height: 260px;
     width: 90%;
@@ -266,6 +264,8 @@
     margin-bottom: -50px !important;
     height: 694px;
     width: 100%;
+    padding: 60px 0 0 0 !important;
+    justify-content: flex-end !important;
   }
   .front_container {
     width: 90%;

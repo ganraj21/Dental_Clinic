@@ -59,7 +59,7 @@ const Contact = () => {
           </div>
           <div className="basic_contact_user_form">
             <div className="clinic_time_table">
-              <h2>
+              <h2 style={{ fontFamily: "Poppins" }}>
                 <span>
                   <i className="fa-solid fa-angles-right"></i>
                 </span>

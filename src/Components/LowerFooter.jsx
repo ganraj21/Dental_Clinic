@@ -152,8 +152,6 @@ function LowerFooter() {
                     className="contact_data_links"
                     key={index}
                     href={data.on_link}
-                    data-aos="fade-left"
-                    data-aos-duration="1000"
                   >
                     {data.img}
                   </a>

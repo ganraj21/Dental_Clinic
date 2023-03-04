@@ -61,14 +61,16 @@
   justify-content: center;
   align-content: center;
   height: 45px;
-  outline: 2px solid green;
+  outline: 2px solid #003380;
 }
 
 .direction_to_clinic a,
 .call_to_clinic a {
   text-decoration: none;
   font-size: 15px;
-  color: green;
+  color: #003380;
+  font-weight: 500;
+  text-transform: uppercase;
 }
 
 .clinic_timing {
@@ -78,7 +80,7 @@
   align-content: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  border-bottom: 2px solid;
+  border-bottom: 1px solid;
   height: 60px;
   padding: 12px;
 }
@@ -115,7 +117,6 @@
     padding: 25px;
     width: 490px;
     margin-right: 20px;
-    background: #d0d0d078;
   }
   .google_map_location {
     width: 80%;
@@ -143,7 +144,7 @@
   }
   .basic_contact_user_form {
     width: 100%;
-    background: #d0d0d078;
+    /* background: #d0d0d078; */
   }
 }
 
