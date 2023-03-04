@@ -1,5 +1,8 @@
 #loading {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
   width: 27px;
   height: 27px;
   margin-left: 20px;

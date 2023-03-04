@@ -161,6 +161,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .bsc_header {
   width: 413px;
 }
+.booking_c_btn span {
+  margin: 0 !important;
+  font-size: 15px !important;
+}
 .form_for_booking {
   display: flex;
   flex-direction: column;

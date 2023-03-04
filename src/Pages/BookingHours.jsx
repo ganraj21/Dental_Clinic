@@ -19,7 +19,7 @@ const BookingHours = () => {
     phone: "",
     time: "",
   });
-
+  const [btn, setBtn] = useState(0);
   const [aces, setACES] = useState(-1);
   const [ace, setACE] = useState(-1);
 
@@ -105,6 +105,7 @@ const BookingHours = () => {
       const data = await res.json();
 
       if (data) {
+        setBtn(0);
         setLoader("none");
       }
       if (data.message === "successfully Make An Appointment") {
@@ -233,8 +234,15 @@ const BookingHours = () => {
                       );
                     })}
                     <div className="submit_slot_btn">
-                      <button className="booking_c_btn" id="bcb" type="submit">
-                        Submit
+                      <button
+                        className="booking_c_btn"
+                        id="bcb"
+                        type="submit"
+                        onClick={() => setBtn(1)}
+                      >
+                        <span style={btn === 1 ? { display: "none" } : {}}>
+                          Submit
+                        </span>
                         <Spinner id="sb_loader" style={loader} />
                       </button>
                     </div>
