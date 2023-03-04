@@ -168,7 +168,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   padding: 3rem 5rem;
   height: 573px;
   border-radius: 0;
-  background: #2a2a2a70;
+  background: #005c9621;
   border-bottom: 7px solid white;
 }
 form {
