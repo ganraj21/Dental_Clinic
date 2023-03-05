@@ -119,7 +119,7 @@ app.post("/dental-clinic/slot", async (req, res) => {
       phone: req.body.phone,
     };
     if (userAppointment) {
-      const bookingDetails = `Your booking has been confirmed for the following date: ${req.body.date} and time: ${req.body.time} , Patient Details: ${patient_details};
+      const bookingDetails = `Your booking has been confirmed for the following date: ${req.body.date} and time: ${req.body.time} , Patient Details: ${patient_details}`;
 
       client.messages
         .create({
