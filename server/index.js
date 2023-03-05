@@ -114,9 +114,11 @@ app.post("/dental-clinic/slot", async (req, res) => {
     const userAppointment = await Appointment_info.save();
     // -----||
     if (userAppointment) {
-      const bookingDetails = `Your booking has been confirmed for the following date and time: ${JSON.stringify(
-        userAppointment
-      )}`;
+      const bookingDetails = `Your booking has been confirmed for the following date: ${
+        req.body.date
+      } and time: ${req.body.time} , Patient Details:${
+        (userAppointment.name, userAppointment.email, userAppointment.phone)
+      }`;
 
       client.messages
         .create({
