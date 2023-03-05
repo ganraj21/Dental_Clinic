@@ -20,6 +20,7 @@
     "gitignore": "^0.7.0",
     "mongoose": "^6.7.0",
     "nodemon": "^2.0.20",
-    "socket.io": "^4.5.3"
+    "socket.io": "^4.5.3",
+    "twilio": "^4.8.0"
   }
 }
