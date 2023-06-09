@@ -1,34 +1,34 @@
-import React, { useState } from "react";
-import EveningData from "./PagesData/EveningData";
-import MorningData from "./PagesData/MorningData";
-import Logo from "../assets/logo.png";
-import { ToastContainer, toast } from "react-toastify";
-import "./BookingHours.css";
-import { useNavigate } from "react-router-dom";
-import Spinner from "../Components/Spinner";
+import React, { useState } from 'react';
+import EveningData from './PagesData/EveningData';
+import MorningData from './PagesData/MorningData';
+import Logo from '../assets/logo.png';
+import { ToastContainer, toast } from 'react-toastify';
+import './BookingHours.css';
+import { useNavigate } from 'react-router-dom';
+import Spinner from '../Components/Spinner';
 
 const BookingHours = () => {
   const url =
-    "https://dental-service.onrender.com/dental-clinic/slot#container45";
+    'https://dental-service.onrender.com/dental-clinic/slot#container45';
   const navigate = useNavigate();
-  const [loader, setLoader] = useState("none");
+  const [loader, setLoader] = useState('none');
   const [activeUser, setActiveUser] = useState({
-    date: "",
-    name: "",
-    email: "",
-    phone: "",
-    time: "",
+    date: '',
+    name: '',
+    email: '',
+    phone: '',
+    time: '',
   });
   const [btn, setBtn] = useState(0);
   const [aces, setACES] = useState(-1);
   const [ace, setACE] = useState(-1);
 
   const toastOptions = {
-    position: "top-right",
+    position: 'top-right',
     autoClose: 8000,
     pauseOnHover: true,
     draggable: true,
-    theme: "dark",
+    theme: 'dark',
   };
 
   let name, value;
@@ -40,29 +40,29 @@ const BookingHours = () => {
 
   const handleValidation = () => {
     const { date, name, email, phone, time } = activeUser;
-    if (date === "") {
-      toast.error("Choose the Date", toastOptions);
+    if (date === '') {
+      toast.error('Choose the Date', toastOptions);
       return false;
-    } else if (name === "") {
-      toast.error("Enter your name", toastOptions);
+    } else if (name === '') {
+      toast.error('Enter your name', toastOptions);
       return false;
-    } else if (email === "") {
-      toast.error("Enter your Email", toastOptions);
+    } else if (email === '') {
+      toast.error('Enter your Email', toastOptions);
       return false;
-    } else if (phone === "") {
-      toast.error("Enter your phone no", toastOptions);
+    } else if (phone === '') {
+      toast.error('Enter your phone no', toastOptions);
       return false;
-    } else if (time === "") {
-      toast.error("Choose your slot timing", toastOptions);
+    } else if (time === '') {
+      toast.error('Choose your slot timing', toastOptions);
       return false;
     } else if (
-      date === "" ||
-      name === "" ||
-      email === "" ||
-      phone === "" ||
-      time === ""
+      date === '' ||
+      name === '' ||
+      email === '' ||
+      phone === '' ||
+      time === ''
     ) {
-      toast.error("Plz Enter Your all details", toastOptions);
+      toast.error('Plz Enter Your all details', toastOptions);
       return false;
     }
     return true;
@@ -93,11 +93,12 @@ const BookingHours = () => {
     console.log(requestOptions);
 
     if (handleValidation()) {
-      setLoader("flex");
+      setBtn(1);
+      setLoader('flex');
       const res = await fetch(url, {
-        method: "POST",
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(requestOptions),
       });
@@ -106,16 +107,16 @@ const BookingHours = () => {
 
       if (data) {
         setBtn(0);
-        setLoader("none");
+        setLoader('none');
       }
-      if (data.message === "successfully Make An Appointment") {
+      if (data.message === 'successfully Make An Appointment') {
         console.log("Your data submitted to me it's server");
         toast.success(data.message, toastOptions);
 
         setTimeout(() => {
-          navigate("/");
+          navigate('/');
         }, 4000);
-      } else if (data.message === "This slot is already Booked") {
+      } else if (data.message === 'This slot is already Booked') {
         toast.error(data.message, toastOptions);
       }
     }
@@ -138,7 +139,7 @@ const BookingHours = () => {
                       type="date"
                       placeholder="Select Date"
                       name="date"
-                      style={{ color: "White" }}
+                      style={{ color: 'White' }}
                       value={activeUser.date}
                       onChange={handleInputs}
                     />
@@ -170,9 +171,9 @@ const BookingHours = () => {
                       className="submit_btn"
                       href="#container45"
                       style={{
-                        scrollBehavior: "smooth",
-                        textDecoration: "none",
-                        transition: "2s all ease",
+                        scrollBehavior: 'smooth',
+                        textDecoration: 'none',
+                        transition: '2s all ease',
                       }}
                     >
                       Next
@@ -190,8 +191,8 @@ const BookingHours = () => {
                           className="md_data"
                           style={{
                             backgroundColor:
-                              aces === index ? data.color[0] : "white",
-                            color: aces === index ? data.color[1] : "black",
+                              aces === index ? data.color[0] : 'white',
+                            color: aces === index ? data.color[1] : 'black',
                           }}
                           onClick={() => {
                             setACES(index);
@@ -218,8 +219,8 @@ const BookingHours = () => {
                           key={index}
                           style={{
                             backgroundColor:
-                              ace === index ? data.color[0] : "white",
-                            color: ace === index ? data.color[1] : "black",
+                              ace === index ? data.color[0] : 'white',
+                            color: ace === index ? data.color[1] : 'black',
                           }}
                           onClick={() => {
                             setACE(index);
@@ -238,9 +239,9 @@ const BookingHours = () => {
                         className="booking_c_btn"
                         id="bcb"
                         type="submit"
-                        onClick={() => setBtn(1)}
+                        // onClick={() => setBtn(1)}
                       >
-                        <span style={btn === 1 ? { display: "none" } : {}}>
+                        <span style={btn === 1 ? { display: 'none' } : {}}>
                           Submit
                         </span>
                         <Spinner id="sb_loader" style={loader} />
