@@ -1,20 +1,21 @@
-import React from "react";
-import styled from "styled-components";
-import site_c from "../assets/site_con.jpg";
-// import { useNavigate } from "react-router-dom";
-// import { allUsersRoute } from "../utils/APIRoutes";
-// import ChatContacts from "../Components/ChatContacts";
+import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import site_c from '../assets/site_con.jpg';
+import { useNavigate } from 'react-router-dom';
+// import { allUsersRoute } from '../utils/APIRoutes';
+import ChatContacts from '../Components/ChatContacts';
 function ChatApp() {
-  // const navigate = useNavigate();
-  // const [contacts, setContacts] = useState();
-  // const [currentUser, setCurrentUser] = useState(undefined);
-  // useEffect(async () => {
-  //   if (!localStorage.getItem("chat-app-user")) {
-  //     navigate("/dental-clinic/login_user");
-  //   } else {
-  //     setCurrentUser(await JSON.parse(localStorage.getItem("chat-app-user")));
-  //   }
-  // }, []);
+  const navigate = useNavigate();
+  const [contacts, setContacts] = useState();
+  const [currentUser, setCurrentUser] = useState(undefined);
+  useEffect(() => {
+    if (!localStorage.getItem('chat-app-user')) {
+      navigate('/login_user');
+    } else {
+      setCurrentUser(JSON.parse(localStorage.getItem('chat-app-user')));
+    }
+  }, []);
+
   // useEffect(async () => {
   //   if (currentUser) {
   //     const data = await fetch(`${allUsersRoute}/${currentUser._id}`);
@@ -30,7 +31,7 @@ function ChatApp() {
             alt=" site under construction "
             // style={{ width: "100%" }}
           />
-          {/* <ChatContacts contacts={contacts} currentUser={currentUser} /> */}
+          <ChatContacts contacts={contacts} currentUser={currentUser} />
         </div>
       </Container>
     </>
