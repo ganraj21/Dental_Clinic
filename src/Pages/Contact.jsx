@@ -1,42 +1,42 @@
-import React from "react";
-import LowerFooter from "../Components/LowerFooter";
-import "./Contact.css";
+import React from 'react';
+import LowerFooter from '../Components/LowerFooter';
+import './Contact.css';
 const Contact = () => {
   const clinic_data = [
     {
       id: 1,
-      c_day: "Monday",
-      c_time: "11:00 AM-9:00 PM",
+      c_day: 'Monday',
+      c_time: '11:00 AM-9:00 PM',
     },
     {
       id: 2,
-      c_day: "Tuesday",
-      c_time: "11:00 AM-9:00 PM",
+      c_day: 'Tuesday',
+      c_time: '11:00 AM-9:00 PM',
     },
     {
       id: 3,
-      c_day: "Wednesday",
-      c_time: "11:00 AM-9:00 PM",
+      c_day: 'Wednesday',
+      c_time: '11:00 AM-9:00 PM',
     },
     {
       id: 4,
-      c_day: "Thursday",
-      c_time: "11:00 AM-9:00 PM",
+      c_day: 'Thursday',
+      c_time: '11:00 AM-9:00 PM',
     },
     {
       id: 5,
-      c_day: "Friday",
-      c_time: "11:00 AM-9:00 PM",
+      c_day: 'Friday',
+      c_time: '11:00 AM-9:00 PM',
     },
     {
       id: 6,
-      c_day: "Saturday",
-      c_time: "11:00 AM-9:00 PM",
+      c_day: 'Saturday',
+      c_time: '11:00 AM-9:00 PM',
     },
     {
       id: 7,
-      c_day: "Sunday",
-      c_time: "5:00 PM-9:00 PM",
+      c_day: 'Sunday',
+      c_time: '5:00 PM-9:00 PM',
     },
   ];
   return (
@@ -53,13 +53,13 @@ const Contact = () => {
                 scrolling="no"
                 marginheight="0"
                 marginwidth="0"
-                src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=plot no 178, Om Dental Clinic, Ulwe, Shop- C13, Sai Sapphire, 180, Sector 20, Ulwe, Maharashtra 410206, India&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1351.329066057928!2d73.03084553864231!3d18.97784631919385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c3d1c70aaf85%3A0x28a4cd68182e4f7e!2sOm%20Dental%20Clinic!5e1!3m2!1sen!2sin!4v1686294084196!5m2!1sen!2sin"
               ></iframe>
             </div>
           </div>
           <div className="basic_contact_user_form">
             <div className="clinic_time_table">
-              <h2 style={{ fontFamily: "Poppins" }}>
+              <h2 style={{ fontFamily: 'Poppins' }}>
                 <span>
                   <i className="fa-solid fa-angles-right"></i>
                 </span>
