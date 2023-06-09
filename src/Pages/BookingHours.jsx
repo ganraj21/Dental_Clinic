@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import EveningData from './PagesData/EveningData';
 import MorningData from './PagesData/MorningData';
 import Logo from '../assets/logo.png';
@@ -20,6 +20,8 @@ const BookingHours = () => {
     time: '',
   });
   const [btn, setBtn] = useState(0);
+  const [nxtbtn, setNxtBtn] = useState(0);
+
   const [aces, setACES] = useState(-1);
   const [ace, setACE] = useState(-1);
 
@@ -77,6 +79,18 @@ const BookingHours = () => {
   //     native: true,
   //   });
   // };
+
+  useEffect(() => {
+    if (
+      activeUser.phone !== '' &&
+      activeUser.email !== '' &&
+      activeUser.name !== '' &&
+      activeUser.date !== ''
+    ) {
+      setNxtBtn(2);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [handleInputs]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -169,11 +183,15 @@ const BookingHours = () => {
 
                     <a
                       className="submit_btn"
-                      href="#container45"
+                      href={nxtbtn === 2 ? '#valid-user' : '#invalid'}
                       style={{
+                        background: nxtbtn === 2 ? 'green' : 'grey',
                         scrollBehavior: 'smooth',
                         textDecoration: 'none',
                         transition: '2s all ease',
+                      }}
+                      onClick={() => {
+                        nxtbtn === 2 ? setBtn(2) : setBtn(0);
                       }}
                     >
                       Next
@@ -239,7 +257,9 @@ const BookingHours = () => {
                         className="booking_c_btn"
                         id="bcb"
                         type="submit"
-                        // onClick={() => setBtn(1)}
+                        onClick={() => {
+                          nxtbtn === 2 ? setBtn(1) : setBtn(0);
+                        }}
                       >
                         <span style={btn === 1 ? { display: 'none' } : {}}>
                           Submit

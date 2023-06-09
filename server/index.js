@@ -1,11 +1,11 @@
-const express = require("express");
-const cors = require("cors");
-const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
-const User = require("./model/userModel");
-const appointment_info = require("./model/appointmentCheck");
+const express = require('express');
+const cors = require('cors');
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
+const User = require('./model/userModel');
+const appointment_info = require('./model/appointmentCheck');
 
-require("dotenv").config({ path: "./.env" });
+require('dotenv').config({ path: './.env' });
 
 const app = express();
 app.use(cors());
@@ -17,17 +17,17 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-    console.log("DB Connection Successfully");
+    console.log('DB Connection Successfully');
   })
   .catch((err) => {
     console.log(err.message);
   });
 
-app.get("/", (req, res) => {
-  res.json({ message: "Hello from server!" });
+app.get('/', (req, res) => {
+  res.json({ message: 'Hello from server!' });
 });
 
-app.post("/register", async (req, res) => {
+app.post('/register', async (req, res) => {
   console.log(req.body);
 
   let saltRounds = await bcrypt.genSalt(10);
@@ -37,7 +37,7 @@ app.post("/register", async (req, res) => {
   try {
     const userExist = await User.findOne({ email: req.body.email });
     if (userExist) {
-      return res.status(401).json({ error: "Email already Exist" });
+      return res.status(401).json({ error: 'Email already Exist' });
     }
     const user = new User({
       name: req.body.name,
@@ -48,14 +48,14 @@ app.post("/register", async (req, res) => {
     const userRegister = await user.save();
 
     if (userRegister) {
-      res.status(201).json({ message: "user registered successfully" });
+      res.status(201).json({ message: 'user registered successfully' });
     }
   } catch (err) {
     console.log(err);
   }
 });
 
-app.post("/login_user", async (req, res) => {
+app.post('/login_user', async (req, res) => {
   console.log(req.body);
 
   try {
@@ -67,7 +67,7 @@ app.post("/login_user", async (req, res) => {
     //     res.render('/dental-clinic/team/admin-dashboard');
     //   }
     if (!user)
-      return res.json({ msg: "Incorrect Email or Password", status: false });
+      return res.json({ msg: 'Incorrect Email or Password', status: false });
 
     const isPasswordValid = await bcrypt.compare(
       req.body.password,
@@ -75,23 +75,23 @@ app.post("/login_user", async (req, res) => {
     );
 
     if (!isPasswordValid)
-      return res.json({ msg: "Incorrect Password", status: false });
+      return res.json({ msg: 'Incorrect Password', status: false });
 
     delete user.password;
     if (user && isPasswordValid) {
-      return res.status(201).json({ message: "Login Successfully" });
+      return res.status(201).json({ message: 'Login Successfully' });
     }
   } catch (err) {
     console.log(err);
   }
 });
 
-app.post("/dental-clinic/slot", async (req, res) => {
+app.post('/dental-clinic/slot/#valid-user', async (req, res) => {
   const accountSid = process.env.ACCOUNT_SID;
   const authToken = process.env.AUTH_TOKEN;
-  const client = require("twilio")(accountSid, authToken);
+  const client = require('twilio')(accountSid, authToken);
 
-  const userPhoneNumber = "+918010844174";
+  const userPhoneNumber = '+918010844174';
 
   try {
     const user_date = await appointment_info.findOne({ date: req.body.date });
@@ -99,7 +99,7 @@ app.post("/dental-clinic/slot", async (req, res) => {
 
     if (user_date) {
       if (user_time) {
-        return res.status(401).json({ message: "This slot is already Booked" });
+        return res.status(401).json({ message: 'This slot is already Booked' });
       }
     }
 
@@ -122,19 +122,19 @@ app.post("/dental-clinic/slot", async (req, res) => {
       client.messages
         .create({
           body: bookingDetails,
-          from: "+15674122650",
+          from: '+15674122650',
           to: userPhoneNumber,
         })
         .then((message) => console.log(message.sid));
       console.log(req.body);
-      res.status(201).json({ message: "successfully Make An Appointment" });
+      res.status(201).json({ message: 'successfully Make An Appointment' });
     }
   } catch (err) {
     console.log(err);
   }
 });
 
-app.get("/dental-clinic/user/profile", async (req, res) => {
+app.get('/dental-clinic/user/profile', async (req, res) => {
   try {
     const Appointment_info = await appointment_info.find();
     res.send(Appointment_info);
@@ -143,7 +143,7 @@ app.get("/dental-clinic/user/profile", async (req, res) => {
   }
 });
 
-app.get("/dental-clinic/admin-person", async (req, res) => {});
+app.get('/dental-clinic/admin-person', async (req, res) => {});
 
 app.listen(process.env.PORT, () => {
   console.log(`Server Started on Port ${process.env.PORT}`);
