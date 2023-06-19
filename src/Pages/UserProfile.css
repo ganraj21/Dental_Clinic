@@ -6,6 +6,7 @@
   align-content: center;
   gap: 15px;
   width: 90%;
+  height: 100vh;
   margin-bottom: 15px;
   margin-top: 15px;
 }
@@ -49,6 +50,6 @@
 
 @media screen and (min-width: 420px) {
   .data_values {
-    width: 90%;
+    width: 375px;
   }
 }

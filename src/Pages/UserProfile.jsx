@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from "react";
-import "./UserProfile.css";
+import React, { useEffect, useState } from 'react';
+import './UserProfile.css';
 function UserProfile() {
   const [apiData, setApiData] = useState([]);
 
   useEffect(() => {
     // const url = "http://localhost:5000/dental-clinic/user/profile";
     const url =
-      "https://dental-service.onrender.com/dental-clinic/user/profile";
+      'https://dental-service.onrender.com/dental-clinic/user/profile';
 
     const getDatas = async () => {
       const response = await fetch(url, {
-        method: "GET",
+        method: 'GET',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
       });
       console.log(response);
@@ -25,7 +25,7 @@ function UserProfile() {
 
   return (
     <>
-      <div className="profile_section_container">
+      <div className="profile_section">
         <div className="user_data_container">
           {apiData.map((val, key) => {
             return (

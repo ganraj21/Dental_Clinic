@@ -1,27 +1,27 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import Logo from "../assets/logo.png";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import "./Login.css";
-import Spinner from "../Components/Spinner";
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import Logo from '../assets/logo.png';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import './Login.css';
+import Spinner from '../Components/Spinner';
 const Login = () => {
   // const url = "http://localhost:5000/login_user";
-  const url = "https://dental-service.onrender.com/login_user";
+  const url = 'https://dental-service.onrender.com/login_user';
   const navigate = useNavigate();
 
-  const [loader, setLoader] = useState("none");
+  const [loader, setLoader] = useState('none');
   const [values, setValues] = useState({
-    email: "",
-    password: "",
+    email: '',
+    password: '',
   });
 
   const toastOptions = {
-    position: "top-right",
+    position: 'top-right',
     autoClose: 8000,
     pauseOnHover: true,
     draggable: true,
-    theme: "dark",
+    theme: 'dark',
   };
 
   const handleChange = (event) => {
@@ -30,11 +30,11 @@ const Login = () => {
 
   const handleValidation = () => {
     const { email, password } = values;
-    if (password === "") {
-      toast.error("Password is required", toastOptions);
+    if (password === '') {
+      toast.error('Password is required', toastOptions);
       return false;
-    } else if (email === "") {
-      toast.error("email and Password is required", toastOptions);
+    } else if (email === '') {
+      toast.error('email and Password is required', toastOptions);
       return false;
     }
     return true;
@@ -48,11 +48,11 @@ const Login = () => {
     const request_login_options = { email, password };
 
     if (handleValidation()) {
-      setLoader("flex");
+      setLoader('flex');
       const res = await fetch(url, {
-        method: "POST",
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(request_login_options),
       });
@@ -60,16 +60,16 @@ const Login = () => {
       const data = await res.json();
 
       if (data) {
-        setLoader("none");
+        setLoader('none');
       }
       console.log(data);
 
       if (data.status === false) {
         toast.error(data.msg, toastOptions);
       }
-      if (data.message === "Login Successfully") {
-        localStorage.setItem("chat-app-user", data);
-        navigate("/dental-clinic/user/chat_section");
+      if (data.message === 'Login Successfully') {
+        localStorage.setItem('chat-app-user', data);
+        // navigate("/dental-clinic/user/chat_section");
       }
     }
   };
