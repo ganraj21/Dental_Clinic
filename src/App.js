@@ -57,9 +57,7 @@ const App = () => {
         <Route
           exact
           path="/dental-clinic/user/profile"
-          element={
-            currentUser === 'chat-app-user' ? <UserProfile /> : <Login />
-          }
+          element={<UserProfile />}
         />
         <Route
           exact
