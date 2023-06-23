@@ -96,8 +96,11 @@ const Contact = () => {
             <span>
               <i className="fa-regular fa-copyright"></i>
             </span>
-            2022 <span id="clinic_name">Om Dental Clinic.</span> All Rights
-            Reserved
+            2023
+            <a href="/" id="clinic_name">
+              Om Dental Clinic.
+            </a>
+            All Rights Reserved
           </p>
         </div>
       </div>

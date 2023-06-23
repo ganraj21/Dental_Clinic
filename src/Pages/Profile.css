@@ -7,6 +7,7 @@
   width: 100%;
   gap: 2rem;
   position: absolute;
+  background: #ffccbc;
 }
 
 .profile_details {
@@ -18,14 +19,16 @@
   width: 400px;
   height: 500px;
   padding: 15px 20px;
-  background-color: #ffffff;
+  backdrop-filter: blur(6px);
+  background-color: #ffffff4a;
   border-radius: 6px;
 }
 .profile_details img {
   border-radius: 50%;
   width: 185px;
   height: 185px;
-  border: 7px solid #29b300;
+  border: 1px solid #000000;
+  box-shadow: 0 0 6px 1px #c2c0c0ba;
 }
 .profile_info {
   text-align: center;
@@ -54,10 +57,6 @@
 
 .profile_section_container h2 span {
   margin-right: 9px;
-}
-
-.profile_section_container h2 {
-  width: 85%;
 }
 
 @media screen and (min-width: 1024px) {

@@ -104,12 +104,12 @@
   display: flex;
   justify-content: center;
   align-content: center;
-  background: #3b3b3b;
+  background: #3b3b3b70;
   color: #fff;
   font-size: 18px;
   border-radius: 50%;
   cursor: pointer;
-  font-family: "Poppins";
+  font-family: 'Poppins';
   text-decoration: none;
 }
 

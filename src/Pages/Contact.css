@@ -97,11 +97,13 @@
 }
 #clinic_name {
   color: #0396fe;
+  margin: 6px;
+  text-decoration: none;
+  font-weight: bold;
 }
 .copyright_footer span {
   margin-left: 9px;
   margin-right: 9px;
-  color: #fff;
 }
 @media screen and (min-width: 1024px) {
   .container_container {
@@ -173,6 +175,7 @@
     align-items: center;
     justify-content: center;
     align-content: center;
+    margin-bottom: 36px;
   }
   .copyright_footer p {
     width: 80%;
