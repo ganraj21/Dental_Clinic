@@ -1,9 +1,9 @@
-import React from "react";
-import { HashLink } from "react-router-hash-link";
-import about_long_des_data from "../Pages/PagesData/AboutData";
-import "./LowerFooter.css";
-import footer_01 from "../Pages/images/footer_01.jpg";
-import footer_02 from "../Pages/images/footer_01.jpg";
+import React from 'react';
+import { HashLink } from 'react-router-hash-link';
+import about_long_des_data from '../Pages/PagesData/AboutData';
+import './LowerFooter.css';
+import footer_01 from '../Pages/images/footer_01.jpg';
+import footer_02 from '../Pages/images/footer_01.jpg';
 
 function LowerFooter() {
   const contact_recent_data = [
@@ -11,39 +11,39 @@ function LowerFooter() {
       index: 1,
       rp_img: footer_01,
       rp_text:
-        "Tooth problems are nothing less than an emergency no matter how minor or major the problem might be. Dental problems are varied and knowing how to handle them can actually go a long way in preventing long term damage.",
-      rp_btn: "read more",
+        'Tooth problems are nothing less than an emergency no matter how minor or major the problem might be. Dental problems are varied and knowing how to handle them can actually go a long way in preventing long term damage.',
+      rp_btn: 'read more',
     },
     {
       index: 2,
       rp_img: footer_02,
       rp_text:
-        "Although brushing and flossing are two important daily oral hygiene routines for maintaining the health of your teeth and gums, there are a few other simple things you can do to prevent tooth decay.",
-      rp_btn: "read more",
+        'Although brushing and flossing are two important daily oral hygiene routines for maintaining the health of your teeth and gums, there are a few other simple things you can do to prevent tooth decay.',
+      rp_btn: 'read more',
     },
   ];
 
   const nav_data = [
-    { index: 1, link_to: "/#home", nav_name: "Home" },
-    { index: 2, link_to: "/#about-doctors", nav_name: "About" },
-    { index: 3, link_to: "/#our-services", nav_name: "Treatments" },
+    { index: 1, link_to: '/#home', nav_name: 'Home' },
+    { index: 2, link_to: '/#about-doctors', nav_name: 'About' },
+    { index: 3, link_to: '/#our-services', nav_name: 'Treatments' },
     {
       index: 4,
-      link_to: "/dental-clinic/appointment",
-      nav_name: "Appointment",
+      link_to: '/dental-clinic/appointment',
+      nav_name: 'Appointment',
     },
-    { index: 5, link_to: "/#contact-us", nav_name: "Contact Us" },
+    { index: 5, link_to: '/#contact-us', nav_name: 'Contact Us' },
   ];
   const contact_data = [
     {
       index: 1,
-      title: "Email:",
-      cu_data: " ghadgekomal51@gmail.com",
+      title: 'Email:',
+      cu_data: ' ghadgekomal51@gmail.com',
     },
     {
       index: 2,
-      title: "Phone:",
-      cu_data: " 7261922208",
+      title: 'Phone:',
+      cu_data: ' 7261922208',
     },
   ];
 
@@ -51,22 +51,22 @@ function LowerFooter() {
     {
       index: 1,
       img: <i class="fa-brands fa-facebook-f"></i>,
-      on_link: "https://www.facebook.com/",
+      on_link: 'https://www.facebook.com/',
     },
     {
       index: 2,
       img: <i class="fa-brands fa-instagram"></i>,
-      on_link: "https://www.instagram.com/",
+      on_link: 'https://www.instagram.com/',
     },
     {
       index: 3,
       img: <i class="fa-brands fa-twitter"></i>,
-      on_link: "https://www.twitter.com/",
+      on_link: 'https://www.twitter.com/',
     },
     {
       index: 4,
       img: <i class="fa-sharp fa-solid fa-globe"></i>,
-      on_link: "https://dentalclinic-snowy.vercel.app/",
+      on_link: 'https://omdentalclinic.vercel.app/#home',
     },
   ];
   return (
@@ -139,7 +139,7 @@ function LowerFooter() {
                     data-aos="fade-down"
                     data-aos-duration="1000"
                   >
-                    <span style={{ color: "#0396fe" }}>{data.title} </span>
+                    <span style={{ color: '#0396fe' }}>{data.title} </span>
                     {data.cu_data}
                   </p>
                 );
