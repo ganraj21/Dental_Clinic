@@ -81,12 +81,6 @@ app.post('/login_user', async (req, res) => {
 });
 
 app.post('/dental-clinic/slot/', async (req, res) => {
-  const accountSid = process.env.ACCOUNT_SID;
-  const authToken = process.env.AUTH_TOKEN;
-  const client = require('twilio')(accountSid, authToken);
-
-  const userPhoneNumber = process.env.PHONE;
-
   try {
     const user_date = await appointment_info.findOne({ date: req.body.date });
     const user_time = await appointment_info.findOne({ time: req.body.time });
@@ -108,18 +102,6 @@ app.post('/dental-clinic/slot/', async (req, res) => {
     const userAppointment = await Appointment_info.save();
     // -----||
     if (userAppointment) {
-      const bookingDetails = `Your booking has been confirmed for the following date: ${req.body.date} and time: ${req.body.time} , 
-       Patient Details: Name: ${userAppointment.name},
-         Email: ${userAppointment.email} , 
-         Phone No: ${userAppointment.phone}`;
-
-      client.messages
-        .create({
-          body: bookingDetails,
-          from: '+15674122650',
-          to: userPhoneNumber,
-        })
-        .then((message) => console.log(message.sid));
       console.log(req.body);
       res.status(201).json({ message: 'successfully Make An Appointment' });
     }
