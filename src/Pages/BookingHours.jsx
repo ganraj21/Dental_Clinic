@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import EveningData from './PagesData/EveningData';
 import MorningData from './PagesData/MorningData';
 import Logo from '../assets/logo.png';
@@ -20,8 +20,6 @@ const BookingHours = () => {
     time: '',
   });
   const [btn, setBtn] = useState(0);
-  const [nxtbtn, setNxtBtn] = useState(0);
-
   const [aces, setACES] = useState(-1);
   const [ace, setACE] = useState(-1);
 
@@ -40,6 +38,18 @@ const BookingHours = () => {
     setActiveUser({ ...activeUser, [name]: value });
   };
 
+  function checkDate(selectedDate) {
+    var now = new Date();
+    var formattedDate = now.toISOString().split('T')[0];
+    console.log(formattedDate);
+    if (selectedDate < formattedDate) {
+      alert('Date must be in the future');
+      return false;
+    }
+
+    return true;
+  }
+
   const handleValidation = () => {
     const { date, name, email, phone, time } = activeUser;
     if (date === '') {
@@ -52,7 +62,7 @@ const BookingHours = () => {
       toast.error('Enter your Email', toastOptions);
       return false;
     } else if (phone === '') {
-      toast.error('Enter your phone no', toastOptions);
+      toast.error('Enter Your Currect Phone No', toastOptions);
       return false;
     } else if (time === '') {
       toast.error('Choose your slot timing', toastOptions);
@@ -69,28 +79,6 @@ const BookingHours = () => {
     }
     return true;
   };
-
-  // const clickToNotify = () => {
-  //   addNotification({
-  //     title: "Om Dental Clinic",
-  //     message: "Appointment booking notification ",
-  //     duration: 8000,
-  //     icon: logo_img,
-  //     native: true,
-  //   });
-  // };
-
-  useEffect(() => {
-    if (
-      activeUser.phone !== '' &&
-      activeUser.email !== '' &&
-      activeUser.name !== '' &&
-      activeUser.date !== ''
-    ) {
-      setNxtBtn(2);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [handleInputs]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -149,53 +137,64 @@ const BookingHours = () => {
                       <img src={Logo} alt="logo" />
                       <h1>Om Dental Clinic</h1>
                     </div>
-                    <input
-                      type="date"
-                      placeholder="Select Date"
-                      name="date"
-                      style={{ color: 'White' }}
-                      value={activeUser.date}
-                      onChange={handleInputs}
-                    />
-                    <input
-                      type="text"
-                      placeholder="Enter your name"
-                      name="name"
-                      min="3"
-                      value={activeUser.name}
-                      onChange={handleInputs}
-                    />
-                    <input
-                      type="email"
-                      placeholder="Enter your Email"
-                      name="email"
-                      min="3"
-                      value={activeUser.email}
-                      onChange={handleInputs}
-                    />
-                    <input
-                      type="phone"
-                      placeholder="Phone No"
-                      name="phone"
-                      value={activeUser.phone}
-                      onChange={handleInputs}
-                    />
-
-                    <a
-                      className="submit_btn"
-                      href={nxtbtn === 2 ? '#valid-user' : '#invalid'}
-                      style={{
-                        background: nxtbtn === 2 ? 'green' : 'grey',
-                        scrollBehavior: 'smooth',
-                        textDecoration: 'none',
-                        transition: '2s all ease',
-                      }}
-                      onClick={() => {
-                        nxtbtn === 2 ? setBtn(2) : setBtn(0);
-                      }}
-                    >
-                      Next
-                    </a>
+                    <div className="in__container">
+                      <label>Choose Date</label>
+                      <input
+                        type="date"
+                        placeholder="Select Date"
+                        name="date"
+                        style={{ color: 'White' }}
+                        value={activeUser.date}
+                        onChange={(event) => {
+                          const selectedDate = event.target.value;
+                          console.log(selectedDate);
+                          if (checkDate(selectedDate)) {
+                            handleInputs(event);
+                          }
+                        }}
+                        required
+                      />
+                    </div>
+                    <div className="in__container">
+                      <label>Your Name</label>
+                      <input
+                        type="text"
+                        placeholder="Enter your name"
+                        name="name"
+                        min="3"
+                        value={activeUser.name}
+                        onChange={handleInputs}
+                        required
+                      />
+                    </div>
+                    <div className="in__container">
+                      <label>Email Id</label>
+                      <input
+                        type="email"
+                        placeholder="Enter your Email"
+                        name="email"
+                        min="3"
+                        value={activeUser.email}
+                        onChange={handleInputs}
+                        required
+                      />
+                    </div>
+                    <div className="in__container">
+                      <label>Your Phone </label>
+                      <input
+                        type="number"
+                        placeholder="Phone No"
+                        name="phone"
+                        value={activeUser.phone}
+                        onChange={handleInputs}
+                        onKeyPress={(event) => {
+                          if (event.target.value.length >= 10) {
+                            event.preventDefault();
+                          }
+                        }}
+                        required
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -253,14 +252,7 @@ const BookingHours = () => {
                       );
                     })}
                     <div className="submit_slot_btn">
-                      <button
-                        className="booking_c_btn"
-                        id="bcb"
-                        type="submit"
-                        onClick={() => {
-                          nxtbtn === 2 ? setBtn(1) : setBtn(0);
-                        }}
-                      >
+                      <button className="booking_c_btn" id="bcb" type="submit">
                         <span style={btn === 1 ? { display: 'none' } : {}}>
                           Submit
                         </span>

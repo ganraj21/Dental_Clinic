@@ -3,16 +3,25 @@
   display: flex;
   position: absolute;
 }
+.in__container {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  color: #e1dddd;
+}
+.in__container label {
+  padding-left: 3px;
+}
 
-/* ::-webkit-calendar-picker-indicator {
-  filter: invert(1);
-} */
-input[type="date"] {
+::placeholder {
+  color: #6a6a6a !important;
+}
+input[type='date'] {
   background: transparent;
   color: white;
 }
 
-input[type="date"]::-webkit-calendar-picker-indicator {
+input[type='date']::-webkit-calendar-picker-indicator {
   filter: invert(100%);
 }
 .bsc_lower {
@@ -61,7 +70,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   cursor: pointer;
   transition: ease-in-out 0.4s;
   font-weight: 500;
-  font-family: "Poppins";
+  font-family: 'Poppins';
 }
 .md_data:active,
 .ed_data:active {
@@ -172,7 +181,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   padding: 3rem 5rem;
   height: 573px;
   border-radius: 0;
-  background: #005c9621;
+  background: #5f606121;
   border-bottom: 7px solid white;
 }
 form {
@@ -200,8 +209,7 @@ form {
 .form_for_booking input {
   padding: 1rem;
   border: none;
-  /* background-color: #fff !important; */
-  color: white !important;
+  color: #6a6a6a !important;
   border-radius: 0.4rem;
   border: 1px solid #8b8b8ba1;
   width: 100%;
@@ -228,7 +236,7 @@ form {
   }
   .form_for_booking {
     background: #2a2a2a70;
-    padding: 2rem 3rem !important;
+    padding: 1rem 2rem !important;
     gap: 1.5rem !important;
   }
   .booking_c_btn {

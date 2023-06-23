@@ -32,7 +32,6 @@ app.post('/register', async (req, res) => {
 
   let saltRounds = await bcrypt.genSalt(10);
   let hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
-  // const hashedPassword = await bcrypt.hash(req.body.password, 10);
 
   try {
     const userExist = await User.findOne({ email: req.body.email });
@@ -59,13 +58,8 @@ app.post('/login_user', async (req, res) => {
   console.log(req.body);
 
   try {
-    //   const admin = await User.findOne({admin_person:req.body.admin_person})
     const user = await User.findOne({ email: req.body.email });
 
-    //   console.log(admin)
-    //   if(admin ){
-    //     res.render('/dental-clinic/team/admin-dashboard');
-    //   }
     if (!user)
       return res.json({ msg: 'Incorrect Email or Password', status: false });
 
@@ -86,12 +80,12 @@ app.post('/login_user', async (req, res) => {
   }
 });
 
-app.post('/dental-clinic/slot/#valid-user', async (req, res) => {
+app.post('/dental-clinic/slot/', async (req, res) => {
   const accountSid = process.env.ACCOUNT_SID;
   const authToken = process.env.AUTH_TOKEN;
   const client = require('twilio')(accountSid, authToken);
 
-  const userPhoneNumber = '+918010844174';
+  const userPhoneNumber = process.env.PHONE;
 
   try {
     const user_date = await appointment_info.findOne({ date: req.body.date });
