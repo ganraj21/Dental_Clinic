@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './Pages/Navbar';
@@ -17,14 +17,14 @@ import ApBooking from './Components/ApBooking';
 import Dashboard from './Pages/PagesData/Admin/Dashboard';
 
 const App = () => {
-  const [currentUser, setCurrentUser] = useState(undefined);
+  // const [currentUser, setCurrentUser] = useState(undefined);
 
-  useEffect(() => {
-    if (localStorage.getItem('chat-app-user')) {
-    } else {
-      setCurrentUser(JSON.parse(localStorage.getItem('chat-app-user')));
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (localStorage.getItem('chat-app-user')) {
+  //   } else {
+  //     setCurrentUser(JSON.parse(localStorage.getItem('chat-app-user')));
+  //   }
+  // }, []);
 
   return (
     <>
@@ -51,8 +51,8 @@ const App = () => {
         />
         {/* <Route exact path="/dental-clinic/treatments" element={} /> */}
         {/* <Route exact path="/dental-clinic/contact" element={} /> */}
-        <Route exact path="/dental-clinic/team" element={<Profile />} />
         <Route exact path="/register" element={<Register />} />
+        <Route exact path="/dental-clinic/team" element={<Profile />} />
         <Route exact path="/login_user" element={<Login />} />
         <Route
           exact

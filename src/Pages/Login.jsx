@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import Logo from '../assets/logo.png';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -69,7 +70,7 @@ const Login = () => {
       }
       if (data.message === 'Login Successfully') {
         localStorage.setItem('chat-app-user', data);
-        // navigate("/dental-clinic/user/chat_section");
+        navigate('/dental-clinic/user/chat_section');
       }
     }
   };
@@ -78,12 +79,7 @@ const Login = () => {
     <>
       <div className="login_form_section">
         <div className="form_container_for_login">
-          <form
-            method="POST"
-            className="login_u_form"
-            onSubmit={PostData}
-            data-aos="fade-right"
-          >
+          <form method="POST" className="login_u_form" onSubmit={PostData}>
             <div className="brand">
               <img src={Logo} alt="logo" />
               <h1>Om Dental Clinic</h1>
@@ -105,7 +101,8 @@ const Login = () => {
               <Spinner id="login_loder" style={loader} />
             </button>
             <span className="lower_title_login">
-              Don't have an account ?<Link to="/register">Register</Link>
+              Don't have an account ?
+              <HashLink to={'/register'}>Register</HashLink>
             </span>
           </form>
         </div>

@@ -121,6 +121,10 @@ app.get('/dental-clinic/user/profile', async (req, res) => {
 
 app.get('/dental-clinic/admin-person', async (req, res) => {});
 
+// app.use((req, res) => {
+//   res.status(404).send('Page not Found');
+// });
+
 app.listen(process.env.PORT, () => {
   console.log(`Server Started on Port ${process.env.PORT}`);
 });

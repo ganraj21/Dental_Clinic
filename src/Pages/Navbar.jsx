@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import logo_img from "./images/logo.png";
-import { HashLink } from "react-router-hash-link";
-import "font-awesome/css/font-awesome.min.css";
-import "./Navbar.css";
+import React, { useState } from 'react';
+import logo_img from './images/logo.png';
+import { HashLink } from 'react-router-hash-link';
+import 'font-awesome/css/font-awesome.min.css';
+import './Navbar.css';
 const Navbar = () => {
   const [isActive, setActive] = useState(false);
 
@@ -22,7 +22,7 @@ const Navbar = () => {
           </HashLink>
           <h2>Dental Clinic</h2>
         </div>
-        <div className={isActive ? "active_links" : "links"}>
+        <div className={isActive ? 'active_links' : 'links'}>
           <div className="MenuItems">
             <HashLink to="/#home" onClick={closeMobileMenu}>
               Home
@@ -39,8 +39,8 @@ const Navbar = () => {
             </HashLink>
           </div>
           <div className="MenuItems">
-            <HashLink to="/login_user" onClick={closeMobileMenu}>
-              Login
+            <HashLink to="/register" onClick={closeMobileMenu}>
+              Register
             </HashLink>
           </div>
           <div className="MenuItems">
@@ -55,7 +55,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className="toggle_menu_icons" onClick={handleClick}>
-          <i className={isActive ? "fas fa-times" : "fas fa-bars"}></i>
+          <i className={isActive ? 'fas fa-times' : 'fas fa-bars'}></i>
         </div>
       </div>
     </>
