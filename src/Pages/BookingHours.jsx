@@ -8,8 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import Spinner from '../Components/Spinner';
 
 const BookingHours = () => {
-  const url =
-    'https://dental-service.onrender.com/dental-clinic/slot#container45';
+  const url = 'https://dental-service.onrender.com/dental-clinic/slot';
   const navigate = useNavigate();
   const [loader, setLoader] = useState('none');
   const [activeUser, setActiveUser] = useState({
@@ -80,11 +79,54 @@ const BookingHours = () => {
     return true;
   };
 
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault();
+
+  //   const { date, name, email, phone, time } = activeUser;
+
+  //   const requestOptions = {
+  //     date,
+  //     name,
+  //     email,
+  //     phone,
+  //     time,
+  //   };
+  //   console.log(requestOptions);
+
+  //   if (handleValidation()) {
+  //     setBtn(1);
+  //     setLoader('flex');
+  //     const res = await fetch(url, {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify(requestOptions),
+  //     });
+
+  //     const data = await res.json();
+
+  //     if (data) {
+  //       setBtn(0);
+  //       setLoader('none');
+  //     }
+  //     if (data.status === 201) {
+  //       console.log("Your data submitted to me it's server");
+  //       toast.success(data.message, toastOptions);
+
+  //       setTimeout(() => {
+  //         navigate('/');
+  //       }, 4000);
+  //     } else if (data.status === 401) {
+  //       toast.error(data.message, toastOptions);
+  //     }
+  //   }
+  // };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     const { date, name, email, phone, time } = activeUser;
-
     const requestOptions = {
       date,
       name,
@@ -92,34 +134,51 @@ const BookingHours = () => {
       phone,
       time,
     };
+
     console.log(requestOptions);
 
     if (handleValidation()) {
       setBtn(1);
       setLoader('flex');
-      const res = await fetch(url, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(requestOptions),
-      });
 
-      const data = await res.json();
+      try {
+        const res = await fetch(url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(requestOptions),
+        });
 
-      if (data) {
+        if (res.status === 201) {
+          console.log('Your data submitted to the server.');
+          toast.success('Successfully made an appointment', toastOptions);
+
+          const form = event.target;
+          form.reset();
+
+          setTimeout(() => {
+            navigate('/');
+          }, 4000);
+        } else if (res.status === 401) {
+          const data = await res.json();
+          toast.error(data.message, toastOptions);
+        } else {
+          console.error('An error occurred while processing your request.');
+          toast.error(
+            'An error occurred while processing your request.',
+            toastOptions
+          );
+        }
+      } catch (err) {
+        console.error(err);
+        toast.error(
+          'An error occurred while processing your request.',
+          toastOptions
+        );
+      } finally {
         setBtn(0);
         setLoader('none');
-      }
-      if (data.message === 'successfully Make An Appointment') {
-        console.log("Your data submitted to me it's server");
-        toast.success(data.message, toastOptions);
-
-        setTimeout(() => {
-          navigate('/');
-        }, 4000);
-      } else if (data.message === 'This slot is already Booked') {
-        toast.error(data.message, toastOptions);
       }
     }
   };

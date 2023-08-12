@@ -53,6 +53,11 @@
   transition: all 0.5s ease-in-out;
   cursor: pointer;
 }
+.bgMenu {
+  background: #c9e6ff;
+  padding: 0px 9px;
+  border-radius: 6px;
+}
 .MenuItems a {
   text-decoration: none;
   font-family: Poppins, sans-serif;
@@ -65,7 +70,7 @@
   transition: ease-in-out 0.4;
 }
 .MenuItems::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   bottom: 0;
@@ -90,7 +95,7 @@
   padding: 47px 20px;
 }
 .active_links::before {
-  content: "";
+  content: '';
   width: 100%;
   height: 4px;
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
