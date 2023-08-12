@@ -27,6 +27,74 @@ app.get('/', (req, res) => {
   res.json({ message: 'Hello from server!' });
 });
 
+// app.post('/dental-clinic/slot/', async (req, res) => {
+//   try {
+//     const user_date = await appointment_info.findOne({ date: req.body.date });
+//     const user_time = await appointment_info.findOne({ time: req.body.time });
+
+//     if (user_date) {
+//       if (user_time) {
+//         return res.status(401).json({ message: 'This slot is already Booked' });
+//       }
+//     }
+
+//     const Appointment_info = new appointment_info({
+//       date: req.body.date,
+//       name: req.body.name,
+//       email: req.body.email,
+//       phone: req.body.phone,
+//       time: req.body.time,
+//     });
+
+//     const userAppointment = await Appointment_info.save();
+//     // -----||
+//     if (userAppointment) {
+//       console.log(req.body);
+//       res.status(201).json({ message: 'successfully Make An Appointment' });
+//     }
+//   } catch (err) {
+//     console.log(err);
+//   }
+// });
+
+app.post('/dental-clinic/slot/', async (req, res) => {
+  try {
+    // Check if the slot is already booked
+    const existingSlot = await appointment_info.findOne({
+      date: req.body.date,
+      time: req.body.time,
+    });
+
+    if (existingSlot) {
+      return res.status(401).json({ message: 'This slot is already booked' });
+    }
+
+    // Create the new appointment
+    const newAppointment = new appointment_info({
+      date: req.body.date,
+      name: req.body.name,
+      email: req.body.email,
+      phone: req.body.phone,
+      time: req.body.time,
+    });
+
+    // Save the new appointment
+    const savedAppointment = await newAppointment.save();
+
+    if (savedAppointment) {
+      console.log(req.body);
+      return res
+        .status(201)
+        .json({ message: 'Successfully made an appointment' });
+    }
+  } catch (err) {
+    console.error(err);
+    return res
+      .status(500)
+      .json({ message: 'An error occurred while processing your request' });
+  }
+});
+
 app.post('/register', async (req, res) => {
   console.log(req.body);
 
@@ -74,36 +142,6 @@ app.post('/login_user', async (req, res) => {
     delete user.password;
     if (user && isPasswordValid) {
       return res.status(201).json({ message: 'Login Successfully' });
-    }
-  } catch (err) {
-    console.log(err);
-  }
-});
-
-app.post('/dental-clinic/slot/', async (req, res) => {
-  try {
-    const user_date = await appointment_info.findOne({ date: req.body.date });
-    const user_time = await appointment_info.findOne({ time: req.body.time });
-
-    if (user_date) {
-      if (user_time) {
-        return res.status(401).json({ message: 'This slot is already Booked' });
-      }
-    }
-
-    const Appointment_info = new appointment_info({
-      date: req.body.date,
-      name: req.body.name,
-      email: req.body.email,
-      phone: req.body.phone,
-      time: req.body.time,
-    });
-
-    const userAppointment = await Appointment_info.save();
-    // -----||
-    if (userAppointment) {
-      console.log(req.body);
-      res.status(201).json({ message: 'successfully Make An Appointment' });
     }
   } catch (err) {
     console.log(err);
